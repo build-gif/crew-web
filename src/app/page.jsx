@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Wordmark, MonoAccent, Divider, Reveal, CrewIcon, CREW_TOKENS, CREW_MEMBERS } from "@/components/ui/crew-shared";
-
 // Crew of Builders — single homepage, repositioned.
 // Thesis: a community where builders show what they're building and learn from each other.
 //
@@ -66,10 +65,13 @@ function CobTopBar() {
         <span style={{fontSize:13, fontWeight:700, letterSpacing:'0.02em', textTransform:'uppercase'}}>
           Crew of Builders
         </span>
+        <span style={{fontFamily:'var(--font-mono, monospace)', fontSize:10, opacity:0.4, letterSpacing:'0.1em', marginLeft: 8}}>
+          Powered by WE
+        </span>
       </div>
-      <button style={cobStyles.applyBtn}>
+      <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, textDecoration:"none"}}>
         Apply <CrewIcon.Arrow s={14}/>
-      </button>
+      </a>
     </div>
   );
 }
@@ -91,9 +93,9 @@ function CobHero() {
             A community of founders showing what they’re building and learning from each other.
           </p>
           <div style={{display:'flex', alignItems:'center', gap:18}}>
-            <button style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12}}>
+            <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12, textDecoration:"none"}}>
               Apply to the Crew <CrewIcon.Arrow s={15}/>
-            </button>
+            </a>
             <span style={{fontSize:13, color:'rgba(10,10,10,0.55)'}}>Reviewed by a human within a week.</span>
           </div>
         </div>
@@ -126,7 +128,7 @@ function CobHero() {
 // Frames the founders themselves as the protagonist.
 // ─────────────────────────────────────────────
 function CobMembers() {
-  const members =(typeof window !== 'undefined' ? window : {}).CREW_MEMBERS || [].slice(0, 8);
+  const members = typeof CREW_MEMBERS !== "undefined" ? CREW_MEMBERS.slice(0, 8) : [];
   // Portrait card colors — orange/cream/ink rotation, brand-locked
   const swatches = [
     { bg:'#FF5A1F', name:'#0A0A0A', role:'rgba(10,10,10,0.7)' },
@@ -228,7 +230,7 @@ function CobMembers() {
 function CobFeed() {
   const [tab, setTab] = React.useState('shipped'); // 'shipped' | 'learning'
   const [hovered, setHovered] = React.useState(null);
-  const members =(typeof window !== 'undefined' ? window : {}).CREW_MEMBERS || [];
+  const members = typeof CREW_MEMBERS !== "undefined" ? CREW_MEMBERS : [];
 
   return (
     <section style={{padding:'112px 32px 88px'}}>
@@ -686,8 +688,10 @@ function CobFooter() {
         }}>
           <div>
             <img src="assets/crew-logo-white.png" style={{width: 130, marginBottom: 18}}/>
-            <div style={{fontSize:14, color:'rgba(245,239,230,0.65)', maxWidth: 360, lineHeight:1.5}}>
+            <div style={{fontSize:14, color:'rgba(245,239,230,0.65)', maxWidth: 380, lineHeight:1.5}}>
               A community of founders showing what they're building and learning from each other.
+              <br/><br/>
+              <span style={{opacity:0.6, fontSize:13}}>WE Heart co-builds companies with proven operators. The Crew is where we find them. It's our talent engine, where builders meet experts and our future venture partners emerge.</span>
             </div>
           </div>
           <div>
@@ -808,9 +812,9 @@ function CobWhatIs() {
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
             The Crew is the community of builders powered by <strong style={{color: CREW.ink}}>WE Heart Impact</strong> — bringing founders, experts, content, and opportunities together.
           </p>
-          <button style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12}}>
+          <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -831,7 +835,6 @@ function CobPage() {
     </div>
   );
 }
-
 
 
 
