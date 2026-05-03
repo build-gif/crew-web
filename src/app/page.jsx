@@ -809,10 +809,10 @@ function CobWhatIs() {
         <div>
           <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE FOUNDERS</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            A community of founders, and the room they've been <span style={{color: CREW.orange}}>looking for.</span>
+            The room founders have been <span style={{color: CREW.orange}}>looking for.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            Founders solve the same problems alone every quarter. The Crew is the room where you don't have to. Conversations with operators who've shipped what you're shipping. Sessions and content from people deep in their craft. A direct line to a venture builder writing first checks. You take what you need, when you need it.
+            Founders solve the same problems alone every quarter. In the Crew, you don't have to.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
