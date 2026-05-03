@@ -31,3 +31,29 @@
     font-weight: normal;
   }
 }
+
+
+@media (max-width: 768px) {
+  /* Override inline grid columns for mobile by targeting the rendered DOM style */
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+  
+  /* Make sure auto-fill/auto-fit grids don't get squished */
+  div[style*="repeat(auto-"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Fix section padding */
+  section {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  
+  /* Fix header top bar */
+  div[style*="padding: 16px 32px"] {
+    padding: 16px 20px !important;
+  }
+}

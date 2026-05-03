@@ -83,8 +83,8 @@ function CobTopBar() {
 // ─────────────────────────────────────────────
 function CobHero() {
   return (
-    <section style={{padding:'88px 32px 72px', position:'relative'}}>
-      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1.15fr 1fr', gap:64, alignItems:'center'}}>
+    <section style={{padding: "88px 32px 72px", position:'relative'}}>
+      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1.15fr 1fr", gap:64, alignItems:'center'}}>
         <div>
           <h1 style={{...cobStyles.h1, fontSize:'clamp(56px, 7vw, 108px)'}}>
             Builders build <span style={{color:CREW.orange}}>near builders.</span>
@@ -615,7 +615,7 @@ function CobFAQ() {
 function CobWeHeart() {
   return (
     <section style={{padding:'112px 32px', background: CREW.ink, color: CREW.cream}}>
-      <div style={{maxWidth: 1100, margin:'0 auto', display:'grid', gridTemplateColumns:'1fr 1.45fr', gap: 64}}>
+      <div style={{maxWidth: 1100, margin:'0 auto', display:'grid', gridTemplateColumns: "1fr 1.45fr", gap: 64}}>
         <div>
           <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>Run by WE Heart</div>
           <h2 style={{...cobStyles.h2, color: CREW.cream}}>
@@ -681,10 +681,10 @@ A human reads every application within a week. If it's not the right fit, we'll 
 
 function CobFooter() {
   return (
-    <footer style={{background: CREW.ink, color: CREW.cream, padding:'56px 32px 28px'}}>
+    <footer className="footer-wrapper" style={{background: CREW.ink, color: CREW.cream, padding:'56px 32px 28px'}}>
       <div style={{maxWidth: 1280, margin:'0 auto'}}>
         <div style={{
-          display:'grid', gridTemplateColumns:'1.6fr 1fr 1fr', gap:32,
+          display:'grid', gridTemplateColumns: "1.6fr 1fr 1fr", gap:32, paddingBottom: 36, borderBottom:'1px solid rgba(245,239,230,0.14)', alignItems:'flex-start' /* mobile-override-footer */,
           paddingBottom: 36, borderBottom:'1px solid rgba(245,239,230,0.14)',
           alignItems:'flex-start',
         }}>
@@ -730,7 +730,7 @@ function CobFooter() {
 function CobWhatIs() {
   return (
     <section style={{padding:'88px 32px 56px'}}>
-      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns:'1.05fr 1fr', gap: 64, alignItems:'center'}}>
+      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1.05fr 1fr", gap: 64, alignItems:'center'}}>
         {/* Video card — orange block with portrait slot, type, play button */}
         <div style={{
           position:'relative',
