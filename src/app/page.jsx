@@ -154,10 +154,10 @@ function CobMembers() {
               fontWeight: 700, letterSpacing:'-0.025em', margin: 0, lineHeight: 1,
             }}>Already in.</h2>
             <span style={{fontSize:14, color:'rgba(10,10,10,0.45)'}}>
-              Builders already in the community.
+              Founders who ship — and show it.
             </span>
           </div>
-          <span style={{...cobStyles.kicker, fontSize:11, color:'rgba(10,10,10,0.4)'}}>↓ More joining</span>
+          <span style={{...cobStyles.kicker, fontSize:11, color:'rgba(10,10,10,0.4)'}}>↓ Batch 01 is filling.</span>
         </div>
 
         {/* Portrait grid — denser, like a press contact-sheet */}
@@ -454,7 +454,7 @@ function CobBatch() {
   const pillars = [
     {
       kicker: '01',
-      title: 'Get your work seen.',
+      title: 'Your work, seen by the right people.',
       body: 'Every member gets a founder profile. What you ship gets shared through our channels and inside the room.',
       bullets: ['Public founder profile', 'Amplified by the Crew', 'Read by other founders'],
     },
@@ -659,7 +659,9 @@ function CobApply() {
           You build.<br/>We're listening.
         </h2>
         <p style={{fontSize:19, lineHeight:1.5, margin:'32px 0 40px', maxWidth: 600, color:'rgba(10,10,10,0.7)'}}>
-          Tell us what you're building, what you've shipped lately, and what you're stuck on. A human reads every application within a week.
+          Tell us what you're building, what you shipped last week, and what's blocking you right now. That's all we need.
+
+A human reads every application within a week. If it's not the right fit, we'll tell you why — and suggest what is.
         </p>
         <div style={{display:'flex', gap:14, alignItems:'center', flexWrap:'wrap'}}>
           <button style={{
@@ -670,7 +672,7 @@ function CobApply() {
           }}>
             Apply to the Crew <CrewIcon.Arrow s={16}/>
           </button>
-          <span style={{fontSize:13, color:'rgba(10,10,10,0.5)'}}>~4 minutes · Free</span>
+          <span style={{fontSize:13, color:'rgba(10,10,10,0.5)'}}>~4 minutes · Free · Batch 01 spots are limited.</span>
         </div>
       </div>
     </section>
@@ -689,9 +691,9 @@ function CobFooter() {
           <div>
             <img src="assets/crew-logo-white.png" style={{width: 130, marginBottom: 18}}/>
             <div style={{fontSize:14, color:'rgba(245,239,230,0.65)', maxWidth: 380, lineHeight:1.5}}>
-              A community of founders showing what they're building and learning from each other.
+              A curated room for founders actively building — and for senior operators ready to build something new. We show our work, share what we know, and keep each other moving.
               <br/><br/>
-              <span style={{opacity:0.6, fontSize:13}}>WE Heart co-builds companies with proven operators. The Crew is where we find them. It's our talent engine, where builders meet experts and our future venture partners emerge.</span>
+              <span style={{opacity:0.6, fontSize:13}}>WE Heart co-builds companies with proven operators. The Crew is where we find them. The Crew is how we find them early — and how founders find each other.</span>
             </div>
           </div>
           <div>
@@ -805,12 +807,14 @@ function CobWhatIs() {
 
         {/* Right copy */}
         <div>
-          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>What is the Crew?</div>
+          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>Built for two kinds of builders.</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
             A community of<br/>founders building<br/><span style={{color: CREW.orange}}>in the open.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            The Crew is the community of builders powered by <strong style={{color: CREW.ink}}>WE Heart Impact</strong> — bringing founders, experts, content, and opportunities together.
+            The Crew brings together founders shipping their companies and senior operators who've done it before — and want to do it again. Every week, members post what they shipped and what's blocking them. That's the whole game: show your work, get real input, move faster.
+
+No curriculum. No demo day. Just a room full of people making things.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
@@ -827,8 +831,11 @@ function CobPage() {
       <CobTopBar/>
       <CobHero/>
       <CobWhatIs/>
+      <CobHabits/>
       <CobBatch/>
       <CobMembers/>
+      <CobFeed/>
+      <CobWeHeart/>
       <CobApply/>
       <CobFAQ/>
       <CobFooter/>
