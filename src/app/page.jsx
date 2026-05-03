@@ -831,11 +831,8 @@ function CobPage() {
       <CobTopBar/>
       <CobHero/>
       <CobWhatIs/>
-      <CobHabits/>
       <CobBatch/>
       <CobMembers/>
-      <CobFeed/>
-      <CobWeHeart/>
       <CobApply/>
       <CobFAQ/>
       <CobFooter/>
