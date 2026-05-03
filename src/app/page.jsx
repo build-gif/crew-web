@@ -90,7 +90,7 @@ function CobHero() {
             Builders build <span style={{color:CREW.orange}}>near builders.</span>
           </h1>
           <p style={{fontSize:20, lineHeight:1.45, maxWidth: 540, color:'rgba(10,10,10,0.72)', margin:'32px 0 40px'}}>
-            A community of founders showing what they’re building and learning from each other.
+            Founders building the next thing. Together.
           </p>
           <div style={{display:'flex', alignItems:'center', gap:18}}>
             <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12, textDecoration:"none"}}>
@@ -454,28 +454,28 @@ function CobBatch() {
   const pillars = [
     {
       kicker: '01',
-      title: 'Your work, seen by the right people.',
-      body: 'Every member gets a founder profile. What you ship gets shared through our channels and inside the room.',
-      bullets: ['Public founder profile', 'Amplified by the Crew', 'Read by other founders'],
+      title: 'Operators in the room.',
+      body: 'Sessions and conversations with founders who\'ve shipped what you\'re shipping. Recorded for when you can\'t make it live. The shortcut you wish you had two years ago.',
+      bullets: ['Live sessions with operators', 'Members-only library', 'Async, on your schedule'],
     },
     {
       kicker: '02',
-      title: 'Operators in the room.',
-      body: 'Working sessions every month with founders who’ve built what you’re building. Recorded, members only.',
-      bullets: ['Live monthly sessions', 'Members-only library', 'Dinners in São Paulo'],
+      title: 'A real shot at first check.',
+      body: 'WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.',
+      bullets: ['Direct line to WE Heart', 'No obligation either way', 'Honest feedback on your raise'],
     },
     {
       kicker: '03',
-      title: 'A real shot at first check.',
-      body: 'WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.',
-      bullets: ['Direct line to WE Heart', 'No obligation either way', 'Intros to capital and customers'],
+      title: 'Visibility, when you want it.',
+      body: 'Every member gets a founder profile. When you ship something, the room knows. When you don\'t, no pressure.',
+      bullets: ['Public founder profile', 'Amplified when you ship', 'No posting quota'],
     },
   ];
   return (
     <section style={{padding:'120px 32px', background: CREW.cream}}>
       <div style={{maxWidth: 1280, margin:'0 auto'}}>
         <div style={{maxWidth: 820, marginBottom: 64}}>
-          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>What we put in your corner</div>
+          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>WHAT YOU GET ACCESS TO</div>
           <h2 style={cobStyles.h2}>
             Three things,<br/>in your corner.
           </h2>
@@ -807,18 +807,17 @@ function CobWhatIs() {
 
         {/* Right copy */}
         <div>
-          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>Built for two kinds of builders.</div>
+          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE FOUNDERS</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            A community of<br/>founders building<br/><span style={{color: CREW.orange}}>in the open.</span>
+            A community of founders, and the room they've been <span style={{color: CREW.orange}}>looking for.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            The Crew brings together founders shipping their companies and senior operators who've done it before — and want to do it again. Every week, members post what they shipped and what's blocking them. That's the whole game: show your work, get real input, move faster.
-
-No curriculum. No demo day. Just a room full of people making things.
+            Founders solve the same problems alone every quarter. The Crew is the room where you don't have to. Conversations with operators who've shipped what you're shipping. Sessions and content from people deep in their craft. A direct line to a venture builder writing first checks. You take what you need, when you need it.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
           </a>
+          <div style={{marginTop: 16, fontSize: 11, fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.1em', opacity: 0.5}}>FREE · APPLICATION REVIEWED BY A HUMAN</div>
         </div>
       </div>
     </section>
