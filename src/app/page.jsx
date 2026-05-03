@@ -533,27 +533,27 @@ function CobFAQ() {
   const faqs = [
     {
       q: 'Is this a course or an accelerator?',
-      a: 'Neither. There\'s no curriculum and no demo day. The Crew is a community where founders show their work to each other and learn out loud. If you want a syllabus, this isn\'t it.',
+      a: 'Neither. There is no curriculum and no demo day. The Crew is a curated room of founders actively building and senior operators sharing real problems, real decisions, and real progress. If you\'re looking for structured learning, there are great programs for that. If you\'re looking for a trusted circle of people who will push your thinking — this is it.',
     },
     {
-      q: 'How much time does it take?',
-      a: 'Honestly: about 30 minutes a week if you want value, an hour if you want to give back. Most activity is async. The monthly expert session is 90 minutes; the dinner is optional.',
+      q: 'How much time does it actually take?',
+      a: 'We built this for people who don\'t have time to waste. Most of the community is async. A realistic baseline is about 30 minutes a week. Once a month, there\'s a 90-minute live session. No mandatory calls. No "be active or get removed" pressure.',
     },
     {
       q: 'How much does it cost?',
-      a: 'Nothing. The Crew is free for accepted founders. WE Heart funds it because we\'d rather know founders early than write cold cheques.',
+      a: 'Membership is free for both founders and experts who are accepted. WE Heart Impact funds the Crew because we believe the most valuable thing we can do is be genuinely useful to builders before any investment relationship exists.',
     },
     {
       q: 'Will WE Heart try to invest in my company?',
-      a: 'Maybe — only if it fits. Joining the Crew creates zero obligation. Many members never raise from WE Heart. The point of the room is the room.',
+      a: 'Only if it makes sense for both sides. Joining the Crew creates zero obligation. Many members build and grow without ever raising from WE Heart. If a funding conversation happens, it will be organic. The point of the room is the room.',
     },
     {
       q: 'Who gets in?',
-      a: 'Founders building serious companies — pre-seed to Series A — who care more about shipping than networking. Brazilian-context bias. Strong preference for people who post their work in public.',
+      a: 'Two profiles: Founders building real companies (pre-seed to Series A) and Experts (senior executives/operators with deep domain expertise exploring their entrepreneurial path). Both need to care about substance over optics and be willing to engage with the Brazilian market context.',
     },
     {
       q: 'How does the application work?',
-      a: 'A short form (10 minutes), reviewed by a human within a week. We\'ll either invite you in, suggest a better fit, or tell you why now isn\'t the right time.',
+      a: 'A short form (about 10 minutes) reviewed by a human within a week. We don\'t auto-reject and we don\'t use filters. We\'ll reach out with an invitation, a note about timing, or a direct question to learn more before deciding.',
     },
   ];
   return (
