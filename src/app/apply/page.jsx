@@ -67,10 +67,13 @@ const STAGE_OPTIONS = [
 
 // ─── Mock API ─────────────────────────────────────────────────────────────────
 async function mockSubmit(data) {
-  // Replace with real Supabase / Notion call when ready.
-  return new Promise((resolve) =>
-    setTimeout(() => resolve({ ok: true, data }), 1500)
-  );
+  const res = await fetch('/api/apply', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+  if (!res.ok) throw new Error('Failed to submit application');
+  return res.json();
 }
 
 // ─── Validation helpers ───────────────────────────────────────────────────────
