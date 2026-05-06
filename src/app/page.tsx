@@ -42,10 +42,10 @@ export default function TeaserPage() {
       
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[640px] text-center gap-12">
         
-        {/* LOGO REUSE - Using text approximation or keeping SVG from other place. Assuming text as placeholder since I don't have the SVG code right now, or I'll try to find it. */}
-        <h1 className="font-serif-it text-[clamp(48px,10vw,80px)] tracking-tight leading-none">
-          Crew of Builders
-        </h1>
+        {/* LOGO REUSE - Using the black logo from assets */}
+        <div className="flex justify-center mb-4">
+          <img src="/assets/crew-logo-black.png" alt="Crew of Builders Logo" className="w-[85%] max-w-[500px] h-auto object-contain" />
+        </div>
 
         <p className="font-serif-it text-[clamp(24px,5vw,36px)] leading-snug text-[#0A0A0A]/90 max-w-[500px]">
           A community of founders building the next thing. Together.
