@@ -9,6 +9,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Email is required' }, { status: 400 });
     }
 
+    // 1. SUPABASE
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -38,7 +39,9 @@ export async function POST(request: Request) {
       }
     }
 
+    // 2. RESEND (Transactional + Audience)
     if (process.env.RESEND_API_KEY) {
+      // Envia o e-mail transacional
       await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -49,15 +52,52 @@ export async function POST(request: Request) {
           from: 'Crew of Builders <hello@weheartimpact.com>',
           to: email,
           subject: `You're on the list — Crew of Builders`,
-          text: `Hey,
+          text: `Hey,\n\nYou're on the list for Crew of Builders.\n\nThe room opens May 18 — we'll send the link the moment applications go live.\n\nUntil then: keep building.\n\n— The Crew`
+        })
+      });
 
-You're on the list for Crew of Builders.
+      // Adiciona na Audiência (Lista de Contatos) do Resend
+      if (process.env.RESEND_AUDIENCE_ID) {
+        await fetch(`https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email,
+            unsubscribed: false
+          })
+        });
+      }
+    }
 
-The room opens May 18 — we'll send the link the moment applications go live.
-
-Until then: keep building.
-
-— The Crew`
+    // 3. NOTION
+    if (process.env.NOTION_API_KEY && process.env.NOTION_WAITLIST_DB_ID) {
+      await fetch('https://api.notion.com/v1/pages', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.NOTION_API_KEY}`,
+          'Content-Type': 'application/json',
+          'Notion-Version': '2022-06-28'
+        },
+        body: JSON.stringify({
+          parent: { database_id: process.env.NOTION_WAITLIST_DB_ID },
+          properties: {
+            Email: {
+              title: [
+                { text: { content: email } }
+              ]
+            },
+            Status: {
+              select: { name: 'Waitlist' }
+            },
+            Source: {
+              rich_text: [
+                { text: { content: 'Teaser LP' } }
+              ]
+            }
+          }
         })
       });
     }
