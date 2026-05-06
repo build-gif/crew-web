@@ -38,71 +38,98 @@ export default function TeaserPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F2EFE6] text-[#0A0A0A] flex flex-col justify-between items-center px-6 py-12 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F5EFE6] text-[#0A0A0A] flex flex-col justify-between px-6 py-8 relative overflow-hidden" style={{ fontFamily: '"Space Grotesk","Inter",ui-sans-serif,system-ui,sans-serif' }}>
       
       {/* Subtle grid pattern background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'linear-gradient(#0A0A0A 1px, transparent 1px), linear-gradient(90deg, #0A0A0A 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
-      <nav className="w-full max-w-[1280px] flex justify-between items-center z-10">
+      {/* Top Nav (Minimal) */}
+      <nav className="w-full max-w-[1280px] mx-auto flex justify-between items-center z-10 pb-8 border-b border-[#0A0A0A]/5">
          <div className="font-bold text-[18px] tracking-[-0.03em] text-[#0A0A0A]">
             WE Heart
          </div>
       </nav>
 
-      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[720px] text-center gap-10 sm:gap-14 z-10 my-16">
+      {/* Split Hero Layout */}
+      <main className="flex-1 w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24 z-10 py-16">
         
-        <div className="w-full flex justify-center mb-0 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <img src="/assets/crew-logo-black.png" alt="Crew of Builders Logo" className="w-[60%] max-w-[280px] h-auto object-contain" style={{ mixBlendMode: 'darken' }} />
-        </div>
-
-        <p className="font-serif-it text-[clamp(32px,7vw,52px)] leading-[1.1] text-[#0A0A0A]/90 max-w-[650px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
-          A community of founders building the next thing. Together.
-        </p>
-
-        <div className="flex flex-col items-center gap-8 w-full mt-4 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-300 fill-mode-both">
+        {/* Left Side: Copy & Waitlist */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
           
-          <div className="flex items-center gap-3">
-             <span className="w-2 h-2 rounded-full bg-[#227468] shadow-[0_0_0_4px_rgba(34,116,104,0.15)] animate-pulse" />
-             <span className="font-mono text-[12px] font-semibold tracking-[0.2em] text-[#0A0A0A] uppercase">
+          <h1 style={{ fontSize: 'clamp(48px, 6vw, 84px)', lineHeight: 0.9, fontWeight: 700, letterSpacing: '-0.04em', margin: 0 }}>
+            Builders build <span style={{color: '#FF5A1F'}}>near builders.</span>
+          </h1>
+
+          <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.45, maxWidth: 500, color: 'rgba(10,10,10,0.72)' }}>
+            A community of founders building the next thing. Together.
+          </p>
+
+          <div className="flex items-center justify-center lg:justify-start gap-3 w-full mt-4">
+             <span className="w-2 h-2 rounded-full bg-[#FF5A1F] shadow-[0_0_0_4px_rgba(255,90,31,0.15)] animate-pulse" />
+             <span className="font-mono text-[11px] font-semibold tracking-[0.2em] text-[#0A0A0A] uppercase">
                The room opens May 18
              </span>
           </div>
 
-          {status === 'success' ? (
-            <div className="w-full max-w-md flex flex-col items-center gap-4 bg-[#0A0A0A]/5 border border-[#0A0A0A]/10 p-8 rounded-[4px] mt-2">
-              <div className="w-12 h-12 bg-[#227468]/10 flex items-center justify-center rounded-full mb-2">
-                <span className="w-3 h-3 bg-[#227468] rounded-full"></span>
+          <div className="w-full max-w-[460px] mx-auto lg:mx-0">
+            {status === 'success' ? (
+              <div className="w-full flex flex-col items-center lg:items-start gap-4 bg-[#0A0A0A]/5 border border-[#0A0A0A]/10 p-6 rounded-[12px] mt-2">
+                <div className="w-10 h-10 bg-[#FF5A1F]/10 flex items-center justify-center rounded-full mb-1">
+                  <span className="w-2.5 h-2.5 bg-[#FF5A1F] rounded-full"></span>
+                </div>
+                <span className="font-mono text-[14px] font-bold tracking-widest text-[#0A0A0A]">YOU'RE ON THE LIST</span>
+                <span className="text-[15px] text-[#6B6862] leading-relaxed">We'll send the link the moment the gates open. Keep building.</span>
               </div>
-              <span className="font-mono text-[16px] font-bold tracking-widest text-[#0A0A0A]">YOU'RE ON THE LIST</span>
-              <span className="text-[16px] text-[#6B6862] leading-relaxed">We'll send the link the moment the gates open. Keep building.</span>
-            </div>
-          ) : (
-            <form onSubmit={submit} className="w-full max-w-[460px] flex flex-col gap-3 relative mt-2">
-              <div className="flex flex-col sm:flex-row gap-3 w-full">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@founder.com"
-                  className="w-full sm:flex-1 bg-white/60 backdrop-blur-sm border border-[#0A0A0A]/20 rounded-[2px] px-6 py-4 text-[16px] outline-none focus:border-[#0A0A0A] focus:bg-white transition-all placeholder:text-[#0A0A0A]/40 text-[#0A0A0A] shadow-sm"
-                />
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A0A0A] text-[#F2EFE6] px-8 py-4 rounded-[2px] font-medium text-[16px] hover:bg-[#227468] hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 whitespace-nowrap shadow-md"
-                >
-                  {status === 'loading' ? 'Locking in...' : 'Join Waitlist'}
-                </button>
-              </div>
-            </form>
-          )}
-          {status === 'error' && <p className="text-[14px] text-red-600 mt-2 bg-red-50 px-4 py-2 rounded border border-red-100">{msg}</p>}
+            ) : (
+              <form onSubmit={submit} className="w-full flex flex-col gap-3 relative mt-2">
+                <div className="flex flex-col sm:flex-row gap-3 w-full">
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="your@email.com"
+                    className="w-full sm:flex-1 bg-white/60 border border-[#111]/20 rounded-[10px] px-6 py-4 text-[16px] outline-none focus:border-[#111] transition-all placeholder:text-[#111]/40 text-[#111]"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111] text-[#F5EFE6] px-8 py-4 rounded-[10px] font-semibold text-[15px] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 whitespace-nowrap"
+                  >
+                    {status === 'loading' ? 'Locking in...' : 'Join Waitlist'}
+                  </button>
+                </div>
+              </form>
+            )}
+            {status === 'error' && <p className="text-[14px] text-red-600 mt-2 text-left">{msg}</p>}
+          </div>
         </div>
-      </div>
 
-      <footer className="w-full max-w-[1280px] flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-[11px] tracking-[0.15em] text-[#6B6862] uppercase pt-12 pb-4 z-10 border-t border-[#0A0A0A]/5 mt-auto">
+        {/* Right Side: Protagonist Logo in Black Slab */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-1000">
+          <div style={{
+            background: '#111', borderRadius: 28, padding: 56,
+            aspectRatio:'1/1', width: '100%', maxWidth: '500px',
+            position:'relative', overflow:'hidden',
+            display:'flex', alignItems:'center', justifyContent:'center',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
+          }}>
+            <img src="/assets/crew-logo-white.png" style={{width:'78%', height:'auto', display:'block'}} alt="Crew of Builders Logo"/>
+            <div style={{position:'absolute', top:22, left:26, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em', fontFamily:'var(--font-mono, monospace)'}}>EST. 2026 · SP</div>
+            <div style={{position:'absolute', top:22, right:26, fontSize:11, color:'#FF5A1F', fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6, fontFamily:'var(--font-mono, monospace)'}}>
+              <span style={{width:6,height:6,borderRadius:'50%', background:'#FF5A1F', boxShadow:'0 0 0 3px rgba(255,90,31,0.2)'}}/> MAY 18
+            </div>
+            <div style={{position:'absolute', bottom:22, left:26, right:26, display:'flex', justifyContent:'space-between', fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em', fontFamily:'var(--font-mono, monospace)'}}>
+              <span>№ 001</span>
+              <span>BY WE HEART ↗</span>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <footer className="w-full max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-[11px] tracking-[0.15em] text-[#6B6862] uppercase pt-8 border-t border-[#0A0A0A]/5 mt-auto z-10">
         <span className="opacity-70">© 2026 Crew of Builders</span>
         <span className="font-semibold text-[#0A0A0A]">Operated by WE Heart</span>
       </footer>
