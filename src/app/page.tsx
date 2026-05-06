@@ -58,11 +58,11 @@ export default function TeaserPage() {
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
           
           <h1 style={{ fontSize: 'clamp(48px, 6vw, 84px)', lineHeight: 0.9, fontWeight: 700, letterSpacing: '-0.04em', margin: 0 }}>
-            Builders build <span style={{color: '#FF5A1F'}}>near builders.</span>
+            Builders build <span style={{color: '#FF5A1F'}}>with Builders.</span>
           </h1>
 
           <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.45, maxWidth: 500, color: 'rgba(10,10,10,0.72)' }}>
-            A community of founders building the next thing. Together.
+            Join the Crew.
           </p>
 
           <div className="flex items-center justify-center lg:justify-start gap-3 w-full mt-4">
