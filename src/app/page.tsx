@@ -53,7 +53,7 @@ export default function TeaserPage() {
       <div className="flex-1 flex flex-col items-center justify-center w-full max-w-[720px] text-center gap-10 sm:gap-14 z-10 my-16">
         
         <div className="w-full flex justify-center mb-0 animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <img src="/assets/crew-logo-black.png" alt="Crew of Builders Logo" className="w-[60%] max-w-[280px] h-auto object-contain mix-blend-multiply" />
+          <img src="/assets/crew-logo-black.png" alt="Crew of Builders Logo" className="w-[60%] max-w-[280px] h-auto object-contain" style={{ mixBlendMode: 'darken' }} />
         </div>
 
         <p className="font-serif-it text-[clamp(32px,7vw,52px)] leading-[1.1] text-[#0A0A0A]/90 max-w-[650px] animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
