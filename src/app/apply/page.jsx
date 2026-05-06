@@ -440,7 +440,7 @@ function CobTopBar() {
         >
           {/* Try real logo; fall back to text wordmark */}
           <img
-            src="/assets/crew-logo-black.png"
+            src="/assets/crew-logo-black.svg"
             alt="Crew of Builders"
             style={{ height: '22px', width: 'auto', display: 'block' }}
             onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.nextSibling.style.display = 'block'; }}

@@ -115,7 +115,7 @@ export default function TeaserPage() {
             display:'flex', alignItems:'center', justifyContent:'center',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
           }}>
-            <img src="/assets/crew-logo-white.png" style={{width:'78%', height:'auto', display:'block'}} alt="Crew of Builders Logo"/>
+            <img src="/assets/crew-logo.svg" style={{width:'78%', height:'auto', display:'block'}} alt="Crew of Builders Logo"/>
             <div style={{position:'absolute', top:22, left:26, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em', fontFamily:'var(--font-mono, monospace)'}}>EST. 2026 · SP</div>
             <div style={{position:'absolute', top:22, right:26, fontSize:11, color:'#FF5A1F', fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6, fontFamily:'var(--font-mono, monospace)'}}>
               <span style={{width:6,height:6,borderRadius:'50%', background:'#FF5A1F', boxShadow:'0 0 0 3px rgba(255,90,31,0.2)'}}/> MAY 18

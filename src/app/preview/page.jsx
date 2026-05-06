@@ -61,7 +61,7 @@ function CobTopBar() {
       borderBottom:'1px solid rgba(10,10,10,0.08)',
     }}>
       <div style={{display:'flex', alignItems:'center', gap:10}}>
-        <img src="assets/crew-logo-black.png" style={{height:28, width:'auto', display:'block'}}/>
+        <img src="assets/crew-logo-black.svg" style={{height:28, width:'auto', display:'block'}}/>
         <span style={{fontSize:13, fontWeight:700, letterSpacing:'0.02em', textTransform:'uppercase'}}>
           Crew of Builders
         </span>
@@ -107,7 +107,7 @@ function CobHero() {
           position:'relative', overflow:'hidden',
           display:'flex', alignItems:'center', justifyContent:'center',
         }}>
-          <img src="assets/crew-logo-white.png" style={{width:'78%', height:'auto', display:'block'}}/>
+          <img src="assets/crew-logo.svg" style={{width:'78%', height:'auto', display:'block'}}/>
           <div style={{position:'absolute', top:18, left:22, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em'}}>EST. 2026 · SP</div>
           <div style={{position:'absolute', top:18, right:22, fontSize:11, color:CREW.orange, fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6}}>
             <span style={{width:6,height:6,borderRadius:'50%', background:CREW.orange}}/> APPLICATIONS OPEN
@@ -689,7 +689,7 @@ function CobFooter() {
           alignItems:'flex-start',
         }}>
           <div>
-            <img src="assets/crew-logo-white.png" style={{width: 130, marginBottom: 18}}/>
+            <img src="assets/crew-logo.svg" style={{width: 130, marginBottom: 18}}/>
             <div style={{fontSize:14, color:'rgba(245,239,230,0.65)', maxWidth: 380, lineHeight:1.5}}>
               A curated room for founders actively building — and for senior operators ready to build something new. We show our work, share what we know, and keep each other moving.
               <br/><br/>
