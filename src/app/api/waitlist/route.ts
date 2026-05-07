@@ -102,6 +102,24 @@ export async function POST(request: Request) {
       });
     }
 
+    
+    // Notify Felipe Waitlist
+    if (process.env.RESEND_API_KEY) {
+      await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'Crew of Builders <hello@weheartimpact.com>',
+          to: 'felipe@weheartimpact.com',
+          subject: 'Novo Lead Recebido - Waitlist Crew',
+          text: `Novo email na waitlist: ${email}`
+        })
+      }).catch(console.error);
+    }
+    
     return NextResponse.json({ success: true });
   } catch (error) {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

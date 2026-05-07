@@ -1,3 +1,4 @@
+import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN || '';
@@ -69,6 +70,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Failed to save to Notion' }, { status: 500 });
     }
 
+    
+    // Notify Felipe
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        await resend.emails.send({
+          from: 'Crew of Builders <hello@weheartimpact.com>',
+          to: 'felipe@weheartimpact.com',
+          subject: 'Novo Lead Recebido - Apply Crew',
+          html: `<p>Novo lead no Apply da Crew:</p><pre>${JSON.stringify(formData, null, 2)}</pre>`
+        });
+      } catch (e) {
+        console.error("Error sending email to Felipe", e);
+      }
+    }
+    
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('API Error:', error);
