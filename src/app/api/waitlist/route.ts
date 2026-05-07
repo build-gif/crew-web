@@ -117,7 +117,7 @@ export async function POST(request: Request) {
           subject: 'Novo Lead Recebido - Waitlist Crew',
           text: `Novo email na waitlist: ${email}`
         })
-      }).catch(console.error);
+      }).then(res => res.json()).then(data => console.log("Felipe Waitlist Notify:", data)).catch(e => console.error("Felipe Waitlist Notify Error:", e));
     }
     
     return NextResponse.json({ success: true });
