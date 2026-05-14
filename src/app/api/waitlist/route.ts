@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     if (supabaseUrl && supabaseKey) {
-      const res = await fetch(`${supabaseUrl}/rest/v1/waitlist`, {
+      const res = await fetch(`${supabaseUrl}/rest/v1/leads`, {
         method: 'POST',
         headers: {
           'apikey': supabaseKey,
@@ -23,11 +23,10 @@ export async function POST(request: Request) {
           'Prefer': 'return=minimal'
         },
         body: JSON.stringify({
+          full_name: 'Desconhecido', // Coluna obrigatória no banco
           email,
-          source: 'teaser',
-          utm_source: null,
-          utm_medium: null,
-          utm_campaign: null
+          origin: 'crew-waitlist',
+          metadata: { source: 'teaser' }
         })
       });
 
