@@ -45,6 +45,6 @@
 
 @layer utilities {
   .focus-ring {
-    @apply focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all;
+    @apply focus:outline-none focus:border-[#0A0A0A] transition-all;
   }
 }
