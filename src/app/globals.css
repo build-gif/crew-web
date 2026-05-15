@@ -1,59 +1,50 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-ink: #111111;
-  --color-paper: #F5F1E8;
-  --color-mint: #B8E0C8;
-  --color-butter: #F5E6A8;
-  --color-whisper: #E8E4DA;
-  --color-muted: #6B6B6B;
+  --font-sans: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 @layer base {
   :root {
-    --ink: #111111;
-    --paper: #F5F1E8;
-    --mint: #B8E0C8;
-    --butter: #F5E6A8;
-    --whisper: #E8E4DA;
-    --muted: #6B6B6B;
+    --background: 44 26% 93%; /* #F5EFE6 */
+    --foreground: 0 0% 4%; /* #0A0A0A */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 4%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 4%;
+    
+    --primary: 0 0% 4%; /* #0A0A0A */
+    --primary-foreground: 44 26% 93%; /* #F5EFE6 */
+    
+    --secondary: 44 15% 85%;
+    --secondary-foreground: 0 0% 4%;
+    
+    --muted: 44 15% 85%;
+    --muted-foreground: 0 0% 40%; /* #6B6862 */
+    
+    --accent: 16 100% 56%; /* #FF5A1F - Laranja Crew */
+    --accent-foreground: 0 0% 100%;
+    
+    --border: 0 0% 4%; /* Controlado por opacidade no utility */
+    --input: 0 0% 4%;
+    --ring: 0 0% 4%;
+    
+    --radius: 0.3rem; /* Border radius seco (rounded-sm) */
   }
 
   body {
-    background-color: var(--paper);
-    color: var(--ink);
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-weight: 450;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-weight: normal;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
-
-@media (max-width: 768px) {
-  /* Override inline grid columns for mobile by targeting the rendered DOM style */
-  div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-  }
-  
-  /* Make sure auto-fill/auto-fit grids don't get squished */
-  div[style*="repeat(auto-"] {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Fix section padding */
-  section {
-    padding-left: 24px !important;
-    padding-right: 24px !important;
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
-  }
-  
-  /* Fix header top bar */
-  div[style*="padding: 16px 32px"] {
-    padding: 16px 20px !important;
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all;
   }
 }
