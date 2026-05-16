@@ -1,139 +1,670 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import React, { useState } from "react";
+import { CrewIcon, CREW_MEMBERS } from "@/components/ui/crew-shared";
 
-export default function TeaserPage() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [msg, setMsg] = useState('');
+const APPLY_HREF = "https://discovery.weheartimpact.com/";
 
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setStatus('loading');
-    setMsg('');
+function memberPhotoSrc(photo: string) {
+  return photo.startsWith("/") ? photo : `/${photo}`;
+}
 
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-      });
-      const data = await res.json();
-      
-      if (res.ok) {
-        setStatus('success');
-      } else {
-        if (res.status === 409 || data.error?.includes('already')) {
-           setStatus('success');
-        } else {
-           setStatus('error');
-           setMsg(data.error || 'Something went wrong');
-        }
-      }
-    } catch (err) {
-      setStatus('error');
-      setMsg('Connection error. Please try again.');
-    }
-  };
+const applyBtnClass =
+  "inline-flex items-center gap-2.5 rounded-sm bg-[#0A0A0A] text-[#F5EFE6] no-underline font-semibold";
+
+const kickerClass =
+  "font-mono text-[11px] font-bold uppercase tracking-[0.18em]";
+
+function TopBar() {
+  return (
+    <header className="sticky top-0 z-50 flex items-center justify-between border-b border-[#0A0A0A]/10 bg-[#F5EFE6]/[0.86] px-8 py-4 backdrop-blur-[14px]">
+      <div className="flex items-center gap-2.5">
+        <img
+          src="/assets/crew-logo-black.svg"
+          alt="Crew of Builders"
+          className="block h-7 w-auto"
+        />
+        <span className="text-[13px] font-bold uppercase tracking-[0.02em] text-[#0A0A0A]">
+          Crew of Builders
+        </span>
+      </div>
+      <a href={APPLY_HREF} className={`${applyBtnClass} px-[22px] py-3.5 text-sm`}>
+        Apply <CrewIcon.Arrow s={14} />
+      </a>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative px-8 pb-[72px] pt-[88px]">
+      <div className="mx-auto grid max-w-[1280px] items-center gap-16 md:grid-cols-[1.15fr_1fr]">
+        <div>
+          <h1 className="m-0 text-[clamp(56px,7vw,108px)] font-bold leading-[0.88] tracking-[-0.04em] text-[#0A0A0A]">
+            Builders build{" "}
+            <span className="text-[#FF5A1F]">near builders.</span>
+          </h1>
+          <p className="mb-10 mt-8 max-w-[540px] text-xl leading-[1.45] text-[#0A0A0A]/72">
+            A community of founders showing what they&apos;re building and
+            learning from each other.
+          </p>
+          <div className="flex flex-wrap items-center gap-[18px]">
+            <a
+              href={APPLY_HREF}
+              className={`${applyBtnClass} px-[26px] py-[18px] text-[15px]`}
+            >
+              Apply to the Crew <CrewIcon.Arrow s={15} />
+            </a>
+            <span className="text-[13px] text-[#0A0A0A]/55">
+              Reviewed by a human within a week.
+            </span>
+          </div>
+        </div>
+
+        <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-sm border border-[#0A0A0A]/10 bg-[#0A0A0A] p-14">
+          <img
+            src="/assets/crew-logo.svg"
+            alt=""
+            className="block w-[78%] max-w-none"
+          />
+          <div className="absolute left-[22px] top-[18px] text-[11px] font-bold tracking-[0.16em] text-[#F5EFE6]/55">
+            EST. 2026 · SP
+          </div>
+          <div className="absolute right-[22px] top-[18px] flex items-center gap-1.5 text-[11px] font-bold tracking-[0.16em] text-[#FF5A1F]">
+            <span className="size-1.5 rounded-sm bg-[#FF5A1F]" />
+            APPLICATIONS OPEN
+          </div>
+          <div className="absolute bottom-[18px] left-[22px] right-[22px] flex justify-between text-[11px] font-bold tracking-[0.16em] text-[#F5EFE6]/55">
+            <span>№ 001</span>
+            <span>BY WE HEART ↗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const MARQUEE_ITEMS = [
+  "Crew of Builders",
+  "WE Heart",
+  "São Paulo",
+  "Builders in the open",
+  "Batch 01",
+  "First cheque thesis",
+];
+
+function Marquee() {
+  const strip = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
+  return (
+    <section
+      className="border-y border-[#0A0A0A]/10 bg-white py-5"
+      aria-label="Brand marquee"
+    >
+      <div className="overflow-hidden">
+        <div className="flex w-max animate-[crew-marquee_40s_linear_infinite] gap-12 px-8 motion-reduce:animate-none">
+          {strip.map((label, i) => (
+            <div
+              key={`${label}-${i}`}
+              className="flex shrink-0 items-center gap-3 border border-[#0A0A0A]/10 bg-[#F5EFE6] px-5 py-2.5"
+            >
+              <img
+                src="/assets/crew-logo-black.svg"
+                alt=""
+                className="h-5 w-auto opacity-80"
+              />
+              <span className={`${kickerClass} text-[#0A0A0A]/80`}>
+                {label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Feed() {
+  const [tab, setTab] = useState<"shipped" | "learning">("shipped");
+  const [hovered, setHovered] = useState<number | null>(null);
+  const members = CREW_MEMBERS;
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6] text-[#0A0A0A] flex flex-col justify-between px-6 py-8 relative overflow-hidden" style={{ fontFamily: '"Space Grotesk","Inter",ui-sans-serif,system-ui,sans-serif' }}>
-      
-      {/* Subtle grid pattern background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'linear-gradient(#0A0A0A 1px, transparent 1px), linear-gradient(90deg, #0A0A0A 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-
-      {/* Top Nav (Minimal) */}
-      <nav className="w-full max-w-[1280px] mx-auto flex justify-between items-center z-10 pb-8 border-b border-[#0A0A0A]/5">
-         <div className="font-bold text-[18px] tracking-[-0.03em] text-[#0A0A0A]">
-            WE Heart
-         </div>
-      </nav>
-
-      {/* Split Hero Layout */}
-      <main className="flex-1 w-full max-w-[1280px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24 z-10 py-16">
-        
-        {/* Left Side: Copy & Waitlist */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-150 fill-mode-both">
-          
-          <h1 style={{ fontSize: 'clamp(48px, 6vw, 84px)', lineHeight: 0.9, fontWeight: 700, letterSpacing: '-0.04em', margin: 0 }}>
-            Builders build <span style={{color: '#FF5A1F'}}>with Builders.</span>
-          </h1>
-
-          <p style={{ fontSize: 'clamp(18px, 2vw, 22px)', lineHeight: 1.45, maxWidth: 500, color: 'rgba(10,10,10,0.72)' }}>
-            Join the Crew.
-          </p>
-
-          <div className="flex items-center justify-center lg:justify-start gap-3 w-full mt-4">
-             <span className="w-2 h-2 rounded-full bg-[#FF5A1F] shadow-[0_0_0_4px_rgba(255,90,31,0.15)] animate-pulse" />
-             <span className="font-mono text-[11px] font-semibold tracking-[0.2em] text-[#0A0A0A] uppercase">
-               The room opens May 18
-             </span>
+    <section className="px-8 py-[112px]">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mb-12 flex flex-wrap items-end justify-between gap-8">
+          <div>
+            <div className={`${kickerClass} mb-3.5 text-[#FF5A1F]`}>
+              The feed
+            </div>
+            <h2 className="m-0 text-[clamp(40px,5vw,76px)] font-bold leading-[0.92] tracking-[-0.035em] text-[#0A0A0A]">
+              See what the
+              <br />
+              crew is building
+              <br />
+              this week.
+            </h2>
           </div>
+          <div className="max-w-[380px] text-base leading-[1.55] text-[#0A0A0A]/65">
+            <p className="mb-3.5 mt-0">
+              The community runs on members posting what they shipped and what
+              they&apos;re stuck on. Once you&apos;re in, you do the same.
+            </p>
+            <p className="m-0 text-[13px] text-[#0A0A0A]/45">
+              {members.length} active builders · updated weekly
+            </p>
+          </div>
+        </div>
 
-          <div className="w-full max-w-[460px] mx-auto lg:mx-0">
-            {status === 'success' ? (
-              <div className="w-full flex flex-col items-center lg:items-start gap-4 bg-[#0A0A0A]/5 border border-[#0A0A0A]/10 p-6 rounded-[12px] mt-2">
-                <div className="w-10 h-10 bg-[#FF5A1F]/10 flex items-center justify-center rounded-full mb-1">
-                  <span className="w-2.5 h-2.5 bg-[#FF5A1F] rounded-full"></span>
+        <div className="mb-7 flex flex-wrap items-center gap-2">
+          {(
+            [
+              { id: "shipped" as const, label: "Shipped this month" },
+              { id: "learning" as const, label: "Learning out loud" },
+            ] as const
+          ).map((t) => (
+            <button
+              key={t.id}
+              type="button"
+              onClick={() => setTab(t.id)}
+              className={`cursor-pointer rounded-sm border px-4 py-2.5 font-sans text-[13px] font-semibold tracking-[-0.005em] ${
+                tab === t.id
+                  ? "border-[#0A0A0A] bg-[#0A0A0A] text-[#F5EFE6]"
+                  : "border-[#0A0A0A]/10 bg-transparent text-[#0A0A0A]"
+              }`}
+            >
+              {t.label}
+            </button>
+          ))}
+          <span className="ml-2 text-xs text-[#0A0A0A]/40">
+            ↳ This is what membership feels like.
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+          {members.map((m, i) => {
+            const body = tab === "shipped" ? m.shipped : m.learning;
+            const isHov = hovered === i;
+            return (
+              <article
+                key={m.name}
+                onMouseEnter={() => setHovered(i)}
+                onMouseLeave={() => setHovered(null)}
+                className={`flex flex-col gap-3.5 rounded-sm border bg-white p-5 transition-[border-color,transform] duration-200 ${
+                  isHov
+                    ? "-translate-y-0.5 border-[#FF5A1F]/45"
+                    : "border-[#0A0A0A]/10"
+                }`}
+              >
+                <header className="flex items-center gap-3">
+                  <div className="size-11 shrink-0 overflow-hidden rounded-sm border border-[#0A0A0A]/10 bg-[#0A0A0A]">
+                    <img
+                      src={memberPhotoSrc(m.photo)}
+                      alt=""
+                      className="block size-full object-cover"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="mb-0.5 truncate text-sm font-semibold leading-tight text-[#0A0A0A]">
+                      {m.name}
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs text-[#0A0A0A]/55">
+                      <span className="font-semibold text-[#FF5A1F]">
+                        {m.co}
+                      </span>
+                      <span>·</span>
+                      <span>{m.city}</span>
+                    </div>
+                  </div>
+                  <span className="shrink-0 rounded-sm border border-[#0A0A0A]/10 bg-[#0A0A0A]/[0.02] px-2 py-1 text-[10px] font-bold tracking-[0.1em] text-[#0A0A0A]/60">
+                    {m.stage.toUpperCase()}
+                  </span>
+                </header>
+
+                <div
+                  className={`${kickerClass} text-[10px] ${
+                    tab === "shipped"
+                      ? "text-[#FF5A1F]"
+                      : "text-[#0A0A0A]/50"
+                  }`}
+                >
+                  {tab === "shipped" ? "→ Shipped" : "~ Learning"}
                 </div>
-                <span className="font-mono text-[14px] font-bold tracking-widest text-[#0A0A0A]">YOU'RE ON THE LIST</span>
-                <span className="text-[15px] text-[#6B6862] leading-relaxed">We'll send the link the moment the gates open. Keep building.</span>
-              </div>
-            ) : (
-              <form onSubmit={submit} className="w-full flex flex-col gap-3 relative mt-2">
-                <div className="flex flex-col sm:flex-row gap-3 w-full">
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="w-full sm:flex-1 bg-white/60 border border-[#111]/20 rounded-[10px] px-6 py-4 text-[16px] outline-none focus:border-[#111] transition-all placeholder:text-[#111]/40 text-[#111]"
-                  />
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#111] text-[#F5EFE6] px-8 py-4 rounded-[10px] font-semibold text-[15px] hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 whitespace-nowrap"
+
+                <p className="m-0 text-[15px] leading-[1.45] text-[#0A0A0A]/85">
+                  {body}
+                </p>
+
+                <footer className="mt-auto flex items-center justify-between border-t border-[#0A0A0A]/10 pt-2 text-xs text-[#0A0A0A]/50">
+                  <span>{m.role}</span>
+                  <span
+                    className={`inline-flex items-center gap-1 font-semibold transition-colors ${
+                      isHov ? "text-[#FF5A1F]" : "text-[#0A0A0A]/50"
+                    }`}
                   >
-                    {status === 'loading' ? 'Locking in...' : 'Join Waitlist'}
-                  </button>
-                </div>
-              </form>
-            )}
-            {status === 'error' && <p className="text-[14px] text-red-600 mt-2 text-left">{msg}</p>}
+                    Open <CrewIcon.Arrow s={11} />
+                  </span>
+                </footer>
+              </article>
+            );
+          })}
+
+          <div className="flex min-h-[240px] flex-col justify-between rounded-sm border-2 border-dashed border-[#0A0A0A]/18 bg-transparent p-5">
+            <div>
+              <div className={`${kickerClass} mb-3 text-[10px] text-[#0A0A0A]/40`}>
+                Empty seat
+              </div>
+              <div className="mb-2.5 text-[22px] font-bold leading-[1.05] tracking-[-0.02em] text-[#0A0A0A]">
+                Your post goes
+                <br />
+                here next.
+              </div>
+              <p className="m-0 text-[13px] leading-normal text-[#0A0A0A]/60">
+                Apply, get reviewed, post what you shipped this week.
+              </p>
+            </div>
+            <a
+              href={APPLY_HREF}
+              className={`${applyBtnClass} mt-4 w-fit px-4 py-3 text-[13px]`}
+            >
+              Apply <CrewIcon.Arrow s={12} />
+            </a>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Right Side: Protagonist Logo in Black Slab */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end animate-in fade-in slide-in-from-right-8 duration-1000">
-          <div style={{
-            background: '#111', borderRadius: 28, padding: 56,
-            aspectRatio:'1/1', width: '100%', maxWidth: '500px',
-            position:'relative', overflow:'hidden',
-            display:'flex', alignItems:'center', justifyContent:'center',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
-          }}>
-            <img src="/assets/crew-logo.svg" style={{width:'78%', height:'auto', display:'block'}} alt="Crew of Builders Logo"/>
-            <div style={{position:'absolute', top:22, left:26, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em', fontFamily:'var(--font-mono, monospace)'}}>EST. 2026 · SP</div>
-            <div style={{position:'absolute', top:22, right:26, fontSize:11, color:'#FF5A1F', fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6, fontFamily:'var(--font-mono, monospace)'}}>
-              <span style={{width:6,height:6,borderRadius:'50%', background:'#FF5A1F', boxShadow:'0 0 0 3px rgba(255,90,31,0.2)'}}/> MAY 18
-            </div>
-            <div style={{position:'absolute', bottom:22, left:26, right:26, display:'flex', justifyContent:'space-between', fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em', fontFamily:'var(--font-mono, monospace)'}}>
-              <span>№ 001</span>
-              <span>BY WE HEART ↗</span>
-            </div>
+function HowItWorks() {
+  const rituals = [
+    {
+      cadence: "Every Monday",
+      title: "Show your work",
+      body: "Post what you shipped last week — a PR, a memo, a number, a screenshot. Read each other before any meeting.",
+      tag: "Async · Slack thread",
+    },
+    {
+      cadence: "Every Wednesday",
+      title: "Stuck thread",
+      body: "Drop the thing blocking you. Someone in the room has solved it before — Anvisa, hiring, regulators, first paying customer.",
+      tag: "Async · 24h response",
+    },
+    {
+      cadence: "Once a month",
+      title: "Expert drop",
+      body: "A founder or operator joins for a 90-minute working session on something specific — fundraising, GTM, a hard hire. Recorded for the room.",
+      tag: "Live · invite-only",
+    },
+    {
+      cadence: "Once a month",
+      title: "Crew dinner",
+      body: "A small dinner in São Paulo. No talks, no pitches. 12 builders eating and going home early.",
+      tag: "In-person · São Paulo",
+    },
+  ];
+
+  return (
+    <section className="border-y border-[#0A0A0A]/10 bg-white px-8 py-[112px]">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mb-14 max-w-[820px]">
+          <div className={`${kickerClass} mb-3.5 text-[#FF5A1F]`}>
+            How the room runs
           </div>
+          <h2 className="m-0 text-[clamp(40px,5vw,76px)] font-bold leading-[0.92] tracking-[-0.035em] text-[#0A0A0A]">
+            A rhythm,
+            <br />
+            not a syllabus.
+          </h2>
+          <p className="mt-6 max-w-[640px] text-lg leading-normal text-[#0A0A0A]/65">
+            Four repeating moments a month. Async by default, live when it
+            matters. You&apos;ll know what&apos;s happening and when — no fear
+            of missing out, no homework.
+          </p>
         </div>
 
-      </main>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
+          {rituals.map((r, i) => (
+            <div
+              key={r.title}
+              className={`flex min-h-[260px] flex-col gap-3.5 rounded-sm border border-[#0A0A0A]/10 border-t-[3px] bg-[#F5EFE6] p-7 ${
+                i < 2 ? "border-t-[#FF5A1F]" : "border-t-[#0A0A0A]"
+              }`}
+            >
+              <div className={`${kickerClass} text-[10px] text-[#FF5A1F]`}>
+                {r.cadence}
+              </div>
+              <div className="text-[26px] font-bold leading-none tracking-[-0.025em] text-[#0A0A0A]">
+                {r.title}
+              </div>
+              <p className="m-0 text-sm leading-[1.55] text-[#0A0A0A]/72">
+                {r.body}
+              </p>
+              <div className="mt-auto border-t border-[#0A0A0A]/10 pt-3.5 text-[11px] font-semibold tracking-[0.04em] text-[#0A0A0A]/45">
+                {r.tag}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      <footer className="w-full max-w-[1280px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-[11px] tracking-[0.15em] text-[#6B6862] uppercase pt-8 border-t border-[#0A0A0A]/5 mt-auto z-10">
-        <span className="opacity-70">© 2026 Crew of Builders</span>
-        <span className="font-semibold text-[#0A0A0A]">Operated by WE Heart</span>
-      </footer>
+function Batch01() {
+  const pillars = [
+    {
+      kicker: "01",
+      title: "Get your work seen.",
+      body: "Every member gets a founder profile. What you ship gets shared through our channels and inside the room.",
+      bullets: [
+        "Public founder profile",
+        "Amplified by the Crew",
+        "Read by other founders",
+      ],
+    },
+    {
+      kicker: "02",
+      title: "Operators in the room.",
+      body: "Working sessions every month with founders who’ve built what you’re building. Recorded, members only.",
+      bullets: [
+        "Live monthly sessions",
+        "Members-only library",
+        "Dinners in São Paulo",
+      ],
+    },
+    {
+      kicker: "03",
+      title: "A real shot at first check.",
+      body: "WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.",
+      bullets: [
+        "Direct line to WE Heart",
+        "No obligation either way",
+        "Intros to capital and customers",
+      ],
+    },
+  ];
 
+  return (
+    <section className="bg-[#F5EFE6] px-8 py-[120px]">
+      <div className="mx-auto max-w-[1280px]">
+        <div className="mb-16 max-w-[820px]">
+          <div className={`${kickerClass} mb-3.5 text-[#FF5A1F]`}>
+            What we put in your corner
+          </div>
+          <h2 className="m-0 text-[clamp(40px,5vw,76px)] font-bold leading-[0.92] tracking-[-0.035em] text-[#0A0A0A]">
+            Three things,
+            <br />
+            in your corner.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 gap-[18px] md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+          {pillars.map((p, i) => (
+            <div
+              key={p.kicker}
+              className={`flex flex-col gap-[18px] rounded-sm p-9 ${
+                i === 1
+                  ? "bg-[#0A0A0A] text-[#F5EFE6]"
+                  : "border border-[#0A0A0A]/10 bg-white text-[#0A0A0A]"
+              }`}
+            >
+              <div className={`flex items-center gap-2.5 ${kickerClass} text-[13px] text-[#FF5A1F]`}>
+                <span className="flex size-8 items-center justify-center rounded-sm bg-[#FF5A1F] text-[13px] font-bold tracking-normal text-[#0A0A0A]">
+                  {p.kicker}
+                </span>
+              </div>
+              <h3 className="m-0 whitespace-pre-line text-[34px] font-bold leading-[0.98] tracking-[-0.03em]">
+                {p.title}
+              </h3>
+              <p
+                className={`m-0 text-[15px] leading-[1.55] ${
+                  i === 1 ? "text-[#F5EFE6]/78" : "text-[#0A0A0A]/72"
+                }`}
+              >
+                {p.body}
+              </p>
+              <ul className="m-0 mt-2 flex list-none flex-col gap-2.5 p-0">
+                {p.bullets.map((b) => (
+                  <li
+                    key={b}
+                    className={`relative pl-[18px] text-[13px] font-medium leading-[1.45] ${
+                      i === 1 ? "text-[#F5EFE6]/85" : "text-[#0A0A0A]/78"
+                    }`}
+                  >
+                    <span className="absolute left-0 top-[7px] h-0.5 w-2 bg-[#FF5A1F]" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Context() {
+  return (
+    <section className="bg-[#0A0A0A] px-8 py-[112px] text-[#F5EFE6]">
+      <div className="mx-auto grid max-w-[1100px] gap-16 md:grid-cols-[1fr_1.45fr]">
+        <div>
+          <div className={`${kickerClass} mb-3.5 text-[#FF5A1F]`}>
+            Run by WE Heart
+          </div>
+          <h2 className="m-0 text-[clamp(40px,5vw,76px)] font-bold leading-[0.92] tracking-[-0.035em] text-[#F5EFE6]">
+            Saying it
+            <br />
+            out loud.
+          </h2>
+          <div className="mt-9 inline-flex items-center gap-2.5 text-[13px] font-semibold uppercase tracking-[0.04em] text-[#F5EFE6]/70">
+            <span className="size-2 rounded-sm bg-[#FF5A1F]" />
+            <a
+              href="https://weheart.vc"
+              className="text-inherit no-underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              weheart.vc ↗
+            </a>
+          </div>
+        </div>
+        <div className="text-[19px] leading-[1.55] text-[#F5EFE6]/88">
+          <p className="mb-[22px] mt-0">
+            The Crew is run by{" "}
+            <strong className="font-bold text-[#F5EFE6]">WE Heart</strong>, a
+            venture builder. Their thesis:{" "}
+            <strong className="font-bold text-[#FF5A1F]">
+              be the first cheque
+            </strong>{" "}
+            — which means knowing founders before they have a CNPJ.
+          </p>
+          <p className="mb-[22px] mt-0">
+            The Crew is how that happens. It&apos;s where we meet you while
+            you&apos;re still figuring it out, watch what you ship, and learn
+            alongside you.
+          </p>
+          <p className="m-0 border-t border-[#F5EFE6]/14 pt-6 text-[15px] text-[#F5EFE6]/60">
+            We&apos;re saying this here because senior operators detect
+            funnel-disguised-as-community. Joining doesn&apos;t mean we&apos;ll
+            invest. Not joining doesn&apos;t mean we won&apos;t. The Crew is its
+            own thing — useful on its own, with or without WE Heart.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WaitlistForm() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "ok" | "err">(
+    "idle",
+  );
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (!res.ok) throw new Error("fail");
+      setStatus("ok");
+      setEmail("");
+    } catch {
+      setStatus("err");
+    }
+  }
+
+  return (
+    <form
+      onSubmit={onSubmit}
+      className="max-w-md border border-[#0A0A0A]/10 bg-white p-6"
+    >
+      <p className={`${kickerClass} mb-4 text-[#FF5A1F]`}>
+        Terminal B2B · Waitlist
+      </p>
+      <div className="mb-4">
+        <label
+          htmlFor="v2-waitlist-email"
+          className="mb-1.5 block font-mono text-[11px] uppercase tracking-[0.18em] text-[#0A0A0A]/80"
+        >
+          Work email
+        </label>
+        <input
+          id="v2-waitlist-email"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@company.com"
+          className="w-full rounded-none border border-[#0A0A0A]/10 bg-[#0A0A0A]/[0.02] px-3 py-3 text-sm text-[#0A0A0A] placeholder:text-[#0A0A0A]/35 focus:border-[#0A0A0A] focus:outline-none"
+        />
+      </div>
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="w-full rounded-sm bg-[#0A0A0A] py-3.5 text-sm font-semibold text-[#F5EFE6] disabled:opacity-60"
+      >
+        {status === "loading" ? "Sending…" : "Join the waitlist"}
+      </button>
+      {status === "ok" && (
+        <p className="mt-3 text-sm text-[#0A0A0A]/65">
+          You&apos;re on the list. Check your inbox.
+        </p>
+      )}
+      {status === "err" && (
+        <p className="mt-3 text-sm text-[#FF5A1F]">
+          Something went wrong. Try again.
+        </p>
+      )}
+    </form>
+  );
+}
+
+function FooterSection() {
+  return (
+    <footer className="text-[#0A0A0A]">
+      <section className="border-t border-[#0A0A0A]/10 bg-[#F5EFE6] px-8 py-[120px]">
+        <div className="mx-auto grid max-w-[1100px] gap-16 md:grid-cols-[1.1fr_1fr]">
+          <div>
+            <div className={`${kickerClass} mb-4 text-[#FF5A1F]`}>Apply</div>
+            <h2 className="m-0 text-[clamp(56px,7vw,112px)] font-bold leading-[0.92] tracking-[-0.035em]">
+              You build.
+              <br />
+              We&apos;re listening.
+            </h2>
+            <p className="mb-10 mt-8 max-w-[600px] text-[19px] leading-normal text-[#0A0A0A]/70">
+              Tell us what you&apos;re building, what you&apos;ve shipped
+              lately, and what you&apos;re stuck on. A human reads every
+              application within a week.
+            </p>
+            <div className="flex flex-wrap items-center gap-3.5">
+              <a
+                href={APPLY_HREF}
+                className={`${applyBtnClass} px-8 py-5 text-base font-bold`}
+              >
+                Apply to the Crew <CrewIcon.Arrow s={16} />
+              </a>
+              <span className="text-[13px] text-[#0A0A0A]/50">
+                ~4 minutes · Free
+              </span>
+            </div>
+          </div>
+          <WaitlistForm />
+        </div>
+      </section>
+
+      <div className="bg-[#0A0A0A] px-8 pb-7 pt-14 text-[#F5EFE6]">
+        <div className="mx-auto max-w-[1280px]">
+          <div className="grid grid-cols-1 gap-8 border-b border-[#F5EFE6]/14 pb-9 md:grid-cols-[1.6fr_1fr_1fr]">
+            <div>
+              <img
+                src="/assets/crew-logo.svg"
+                alt="Crew of Builders"
+                className="mb-[18px] w-[130px]"
+              />
+              <div className="max-w-[360px] text-sm leading-normal text-[#F5EFE6]/65">
+                A community of founders showing what they&apos;re building and
+                learning from each other.
+              </div>
+            </div>
+            <div>
+              <div className={`${kickerClass} mb-3.5 text-[#F5EFE6]/40`}>
+                Join
+              </div>
+              <div className="flex flex-col gap-2.5 text-sm">
+                <a href={APPLY_HREF} className="text-inherit no-underline">
+                  Apply to the Crew
+                </a>
+                <a href={APPLY_HREF} className="text-inherit no-underline">
+                  Apply to Batch 01
+                </a>
+              </div>
+            </div>
+            <div>
+              <div className={`${kickerClass} mb-3.5 text-[#F5EFE6]/40`}>
+                Run by
+              </div>
+              <div className="flex flex-col gap-2.5 text-sm">
+                <a
+                  href="https://weheart.vc"
+                  className="text-inherit no-underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  WE Heart ↗
+                </a>
+                <span>Contact</span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-between gap-2.5 pt-6 text-xs text-[#F5EFE6]/45">
+            <span>© 2026 Crew of Builders</span>
+            <span>Made in São Paulo</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function V2LandingPage() {
+  return (
+    <div className="min-h-full w-full overflow-x-hidden bg-[#F5EFE6] font-sans text-[#0A0A0A] tracking-[-0.01em] antialiased [font-feature-settings:'ss01','cv11']">
+      <TopBar />
+      <Hero />
+      <Marquee />
+      <Feed />
+      <HowItWorks />
+      <Batch01 />
+      <Context />
+      <FooterSection />
     </div>
   );
 }
