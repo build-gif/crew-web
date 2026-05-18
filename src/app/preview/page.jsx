@@ -455,20 +455,20 @@ function CobBatch() {
     {
       kicker: '01',
       title: 'Operators in the room.',
-      body: 'Sessions and conversations with founders who\'ve shipped what you\'re shipping. Recorded for when you can\'t make it live. The shortcut you wish you had two years ago.',
+      body: 'Sessions and conversations with builders who\'ve shipped what you\'re shipping. Recorded for when you can\'t make it live. The shortcut you wish you had two years ago.',
       bullets: ['Live sessions with operators', 'Members-only library', 'Async, on your schedule'],
     },
     {
       kicker: '02',
-      title: 'A real shot at first check.',
-      body: 'WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.',
-      bullets: ['Direct line to WE Heart', 'No obligation either way', 'Honest feedback on your raise'],
+      title: 'Direct line to capital.',
+      body: 'WE Heart is a venture builder. We write first checks for the right teams. Being inside the Crew is how we find them early.',
+      bullets: ['Direct line to WE Heart partners', 'Honest feedback on your raise', 'Zero obligation to pitch'],
     },
     {
       kicker: '03',
       title: 'Visibility, when you want it.',
-      body: 'Every member gets a founder profile. When you ship something, the room knows. When you don\'t, no pressure.',
-      bullets: ['Public founder profile', 'Amplified when you ship', 'No posting quota'],
+      body: 'Every member gets a builder profile. When you ship something, the room knows. When you don\'t, no pressure.',
+      bullets: ['Public builder profile', 'Amplified when you ship', 'No posting quota'],
     },
   ];
   return (
@@ -661,7 +661,7 @@ function CobApply() {
         <p style={{fontSize:19, lineHeight:1.5, margin:'32px 0 40px', maxWidth: 600, color:'rgba(10,10,10,0.7)'}}>
           Tell us what you're building, what you shipped last week, and what's blocking you right now. That's all we need.
 
-A human reads every application within a week. If it's not the right fit, we'll tell you why — and suggest what is.
+Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
         </p>
         <div style={{display:'flex', gap:14, alignItems:'center', flexWrap:'wrap'}}>
           <button style={{

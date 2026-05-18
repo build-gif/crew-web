@@ -552,12 +552,12 @@ function Batch01() {
     },
     {
       kicker: "02",
-      title: "A real shot at first check.",
-      body: "WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.",
+      title: "Direct line to capital.",
+      body: "WE Heart is a venture builder. We write first checks for the right teams. Being inside the Crew is how we find them early.",
       bullets: [
-        "Direct line to WE Heart",
-        "No obligation either way",
+        "Direct line to WE Heart partners",
         "Honest feedback on your raise",
+        "Zero obligation to pitch",
       ],
     },
     {
