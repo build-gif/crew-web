@@ -809,10 +809,10 @@ function CobWhatIs() {
         <div>
           <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE CREW</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            Where builders stop building <span style={{color: CREW.orange}}>alone.</span>
+            Helping builders build, from idea to <span style={{color: CREW.orange}}>first check.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            Building is lonely by default. The Crew changes the default — with the people, the playbooks, and the capital you need within reach.
+            The people solving what you're solving, the playbooks from operators who've done it, and a direct line to capital when you're ready.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
