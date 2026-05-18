@@ -375,7 +375,7 @@ function WhatIs() {
             href={APPLY_HREF}
             className={`${applyBtnClass} mt-8 px-6 py-4 text-sm`}
           >
-            Apply to the Crew <CrewIcon.Arrow s={14} />
+            Join the Crew <CrewIcon.Arrow s={14} />
           </a>
         </div>
       </div>

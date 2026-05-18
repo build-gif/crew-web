@@ -670,7 +670,7 @@ A human reads every application within a week. If it's not the right fit, we'll 
             fontSize:16, fontWeight:700, cursor:'pointer',
             display:'inline-flex', alignItems:'center', gap:10,
           }}>
-            Apply to the Crew <CrewIcon.Arrow s={16}/>
+            Join the Crew <CrewIcon.Arrow s={16}/>
           </button>
           <span style={{fontSize:13, color:'rgba(10,10,10,0.5)'}}>~4 minutes · Free · Batch 01 spots are limited.</span>
         </div>
@@ -807,17 +807,17 @@ function CobWhatIs() {
 
         {/* Right copy */}
         <div>
-          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE FOUNDERS</div>
+          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE CREW</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            The room founders have been <span style={{color: CREW.orange}}>looking for.</span>
+            The room builders have been <span style={{color: CREW.orange}}>looking for.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            Founders solve the same problems alone every quarter. In the Crew, you don't have to.
+            Builders solve the same problems alone every quarter. In the Crew, you don't have to.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
           </a>
-          <div style={{marginTop: 16, fontSize: 11, fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.1em', opacity: 0.5}}>FREE · APPLICATION REVIEWED BY A HUMAN</div>
+          <div style={{marginTop: 16, fontSize: 11, fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.1em', opacity: 0.5}}>FREE · INSTANT ACCESS AFTER ONBOARDING</div>
         </div>
       </div>
     </section>
