@@ -812,7 +812,7 @@ function CobWhatIs() {
             The room builders have been <span style={{color: CREW.orange}}>looking for.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            Builders solve the same problems alone every quarter. In the Crew, you don't have to.
+            Building is lonely by default. The Crew changes the default — with the people, the playbooks, and the capital you need within reach.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
             Apply to the Crew <CrewIcon.Arrow s={14}/>
