@@ -87,16 +87,16 @@ function CobHero() {
       <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1.15fr 1fr", gap:64, alignItems:'center'}}>
         <div>
           <h1 style={{...cobStyles.h1, fontSize:'clamp(56px, 7vw, 108px)'}}>
-            Builders build <span style={{color:CREW.orange}}>near builders.</span>
+            Builders build <span style={{color:CREW.orange}}>with builders.</span>
           </h1>
           <p style={{fontSize:20, lineHeight:1.45, maxWidth: 540, color:'rgba(10,10,10,0.72)', margin:'32px 0 40px'}}>
             Founders building the next thing. Together.
           </p>
           <div style={{display:'flex', alignItems:'center', gap:18}}>
             <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12, textDecoration:"none"}}>
-              Apply to the Crew <CrewIcon.Arrow s={15}/>
+              Join the Crew <CrewIcon.Arrow s={15}/>
             </a>
-            <span style={{fontSize:13, color:'rgba(10,10,10,0.55)'}}>Reviewed by a human within a week.</span>
+            <span style={{fontSize:13, color:'rgba(10,10,10,0.55)'}}>Instant access after onboarding.</span>
           </div>
         </div>
 
@@ -110,7 +110,7 @@ function CobHero() {
           <img src="assets/crew-logo.svg" style={{width:'78%', height:'auto', display:'block'}}/>
           <div style={{position:'absolute', top:18, left:22, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em'}}>EST. 2026 · SP</div>
           <div style={{position:'absolute', top:18, right:22, fontSize:11, color:CREW.orange, fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6}}>
-            <span style={{width:6,height:6,borderRadius:'50%', background:CREW.orange}}/> APPLICATIONS OPEN
+            <span style={{width:6,height:6,borderRadius:'50%', background:CREW.orange}}/> THE ROOM IS OPEN
           </div>
           <div style={{position:'absolute', bottom:18, left:22, right:22, display:'flex', justifyContent:'space-between', fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em'}}>
             <span>№ 001</span>
