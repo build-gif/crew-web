@@ -42,7 +42,8 @@ function Hero() {
         <div>
           <h1 className="m-0 text-[clamp(56px,7vw,108px)] font-bold leading-[0.88] tracking-[-0.04em] text-[#0A0A0A]">
             Builders build{" "}
-            <span className="text-[#FF5A1F]">near builders.</span>
+            <br className="md:hidden" />
+            <span className="text-[#FF5A1F]">with builders.</span>
           </h1>
           <p className="mb-10 mt-8 max-w-[540px] text-xl leading-[1.45] text-[#0A0A0A]/72">
             A community of founders showing what they&apos;re building and
@@ -56,7 +57,7 @@ function Hero() {
               Join the Crew <CrewIcon.Arrow s={15} />
             </a>
             <span className="text-[13px] text-[#0A0A0A]/55">
-              Reviewed by a human within a week.
+              Instant access after onboarding.
             </span>
           </div>
         </div>
@@ -71,7 +72,7 @@ function Hero() {
           </div>
           <div className="absolute right-[22px] top-[18px] flex items-center gap-1.5 text-[11px] font-bold tracking-[0.16em] text-[#FF5A1F]">
             <span className="size-1.5 rounded-sm bg-[#FF5A1F]" />
-            APPLICATIONS OPEN
+            THE ROOM IS OPEN
           </div>
           <div className="absolute bottom-[18px] left-[22px] right-[22px] flex justify-between text-[11px] font-bold tracking-[0.16em] text-[#F5EFE6]/55">
             <span>№ 001</span>
