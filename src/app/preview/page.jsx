@@ -454,14 +454,14 @@ function CobBatch() {
   const pillars = [
     {
       kicker: '01',
-      title: 'Meet other builders.',
-      body: 'Connect with people who are solving the same problems you are. Filter by sector, see what they\'re shipping, and ask for intros.',
+      title: 'Your unfair network.',
+      body: 'The builders solving what you\'re solving — one intro away. Filter by sector, see what they\'re shipping, skip the cold outreach.',
       bullets: ['Curated builder directory', 'Clear match signals', 'Direct intros'],
     },
     {
       kicker: '02',
-      title: 'Private events & library.',
-      body: 'Live sessions with operators who\'ve built what you\'re building. Plus a growing library of playbooks and recordings you can\'t find anywhere else.',
+      title: 'Insider access.',
+      body: 'Live sessions with operators who\'ve built what you\'re building. Plus a library of playbooks and recordings that don\'t exist anywhere else.',
       bullets: ['Live monthly sessions', 'Members-only library', 'Async, on your schedule'],
     },
     {
