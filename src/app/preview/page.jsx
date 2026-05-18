@@ -460,7 +460,7 @@ function CobBatch() {
     },
     {
       kicker: '02',
-      title: 'Exclusive events and content.',
+      title: 'Private events & library.',
       body: 'Live sessions with operators who\'ve built what you\'re building. Plus a growing library of playbooks and recordings you can\'t find anywhere else.',
       bullets: ['Live monthly sessions', 'Members-only library', 'Async, on your schedule'],
     },
