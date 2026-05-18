@@ -542,32 +542,32 @@ function Batch01() {
   const pillars = [
     {
       kicker: "01",
-      title: "Get your work seen.",
-      body: "Every member gets a founder profile. What you ship gets shared through our channels and inside the room.",
+      title: "Operators in the room.",
+      body: "Sessions and conversations with builders who've shipped what you're shipping. Recorded for when you can't make it live. The shortcut you wish you had two years ago.",
       bullets: [
-        "Public founder profile",
-        "Amplified by the Crew",
-        "Read by other founders",
+        "Live sessions with operators",
+        "Members-only library",
+        "Async, on your schedule",
       ],
     },
     {
       kicker: "02",
-      title: "Operators in the room.",
-      body: "Working sessions every month with founders who’ve built what you’re building. Recorded, members only.",
-      bullets: [
-        "Live monthly sessions",
-        "Members-only library",
-        "Dinners in São Paulo",
-      ],
-    },
-    {
-      kicker: "03",
       title: "A real shot at first check.",
       body: "WE Heart writes first checks. Being in the Crew is the most natural way for that conversation to start.",
       bullets: [
         "Direct line to WE Heart",
         "No obligation either way",
-        "Intros to capital and customers",
+        "Honest feedback on your raise",
+      ],
+    },
+    {
+      kicker: "03",
+      title: "Visibility, when you want it.",
+      body: "Every member gets a builder profile. When you ship something, the room knows. When you don't, no pressure.",
+      bullets: [
+        "Public builder profile",
+        "Amplified when you ship",
+        "No posting quota",
       ],
     },
   ];
