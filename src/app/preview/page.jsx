@@ -833,7 +833,7 @@ function CobPage() {
       <CobBatch/>
       <CobMembers/>
       <CobApply/>
-      <CobFAQ/>
+      
       <CobFooter/>
     </div>
   );

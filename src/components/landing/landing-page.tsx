@@ -850,7 +850,7 @@ export default function LandingPage() {
       <Batch01 />
       <MembersGrid />
       <Context />
-      <FAQ />
+      
       <FooterSection />
     </div>
   );
