@@ -699,7 +699,7 @@ function CobFooter() {
           <div>
             <div style={{...cobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom: 14}}>Join</div>
             <div style={{display:'flex', flexDirection:'column', gap:10, fontSize:14}}>
-              <span>Apply to the Crew</span>
+              <span>Join the Crew</span>
               <span>Apply to Batch 01</span>
             </div>
           </div>
@@ -809,7 +809,7 @@ function CobWhatIs() {
         <div>
           <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE CREW</div>
           <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            The room builders have been <span style={{color: CREW.orange}}>looking for.</span>
+            Where builders stop building <span style={{color: CREW.orange}}>alone.</span>
           </h2>
           <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
             Building is lonely by default. The Crew changes the default — with the people, the playbooks, and the capital you need within reach.
