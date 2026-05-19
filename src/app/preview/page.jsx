@@ -128,16 +128,7 @@ function CobHero() {
 // Frames the founders themselves as the protagonist.
 // ─────────────────────────────────────────────
 function CobMembers() {
-  const members = typeof CREW_MEMBERS !== "undefined" ? CREW_MEMBERS.slice(0, 8) : [];
-  // Portrait card colors — orange/cream/ink rotation, brand-locked
-  const swatches = [
-    { bg:'#FF5A1F', name:'#0A0A0A', role:'rgba(10,10,10,0.7)' },
-    { bg:'#0A0A0A', name:'#F5EFE6', role:'rgba(245,239,230,0.7)' },
-    { bg:'#F5EFE6', name:'#0A0A0A', role:'rgba(10,10,10,0.65)' },
-    { bg:'#1A1A1A', name:'#FF5A1F', role:'rgba(245,239,230,0.7)' },
-    { bg:'#FFE0CC', name:'#0A0A0A', role:'rgba(10,10,10,0.7)' },
-    { bg:'#FF7A45', name:'#0A0A0A', role:'rgba(10,10,10,0.75)' },
-  ];
+  const members = typeof CREW_MEMBERS !== "undefined" ? CREW_MEMBERS.slice(0, 7) : [];
 
   return (
     <section style={{padding:'112px 32px 88px', background:'#FFFFFF', borderTop:'1px solid rgba(10,10,10,0.08)'}}>
@@ -163,18 +154,18 @@ function CobMembers() {
         {/* Portrait grid — denser, like a press contact-sheet */}
         <div style={{
           display:'grid',
-          gridTemplateColumns:'repeat(auto-fit, minmax(190px, 1fr))',
+          gridTemplateColumns:'repeat(4, 1fr)',
           gap: 12,
+          maxWidth: 960,
         }}>
           {members.map((m, i) => {
-            const sw = swatches[i % swatches.length];
-            const initials = m.name.split(' ').map(n => n[0]).slice(0,2).join('');
+            const photoSrc = m.photo.startsWith('/') ? m.photo : `/${m.photo}`;
             return (
               <article
                 key={i}
                 style={{
                   position:'relative',
-                  background: sw.bg,
+                  background: '#0A0A0A',
                   borderRadius: 16,
                   aspectRatio:'3 / 4',
                   overflow:'hidden',
@@ -184,39 +175,32 @@ function CobMembers() {
                 onMouseEnter={(e)=>{ e.currentTarget.style.transform='translateY(-4px)'; e.currentTarget.style.boxShadow='0 18px 40px rgba(10,10,10,0.18)'; }}
                 onMouseLeave={(e)=>{ e.currentTarget.style.transform='none'; e.currentTarget.style.boxShadow='none'; }}
               >
-                {/* Portrait slot — initials placeholder, swap with real photo later */}
-                <div style={{
-                  position:'absolute', inset:0,
-                  display:'flex', alignItems:'center', justifyContent:'center',
-                  fontSize:'clamp(64px, 7vw, 130px)', fontWeight:700, letterSpacing:'-0.04em',
-                  color: sw.name === '#0A0A0A' ? 'rgba(10,10,10,0.14)' : 'rgba(245,239,230,0.18)',
-                  lineHeight:1, userSelect:'none',
-                }}>{initials}</div>
+                <img
+                  src={photoSrc}
+                  alt={m.name}
+                  style={{
+                    position:'absolute', inset:0,
+                    width:'100%', height:'100%',
+                    objectFit:'cover', display:'block',
+                  }}
+                />
 
                 {/* Soft gradient at the bottom for legibility */}
                 <div style={{
                   position:'absolute', left:0, right:0, bottom:0, height:'55%',
-                  background: sw.name === '#0A0A0A'
-                    ? 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.0) 30%, rgba(0,0,0,0.0) 100%)'
-                    : 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%)',
+                  background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)',
                   pointerEvents:'none',
                 }}/>
 
-                {/* Name + role overlay */}
+                {/* Name overlay */}
                 <div style={{
                   position:'absolute', left: 18, right: 18, bottom: 18,
                   zIndex: 2,
                 }}>
                   <div style={{
                     fontSize:18, fontWeight:700, lineHeight:1.05, letterSpacing:'-0.02em',
-                    color: sw.name, marginBottom: 6,
+                    color: '#FFFFFF',
                   }}>{m.name}</div>
-                  <div style={{
-                    fontSize:11, fontWeight:500, lineHeight:1.35,
-                    color: sw.role,
-                  }}>
-                    <span style={{fontWeight:600}}>{m.co}</span> · {m.line}
-                  </div>
                 </div>
               </article>
             );

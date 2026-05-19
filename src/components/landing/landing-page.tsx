@@ -393,7 +393,7 @@ const MEMBER_SWATCHES = [
 ];
 
 function MembersGrid() {
-  const members = CREW_MEMBERS.slice(0, 8);
+  const members = CREW_MEMBERS.slice(0, 7);
   return (
     <section className="border-t border-[#0A0A0A]/10 bg-white px-4 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-[1280px]">
@@ -409,48 +409,27 @@ function MembersGrid() {
           <span className={`${kickerClass} text-[11px] text-[#0A0A0A]/40`}>↓ More joining</span>
         </div>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {members.map((m, i) => {
-            const sw = MEMBER_SWATCHES[i % MEMBER_SWATCHES.length];
-            const initials = m.name
-              .split(" ")
-              .map((n) => n[0])
-              .slice(0, 2)
-              .join("");
+          {members.map((m) => {
             return (
               <article
                 key={m.name}
                 className="relative aspect-[3/4] overflow-hidden rounded-2xl transition-transform hover:-translate-y-1"
-                style={{ background: sw.bg }}
               >
-                <span
-                  className="absolute inset-0 flex items-center justify-center text-[clamp(48px,7vw,100px)] font-bold leading-none tracking-[-0.04em] select-none"
-                  style={{
-                    color:
-                      sw.name === "#0A0A0A"
-                        ? "rgba(10,10,10,0.14)"
-                        : "rgba(245,239,230,0.18)",
-                  }}
-                >
-                  {initials}
-                </span>
+                <img
+                  src={memberPhotoSrc(m.photo)}
+                  alt={m.name}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ display: "block", width: "100%", height: "100%" }}
+                />
                 <div
                   className="pointer-events-none absolute inset-x-0 bottom-0 h-[55%]"
                   style={{
-                    background:
-                      sw.name === "#0A0A0A"
-                        ? "linear-gradient(180deg, transparent, rgba(0,0,0,0.45))"
-                        : "linear-gradient(180deg, transparent, rgba(0,0,0,0.45))",
+                    background: "linear-gradient(180deg, transparent, rgba(0,0,0,0.55))",
                   }}
                 />
                 <div className="absolute bottom-4 left-4 right-4 z-[2]">
-                  <p
-                    className="m-0 text-sm font-semibold leading-tight"
-                    style={{ color: sw.name }}
-                  >
+                  <p className="m-0 text-sm font-semibold leading-tight text-white">
                     {m.name}
-                  </p>
-                  <p className="m-0 mt-1 text-xs" style={{ color: sw.role }}>
-                    {m.co} · {m.role}
                   </p>
                 </div>
               </article>
