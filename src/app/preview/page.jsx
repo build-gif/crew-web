@@ -152,12 +152,18 @@ function CobMembers() {
         </div>
 
         {/* Portrait grid — denser, like a press contact-sheet */}
-        <div style={{
-          display:'grid',
-          gridTemplateColumns:'repeat(4, 1fr)',
-          gap: 12,
-          maxWidth: 960,
-        }}>
+        <style>{`
+          .builders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 960px;
+          }
+          @media (min-width: 640px) {
+            .builders-grid { grid-template-columns: repeat(4, 1fr); }
+          }
+        `}</style>
+        <div className="builders-grid">
           {members.map((m, i) => {
             const photoSrc = m.photo.startsWith('/') ? m.photo : `/${m.photo}`;
             return (
