@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Wordmark, MonoAccent, Divider, Reveal, CrewIcon, CREW_TOKENS, CREW_MEMBERS } from "@/components/ui/crew-shared";
+import CobChatSection from "@/components/ui/cob-chat";
+import CobNextAct from "@/components/ui/cob-next-act";
 // Crew of Builders — single homepage, repositioned.
 // Thesis: a community where builders show what they're building and learn from each other.
 //
@@ -47,6 +49,370 @@ const cobStyles = {
 };
 
 // ─────────────────────────────────────────────
+// Mobile detection hook
+// ─────────────────────────────────────────────
+function useIsMobile(bp = 768) {
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${bp}px)`);
+    setMobile(mq.matches);
+    const h = (e) => setMobile(e.matches);
+    mq.addEventListener('change', h);
+    return () => mq.removeEventListener('change', h);
+  }, [bp]);
+  return mobile;
+}
+
+const mobStyles = {
+  page: {
+    background: CREW.cream, color: CREW.ink,
+    fontFamily: '"Space Grotesk","Inter",ui-sans-serif,system-ui,sans-serif',
+    fontFeatureSettings: '"ss01","cv11"',
+    width:'100%', minHeight:'100%', overflowX:'hidden',
+    letterSpacing:'-0.01em',
+  },
+  kicker: {
+    fontSize: 10, fontWeight: 700,
+    letterSpacing: '0.16em', textTransform: 'uppercase',
+  },
+};
+
+// ─────────────────────────────────────────────
+// MOBILE COMPONENTS
+// ─────────────────────────────────────────────
+function CobMobTopBar() {
+  return (
+    <div style={{
+      position:'sticky', top:0, zIndex:50,
+      display:'flex', alignItems:'center', justifyContent:'space-between',
+      padding:'14px 20px',
+      background:'rgba(245,239,230,0.92)',
+      backdropFilter:'blur(14px)', WebkitBackdropFilter:'blur(14px)',
+      borderBottom:'1px solid rgba(10,10,10,0.08)',
+    }}>
+      <div style={{display:'flex', alignItems:'center', gap:8, minWidth:0}}>
+        <img src="assets/crew-logo-black.png" style={{height:22, width:'auto', display:'block', flexShrink:0}}/>
+        <span style={{fontSize:11, fontWeight:700, letterSpacing:'0.04em', textTransform:'uppercase', whiteSpace:'nowrap'}}>
+          Crew of Builders
+        </span>
+      </div>
+      <a href="https://discovery.weheartimpact.com/" style={{
+        background:CREW.ink, color:CREW.cream, border:'none',
+        padding:'9px 16px', borderRadius:8, fontSize:12, fontWeight:600,
+        cursor:'pointer', fontFamily:'inherit',
+        display:'inline-flex', alignItems:'center', gap:6,
+        textDecoration:'none',
+      }}>
+        Join the Crew <span>→</span>
+      </a>
+    </div>
+  );
+}
+
+function CobMobHero() {
+  return (
+    <section style={{padding:'40px 20px 48px'}}>
+      <div style={{
+        position:'relative',
+        background: CREW.orange, borderRadius:16, padding:22,
+        overflow:'hidden', cursor:'pointer',
+        boxShadow:'0 20px 40px rgba(255,90,31,0.22)',
+        minHeight: 260, marginBottom: 32,
+      }}>
+        <div style={{...mobStyles.kicker, color:CREW.ink, marginBottom:12}}>WATCH · 2:14</div>
+        <h3 style={{fontSize:26, lineHeight:0.95, fontWeight:700, letterSpacing:'-0.02em', margin:'0 0 110px', color:CREW.ink}}>
+          Why we<br/>started the<br/>Crew.
+        </h3>
+        <div style={{fontSize:13, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4, position:'absolute', bottom:74, left:22}}>
+          <strong>Daniel Muniz</strong><br/>
+          <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
+        </div>
+        <div style={{
+          position:'absolute', top:14, right:14,
+          width:64, height:64, borderRadius:12,
+          background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
+          border:'1px solid rgba(10,10,10,0.12)',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          fontSize:30, fontWeight:700, color:'rgba(10,10,10,0.22)', letterSpacing:'-0.04em',
+        }}>DM</div>
+        <button style={{
+          position:'absolute', bottom:18, left:22,
+          display:'inline-flex', alignItems:'center', gap:8,
+          background:CREW.ink, color:CREW.cream, border:'none',
+          padding:'10px 18px 10px 12px', borderRadius:999,
+          fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
+        }}>
+          <span style={{width:18, height:18, borderRadius:'50%', background:CREW.cream, color:CREW.ink, display:'flex', alignItems:'center', justifyContent:'center', fontSize:8}}>▶</span>
+          Play
+        </button>
+      </div>
+
+      <h1 style={{
+        fontSize: 48, lineHeight: 0.92, fontWeight:700, letterSpacing:'-0.035em',
+        margin:'0 0 16px',
+      }}>
+        Builders build <span style={{color:CREW.orange}}>with builders.</span>
+      </h1>
+      <p style={{fontSize:15, lineHeight:1.5, color:'rgba(10,10,10,0.72)', margin:'0 0 24px'}}>
+        Founders building the next thing. Together.
+      </p>
+      <a href="https://discovery.weheartimpact.com/" style={{
+        background: CREW.ink, color: CREW.cream, border:'none',
+        padding:'16px 22px', borderRadius:12, fontSize:15, fontWeight:600,
+        cursor:'pointer', fontFamily:'inherit', width:'100%',
+        display:'inline-flex', alignItems:'center', justifyContent:'center', gap:8,
+        marginBottom: 12, textDecoration:'none', boxSizing:'border-box',
+      }}>
+        Join the Crew →
+      </a>
+      <div style={{textAlign:'center', fontSize:12, color:'rgba(10,10,10,0.55)'}}>
+        Instant access after onboarding
+      </div>
+    </section>
+  );
+}
+
+function CobMobWhatIs() {
+  return (
+    <section style={{padding:'48px 20px'}}>
+      <div style={{
+        position:'relative',
+        background: CREW.orange, borderRadius:16, padding:22,
+        overflow:'hidden', cursor:'pointer',
+        boxShadow:'0 20px 40px rgba(255,90,31,0.22)',
+        minHeight: 260, marginBottom: 32,
+      }}>
+        <div style={{...mobStyles.kicker, color:CREW.ink, marginBottom:12}}>WATCH · 2:14</div>
+        <h3 style={{fontSize:26, lineHeight:0.95, fontWeight:700, letterSpacing:'-0.02em', margin:'0 0 110px', color:CREW.ink}}>
+          Why we<br/>started the<br/>Crew.
+        </h3>
+        <div style={{fontSize:13, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4, position:'absolute', bottom:74, left:22}}>
+          <strong>Daniel Muniz</strong><br/>
+          <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
+        </div>
+        <div style={{
+          position:'absolute', top:14, right:14,
+          width:64, height:64, borderRadius:12,
+          background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
+          border:'1px solid rgba(10,10,10,0.12)',
+          display:'flex', alignItems:'center', justifyContent:'center',
+          fontSize:30, fontWeight:700, color:'rgba(10,10,10,0.22)', letterSpacing:'-0.04em',
+        }}>DM</div>
+        <button style={{
+          position:'absolute', bottom:18, left:22,
+          display:'inline-flex', alignItems:'center', gap:8,
+          background:CREW.ink, color:CREW.cream, border:'none',
+          padding:'10px 18px 10px 12px', borderRadius:999,
+          fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
+        }}>
+          <span style={{width:18, height:18, borderRadius:'50%', background:CREW.cream, color:CREW.ink, display:'flex', alignItems:'center', justifyContent:'center', fontSize:8}}>▶</span>
+          Play
+        </button>
+      </div>
+
+      <div style={{...mobStyles.kicker, color: CREW.orange, marginBottom:12}}>From the Crew</div>
+      <h2 style={{fontSize:34, lineHeight:0.98, fontWeight:700, letterSpacing:'-0.03em', margin:'0 0 18px'}}>
+        Helping builders<br/>build, from idea to<br/><span style={{color:CREW.orange}}>first check.</span>
+      </h2>
+      <p style={{fontSize:15, lineHeight:1.55, color:'rgba(10,10,10,0.72)', margin:'0 0 24px'}}>
+        The people solving what you're solving, the playbooks from operators who've done it, and a direct line to capital when you're ready.
+      </p>
+
+      <a href="https://discovery.weheartimpact.com/" style={{
+        background:CREW.ink, color:CREW.cream, border:'none',
+        padding:'14px 22px', borderRadius:12, fontSize:14, fontWeight:600,
+        cursor:'pointer', fontFamily:'inherit',
+        display:'inline-flex', alignItems:'center', gap:8, marginBottom: 10,
+        textDecoration:'none',
+      }}>Join the Crew →</a>
+      <div style={{...mobStyles.kicker, fontSize:9, color:'rgba(10,10,10,0.45)'}}>FREE · INSTANT ACCESS AFTER ONBOARDING</div>
+    </section>
+  );
+}
+
+function CobMobPillars() {
+  const pillars = [
+    {
+      kicker: '01',
+      title: 'Your unfair network.',
+      body: 'The builders solving what you\'re solving — one intro away. Filter by sector, see what they\'re shipping, skip the cold outreach.',
+      bullets: ['Curated builder directory', 'Clear match signals', 'Direct intros'],
+    },
+    {
+      kicker: '02',
+      title: 'Insider access.',
+      body: 'Live sessions with operators who\'ve built what you\'re building. Plus a library of playbooks and recordings that don\'t exist anywhere else.',
+      bullets: ['Live monthly sessions', 'Members-only library', 'Async, on your schedule'],
+    },
+    {
+      kicker: '03',
+      title: 'Direct line to capital.',
+      body: 'WE Heart is a venture builder. We write first checks for the right teams. Being inside the Crew is how we find them early.',
+      bullets: ['Direct line to WE Heart partners', 'Honest feedback on your raise', 'Zero obligation to pitch'],
+    },
+  ];
+  return (
+    <section style={{padding:'56px 20px', background: CREW.cream}}>
+      <div style={{...mobStyles.kicker, color:CREW.orange, marginBottom:12}}>What you get access to</div>
+      <h2 style={{fontSize:36, lineHeight:0.96, fontWeight:700, letterSpacing:'-0.03em', margin:'0 0 32px'}}>
+        Three things,<br/>in your corner.
+      </h2>
+
+      <div style={{display:'flex', flexDirection:'column', gap:14}}>
+        {pillars.map((p, i) => (
+          <div key={i} style={{
+            background: i === 1 ? CREW.ink : '#FFFFFF',
+            color: i === 1 ? CREW.cream : CREW.ink,
+            borderRadius:18, padding:24,
+            display:'flex', flexDirection:'column', gap:14,
+            border: i === 1 ? 'none' : '1px solid rgba(10,10,10,0.08)',
+          }}>
+            <span style={{
+              width:30, height:30, borderRadius:'50%',
+              background:CREW.orange, color:CREW.ink,
+              display:'flex', alignItems:'center', justifyContent:'center',
+              fontSize:12, fontWeight:700,
+            }}>{p.kicker}</span>
+            <h3 style={{fontSize:22, fontWeight:700, lineHeight:1.1, letterSpacing:'-0.02em', margin:0}}>{p.title}</h3>
+            <p style={{margin:0, fontSize:14, lineHeight:1.55, color: i === 1 ? 'rgba(245,239,230,0.78)' : 'rgba(10,10,10,0.7)'}}>
+              {p.body}
+            </p>
+            <ul style={{margin:'4px 0 0', padding:0, listStyle:'none', display:'flex', flexDirection:'column', gap:8,
+              paddingTop:14, borderTop: i === 1 ? '1px solid rgba(245,239,230,0.14)' : '1px solid rgba(10,10,10,0.08)',
+            }}>
+              {p.bullets.map((b, j) => (
+                <li key={j} style={{
+                  fontSize:12.5, color: i === 1 ? 'rgba(245,239,230,0.85)' : 'rgba(10,10,10,0.78)',
+                  paddingLeft:16, position:'relative', lineHeight:1.45, fontWeight:500,
+                }}>
+                  <span style={{position:'absolute', left:0, top:7, width:8, height:2, background:CREW.orange}}/>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function CobMobMembers() {
+  const members = typeof CREW_MEMBERS !== "undefined" ? CREW_MEMBERS.slice(0, 6) : [];
+
+  return (
+    <section style={{padding:'56px 20px', background:'#FFFFFF', borderTop:'1px solid rgba(10,10,10,0.08)'}}>
+      <div style={{
+        display:'flex', alignItems:'baseline', justifyContent:'space-between',
+        paddingBottom:14, marginBottom:14,
+        borderBottom:'1px solid rgba(10,10,10,0.12)',
+      }}>
+        <h2 style={{fontSize:24, fontWeight:700, letterSpacing:'-0.02em', margin:0, lineHeight:1}}>Already in.</h2>
+        <span style={{...mobStyles.kicker, fontSize:9, color:'rgba(10,10,10,0.4)'}}>BATCH 01 IS FILLING.</span>
+      </div>
+      <p style={{fontSize:13, color:'rgba(10,10,10,0.55)', margin:'0 0 20px'}}>
+        Founders who ship — and show it.
+      </p>
+
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:10}}>
+        {members.map((m, i) => {
+          const photoSrc = m.photo.startsWith('/') ? m.photo : `/${m.photo}`;
+          return (
+            <article key={i} style={{
+              position:'relative', background:'#0A0A0A', borderRadius:14,
+              aspectRatio:'3/4', overflow:'hidden',
+            }}>
+              <img
+                src={photoSrc}
+                alt={m.name}
+                style={{
+                  position:'absolute', inset:0,
+                  width:'100%', height:'100%',
+                  objectFit:'cover', display:'block',
+                }}
+              />
+              <div style={{
+                position:'absolute', left:0, right:0, bottom:0, height:'55%',
+                background:'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)',
+                pointerEvents:'none',
+              }}/>
+              <div style={{position:'absolute', left:12, right:12, bottom:12, zIndex:2}}>
+                <div style={{fontSize:14, fontWeight:700, lineHeight:1.05, letterSpacing:'-0.02em', color:'#FFFFFF', marginBottom:3}}>{m.name}</div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function CobMobApply() {
+  return (
+    <section style={{padding:'64px 20px'}}>
+      <div style={{...mobStyles.kicker, color:CREW.orange, marginBottom:14}}>Apply</div>
+      <h2 style={{fontSize:44, lineHeight:0.94, fontWeight:700, letterSpacing:'-0.035em', margin:'0 0 22px'}}>
+        You build.<br/>We're listening.
+      </h2>
+      <p style={{fontSize:15, lineHeight:1.55, margin:'0 0 28px', color:'rgba(10,10,10,0.7)'}}>
+        Tell us what you're building, what you shipped last week, and what's blocking you right now. That's all we need. Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
+      </p>
+      <a href="https://discovery.weheartimpact.com/" style={{
+        background:CREW.ink, color:CREW.cream, border:'none',
+        padding:'17px 22px', borderRadius:12, fontSize:15, fontWeight:700,
+        cursor:'pointer', fontFamily:'inherit', width:'100%',
+        display:'inline-flex', alignItems:'center', justifyContent:'center', gap:10,
+        textDecoration:'none', boxSizing:'border-box',
+      }}>
+        Join the Crew →
+      </a>
+      <div style={{
+        marginTop:14, textAlign:'center', fontSize:12,
+        color:'rgba(10,10,10,0.55)',
+      }}>
+        ~4 minutes · Free · Batch 01 spots are limited.
+      </div>
+    </section>
+  );
+}
+
+function CobMobFooter() {
+  return (
+    <footer style={{background:CREW.ink, color:CREW.cream, padding:'40px 20px 24px', borderTop:'1px solid rgba(245,239,230,0.14)'}}>
+      <img src="assets/crew-logo-white.png" style={{width:100, marginBottom:14}}/>
+      <div style={{display:'flex', flexDirection:'column', gap:12, marginBottom:24, fontSize:13, color:'rgba(245,239,230,0.65)', lineHeight:1.55}}>
+        <p style={{margin:0}}>A curated room for founders actively building — and for senior operators ready to build something new. We show our work, share what we know, and keep each other moving.</p>
+        <p style={{margin:0, color:'rgba(245,239,230,0.5)'}}>WE Heart co-builds companies with proven operators. The Crew is where we find them. The Crew is how we find them early — and how founders find each other.</p>
+      </div>
+      <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap:24, marginBottom:24}}>
+        <div>
+          <div style={{...mobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom:10}}>Join</div>
+          <div style={{display:'flex', flexDirection:'column', gap:8, fontSize:13}}>
+            <span>Join the Crew</span>
+            <span>Join the Crew</span>
+          </div>
+        </div>
+        <div>
+          <div style={{...mobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom:10}}>Run by</div>
+          <div style={{display:'flex', flexDirection:'column', gap:8, fontSize:13}}>
+            <span>WE Heart ↗</span>
+            <span>Contact</span>
+          </div>
+        </div>
+      </div>
+      <div style={{paddingTop:16, borderTop:'1px solid rgba(245,239,230,0.14)', display:'flex', justifyContent:'space-between', fontSize:11, color:'rgba(245,239,230,0.45)'}}>
+        <span>© 2026 Crew of Builders</span>
+        <span>Made in São Paulo</span>
+      </div>
+    </footer>
+  );
+}
+
+// ─────────────────────────────────────────────
+// DESKTOP COMPONENTS
+// ─────────────────────────────────────────────
+
+// ─────────────────────────────────────────────
 // Topbar — minimal: logo mark + apply only.
 // (Header used to have Why/What/For who/etc — user asked to remove.)
 // ─────────────────────────────────────────────
@@ -70,7 +436,7 @@ function CobTopBar() {
         </span>
       </div>
       <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, textDecoration:"none"}}>
-        Apply <CrewIcon.Arrow s={14}/>
+        Join the Crew <CrewIcon.Arrow s={14}/>
       </a>
     </div>
   );
@@ -100,22 +466,69 @@ function CobHero() {
           </div>
         </div>
 
-        {/* Logo as protagonist — black slab, badges */}
+        {/* Video card — orange block */}
         <div style={{
-          background: CREW.ink, borderRadius: 28, padding: 56,
-          aspectRatio:'1/1',
-          position:'relative', overflow:'hidden',
-          display:'flex', alignItems:'center', justifyContent:'center',
+          position:'relative',
+          background: CREW.orange,
+          borderRadius: 22, padding: 36, aspectRatio:'4 / 3',
+          overflow:'hidden', cursor:'pointer',
+          boxShadow:'0 30px 70px rgba(255,90,31,0.25)',
+          display:'grid', gridTemplateColumns:'1.15fr 0.85fr', gap: 28,
         }}>
-          <img src="assets/crew-logo.svg" style={{width:'78%', height:'auto', display:'block'}}/>
-          <div style={{position:'absolute', top:18, left:22, fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em'}}>EST. 2026 · SP</div>
-          <div style={{position:'absolute', top:18, right:22, fontSize:11, color:CREW.orange, fontWeight:700, letterSpacing:'0.16em', display:'flex', alignItems:'center', gap:6}}>
-            <span style={{width:6,height:6,borderRadius:'50%', background:CREW.orange}}/> THE ROOM IS OPEN
+          <div style={{position:'relative', display:'flex', flexDirection:'column', justifyContent:'space-between', zIndex:2}}>
+            <div>
+              <div style={{...cobStyles.kicker, color: CREW.ink, marginBottom:14}}>WATCH · 2:14</div>
+              <h3 style={{
+                fontSize:'clamp(34px, 3vw, 44px)', lineHeight:0.92, fontWeight:700, letterSpacing:'-0.025em',
+                margin:0, color: CREW.ink,
+              }}>
+                Why we<br/>started the<br/>Crew.
+              </h3>
+            </div>
+            <div style={{fontSize:14, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4}}>
+              <strong style={{fontSize:15}}>Daniel Muniz</strong><br/>
+              <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
+            </div>
           </div>
-          <div style={{position:'absolute', bottom:18, left:22, right:22, display:'flex', justifyContent:'space-between', fontSize:11, color:'rgba(245,239,230,0.55)', fontWeight:700, letterSpacing:'0.16em'}}>
-            <span>№ 001</span>
-            <span>BY WE HEART ↗</span>
+          <div style={{
+            position:'relative', borderRadius: 14, overflow:'hidden',
+            background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
+            border:'1px solid rgba(10,10,10,0.12)',
+            display:'flex', alignItems:'flex-end', justifyContent:'center',
+            padding: 18,
+          }}>
+            <div style={{
+              position:'absolute', inset:0,
+              display:'flex', alignItems:'center', justifyContent:'center',
+              fontSize:'clamp(80px, 9vw, 130px)', fontWeight:700, letterSpacing:'-0.04em',
+              color:'rgba(10,10,10,0.18)', lineHeight:1,
+            }}>DM</div>
+            <div style={{
+              position:'relative',
+              fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase',
+              color:'rgba(10,10,10,0.55)',
+            }}>Daniel Muniz</div>
           </div>
+          <button style={{
+            position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)',
+            display:'inline-flex', alignItems:'center', gap:10,
+            background: CREW.ink, color: CREW.cream, border:'none',
+            padding:'12px 22px 12px 14px', borderRadius:999,
+            fontSize:14, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
+            zIndex: 3, boxShadow:'0 10px 24px rgba(10,10,10,0.25)',
+          }}>
+            <span style={{
+              width:22, height:22, borderRadius:'50%', background: CREW.cream, color: CREW.ink,
+              display:'flex', alignItems:'center', justifyContent:'center', fontSize:9,
+            }}>▶</span>
+            Play
+          </button>
+          <div style={{
+            position:'absolute', top:20, right:20,
+            background:'rgba(10,10,10,0.75)', color: CREW.cream,
+            padding:'4px 10px', borderRadius:999, fontSize:11, fontWeight:600,
+            zIndex: 3,
+          }}>● 2:14</div>
         </div>
       </div>
     </section>
@@ -361,7 +774,7 @@ function CobFeed() {
               fontSize:13, fontWeight:600, cursor:'pointer',
               display:'inline-flex', alignItems:'center', gap:8, marginTop: 16,
             }}>
-              Apply <CrewIcon.Arrow s={12}/>
+              Join the Crew <CrewIcon.Arrow s={12}/>
             </button>
           </div>
         </div>
@@ -690,7 +1103,7 @@ function CobFooter() {
             <div style={{...cobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom: 14}}>Join</div>
             <div style={{display:'flex', flexDirection:'column', gap:10, fontSize:14}}>
               <span>Join the Crew</span>
-              <span>Apply to Batch 01</span>
+              <span>Join the Crew</span>
             </div>
           </div>
           <div>
@@ -805,7 +1218,7 @@ function CobWhatIs() {
             The people solving what you're solving, the playbooks from operators who've done it, and a direct line to capital when you're ready.
           </p>
           <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
-            Apply to the Crew <CrewIcon.Arrow s={14}/>
+            Join the Crew <CrewIcon.Arrow s={14}/>
           </a>
           <div style={{marginTop: 16, fontSize: 11, fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.1em', opacity: 0.5}}>FREE · INSTANT ACCESS AFTER ONBOARDING</div>
         </div>
@@ -815,17 +1228,35 @@ function CobWhatIs() {
 }
 
 function CobPage() {
+  const mobile = useIsMobile();
+
   return (
-    <div style={cobStyles.page}>
-      <CobTopBar/>
-      <CobHero/>
-      <CobWhatIs/>
-      <CobBatch/>
-      <CobMembers/>
-      <CobApply/>
-      
-      <CobFooter/>
-    </div>
+    <>
+      <style>{`
+        @media (max-width: 768px) { .cob-desktop { display: none !important; } }
+        @media (min-width: 769px) { .cob-mobile { display: none !important; } }
+      `}</style>
+      <div className="cob-mobile" style={mobStyles.page}>
+        <CobMobTopBar/>
+        <CobMobHero/>
+        <CobChatSection mobile/>
+        <CobMobPillars/>
+        <CobMobMembers/>
+        <CobNextAct mobile/>
+        <CobMobApply/>
+        <CobMobFooter/>
+      </div>
+      <div className="cob-desktop" style={cobStyles.page}>
+        <CobTopBar/>
+        <CobHero/>
+        <CobChatSection/>
+        <CobBatch/>
+        <CobMembers/>
+        <CobNextAct/>
+        <CobApply/>
+        <CobFooter/>
+      </div>
+    </>
   );
 }
 
