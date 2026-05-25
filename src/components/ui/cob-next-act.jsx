@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { CrewIcon } from "@/components/ui/crew-shared";
 
 const CREW = { ink: '#111', cream: '#F5F1E8', orange: '#FF5A1F' };
 
@@ -70,6 +71,25 @@ export default function CobNextAct({ mobile }) {
           }}>
             If you're a senior operator looking for what's next — or a company that needs one — this is where it starts.
           </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap', marginTop: 28 }}>
+            <a
+              href="https://www.nextact.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: CREW.orange, color: CREW.ink, border: 'none',
+                padding: '15px 22px', borderRadius: 10, fontSize: 14, fontWeight: 700,
+                cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none',
+                display: 'inline-flex', alignItems: 'center', gap: 10,
+              }}
+            >
+              Explore Next Act <CrewIcon.ArrowUR s={13}/>
+            </a>
+            <span style={{ fontSize: 12, color: 'rgba(245,239,230,0.55)' }}>
+              nextact.me ↗
+            </span>
+          </div>
         </div>
 
         {mobile && (

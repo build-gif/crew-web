@@ -96,7 +96,7 @@ function CobMobTopBar() {
           Crew of Builders
         </span>
       </div>
-      <a href="https://discovery.weheartimpact.com/" style={{
+      <a href="https://app.crewofbuilders.com/login" style={{
         background:CREW.ink, color:CREW.cream, border:'none',
         padding:'9px 16px', borderRadius:8, fontSize:12, fontWeight:600,
         cursor:'pointer', fontFamily:'inherit',
@@ -114,37 +114,23 @@ function CobMobHero() {
     <section style={{padding:'40px 20px 48px'}}>
       <div style={{
         position:'relative',
-        background: CREW.orange, borderRadius:16, padding:22,
-        overflow:'hidden', cursor:'pointer',
+        borderRadius:16,
+        overflow:'hidden',
+        aspectRatio:'16 / 9',
         boxShadow:'0 20px 40px rgba(255,90,31,0.22)',
-        minHeight: 260, marginBottom: 32,
+        marginBottom: 32,
       }}>
-        <div style={{...mobStyles.kicker, color:CREW.ink, marginBottom:12}}>WATCH · 2:14</div>
-        <h3 style={{fontSize:26, lineHeight:0.95, fontWeight:700, letterSpacing:'-0.02em', margin:'0 0 110px', color:CREW.ink}}>
-          Why we<br/>started the<br/>Crew.
-        </h3>
-        <div style={{fontSize:13, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4, position:'absolute', bottom:74, left:22}}>
-          <strong>Daniel Muniz</strong><br/>
-          <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
-        </div>
-        <div style={{
-          position:'absolute', top:14, right:14,
-          width:64, height:64, borderRadius:12,
-          background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
-          border:'1px solid rgba(10,10,10,0.12)',
-          display:'flex', alignItems:'center', justifyContent:'center',
-          fontSize:30, fontWeight:700, color:'rgba(10,10,10,0.22)', letterSpacing:'-0.04em',
-        }}>DM</div>
-        <button style={{
-          position:'absolute', bottom:18, left:22,
-          display:'inline-flex', alignItems:'center', gap:8,
-          background:CREW.ink, color:CREW.cream, border:'none',
-          padding:'10px 18px 10px 12px', borderRadius:999,
-          fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
-        }}>
-          <span style={{width:18, height:18, borderRadius:'50%', background:CREW.cream, color:CREW.ink, display:'flex', alignItems:'center', justifyContent:'center', fontSize:8}}>▶</span>
-          Play
-        </button>
+        <iframe
+          src="https://www.youtube.com/embed/KOFpufzBWyE?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
+          title="Why we started the Crew"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            position:'absolute', top:0, left:0,
+            width:'100%', height:'100%',
+            border:'none', borderRadius: 16,
+          }}
+        />
       </div>
 
       <h1 style={{
@@ -156,7 +142,7 @@ function CobMobHero() {
       <p style={{fontSize:15, lineHeight:1.5, color:'rgba(10,10,10,0.72)', margin:'0 0 24px'}}>
         Founders building the next thing. Together.
       </p>
-      <a href="https://discovery.weheartimpact.com/" style={{
+      <a href="https://app.crewofbuilders.com/login" style={{
         background: CREW.ink, color: CREW.cream, border:'none',
         padding:'16px 22px', borderRadius:12, fontSize:15, fontWeight:600,
         cursor:'pointer', fontFamily:'inherit', width:'100%',
@@ -172,63 +158,6 @@ function CobMobHero() {
   );
 }
 
-function CobMobWhatIs() {
-  return (
-    <section style={{padding:'48px 20px'}}>
-      <div style={{
-        position:'relative',
-        background: CREW.orange, borderRadius:16, padding:22,
-        overflow:'hidden', cursor:'pointer',
-        boxShadow:'0 20px 40px rgba(255,90,31,0.22)',
-        minHeight: 260, marginBottom: 32,
-      }}>
-        <div style={{...mobStyles.kicker, color:CREW.ink, marginBottom:12}}>WATCH · 2:14</div>
-        <h3 style={{fontSize:26, lineHeight:0.95, fontWeight:700, letterSpacing:'-0.02em', margin:'0 0 110px', color:CREW.ink}}>
-          Why we<br/>started the<br/>Crew.
-        </h3>
-        <div style={{fontSize:13, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4, position:'absolute', bottom:74, left:22}}>
-          <strong>Daniel Muniz</strong><br/>
-          <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
-        </div>
-        <div style={{
-          position:'absolute', top:14, right:14,
-          width:64, height:64, borderRadius:12,
-          background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
-          border:'1px solid rgba(10,10,10,0.12)',
-          display:'flex', alignItems:'center', justifyContent:'center',
-          fontSize:30, fontWeight:700, color:'rgba(10,10,10,0.22)', letterSpacing:'-0.04em',
-        }}>DM</div>
-        <button style={{
-          position:'absolute', bottom:18, left:22,
-          display:'inline-flex', alignItems:'center', gap:8,
-          background:CREW.ink, color:CREW.cream, border:'none',
-          padding:'10px 18px 10px 12px', borderRadius:999,
-          fontSize:13, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
-        }}>
-          <span style={{width:18, height:18, borderRadius:'50%', background:CREW.cream, color:CREW.ink, display:'flex', alignItems:'center', justifyContent:'center', fontSize:8}}>▶</span>
-          Play
-        </button>
-      </div>
-
-      <div style={{...mobStyles.kicker, color: CREW.orange, marginBottom:12}}>From the Crew</div>
-      <h2 style={{fontSize:34, lineHeight:0.98, fontWeight:700, letterSpacing:'-0.03em', margin:'0 0 18px'}}>
-        Helping builders<br/>build, from idea to<br/><span style={{color:CREW.orange}}>first check.</span>
-      </h2>
-      <p style={{fontSize:15, lineHeight:1.55, color:'rgba(10,10,10,0.72)', margin:'0 0 24px'}}>
-        The people solving what you're solving, the playbooks from operators who've done it, and a direct line to capital when you're ready.
-      </p>
-
-      <a href="https://discovery.weheartimpact.com/" style={{
-        background:CREW.ink, color:CREW.cream, border:'none',
-        padding:'14px 22px', borderRadius:12, fontSize:14, fontWeight:600,
-        cursor:'pointer', fontFamily:'inherit',
-        display:'inline-flex', alignItems:'center', gap:8, marginBottom: 10,
-        textDecoration:'none',
-      }}>Join the Crew →</a>
-      <div style={{...mobStyles.kicker, fontSize:9, color:'rgba(10,10,10,0.45)'}}>FREE · INSTANT ACCESS AFTER ONBOARDING</div>
-    </section>
-  );
-}
 
 function CobMobPillars() {
   const pillars = [
@@ -357,7 +286,7 @@ function CobMobApply() {
       <p style={{fontSize:15, lineHeight:1.55, margin:'0 0 28px', color:'rgba(10,10,10,0.7)'}}>
         Tell us what you're building, what you shipped last week, and what's blocking you right now. That's all we need. Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
       </p>
-      <a href="https://discovery.weheartimpact.com/" style={{
+      <a href="https://app.crewofbuilders.com/login" style={{
         background:CREW.ink, color:CREW.cream, border:'none',
         padding:'17px 22px', borderRadius:12, fontSize:15, fontWeight:700,
         cursor:'pointer', fontFamily:'inherit', width:'100%',
@@ -388,8 +317,8 @@ function CobMobFooter() {
         <div>
           <div style={{...mobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom:10}}>Join</div>
           <div style={{display:'flex', flexDirection:'column', gap:8, fontSize:13}}>
-            <span>Join the Crew</span>
-            <span>Join the Crew</span>
+            <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
+            <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
           </div>
         </div>
         <div>
@@ -435,7 +364,7 @@ function CobTopBar() {
           Powered by WE
         </span>
       </div>
-      <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, textDecoration:"none"}}>
+      <a href="https://app.crewofbuilders.com/login" style={{...cobStyles.applyBtn, textDecoration:"none"}}>
         Join the Crew <CrewIcon.Arrow s={14}/>
       </a>
     </div>
@@ -450,7 +379,7 @@ function CobTopBar() {
 function CobHero() {
   return (
     <section style={{padding: "88px 32px 72px", position:'relative'}}>
-      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1.15fr 1fr", gap:64, alignItems:'center'}}>
+      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1fr 1.3fr", gap:64, alignItems:'center'}}>
         <div>
           <h1 style={{...cobStyles.h1, fontSize:'clamp(56px, 7vw, 108px)'}}>
             Builders build <span style={{color:CREW.orange}}>with builders.</span>
@@ -459,76 +388,32 @@ function CobHero() {
             Founders building the next thing. Together.
           </p>
           <div style={{display:'flex', alignItems:'center', gap:18}}>
-            <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12, textDecoration:"none"}}>
+            <a href="https://app.crewofbuilders.com/login" style={{...cobStyles.applyBtn, padding:'18px 26px', fontSize:15, borderRadius:12, textDecoration:"none"}}>
               Join the Crew <CrewIcon.Arrow s={15}/>
             </a>
             <span style={{fontSize:13, color:'rgba(10,10,10,0.55)'}}>Instant access after onboarding.</span>
           </div>
         </div>
 
-        {/* Video card — orange block */}
+        {/* Video card — embedded YouTube */}
         <div style={{
           position:'relative',
-          background: CREW.orange,
-          borderRadius: 22, padding: 36, aspectRatio:'4 / 3',
-          overflow:'hidden', cursor:'pointer',
+          borderRadius: 22,
+          overflow:'hidden',
+          aspectRatio:'16 / 9',
           boxShadow:'0 30px 70px rgba(255,90,31,0.25)',
-          display:'grid', gridTemplateColumns:'1.15fr 0.85fr', gap: 28,
         }}>
-          <div style={{position:'relative', display:'flex', flexDirection:'column', justifyContent:'space-between', zIndex:2}}>
-            <div>
-              <div style={{...cobStyles.kicker, color: CREW.ink, marginBottom:14}}>WATCH · 2:14</div>
-              <h3 style={{
-                fontSize:'clamp(34px, 3vw, 44px)', lineHeight:0.92, fontWeight:700, letterSpacing:'-0.025em',
-                margin:0, color: CREW.ink,
-              }}>
-                Why we<br/>started the<br/>Crew.
-              </h3>
-            </div>
-            <div style={{fontSize:14, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4}}>
-              <strong style={{fontSize:15}}>Daniel Muniz</strong><br/>
-              <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
-            </div>
-          </div>
-          <div style={{
-            position:'relative', borderRadius: 14, overflow:'hidden',
-            background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
-            border:'1px solid rgba(10,10,10,0.12)',
-            display:'flex', alignItems:'flex-end', justifyContent:'center',
-            padding: 18,
-          }}>
-            <div style={{
-              position:'absolute', inset:0,
-              display:'flex', alignItems:'center', justifyContent:'center',
-              fontSize:'clamp(80px, 9vw, 130px)', fontWeight:700, letterSpacing:'-0.04em',
-              color:'rgba(10,10,10,0.18)', lineHeight:1,
-            }}>DM</div>
-            <div style={{
-              position:'relative',
-              fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase',
-              color:'rgba(10,10,10,0.55)',
-            }}>Daniel Muniz</div>
-          </div>
-          <button style={{
-            position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)',
-            display:'inline-flex', alignItems:'center', gap:10,
-            background: CREW.ink, color: CREW.cream, border:'none',
-            padding:'12px 22px 12px 14px', borderRadius:999,
-            fontSize:14, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
-            zIndex: 3, boxShadow:'0 10px 24px rgba(10,10,10,0.25)',
-          }}>
-            <span style={{
-              width:22, height:22, borderRadius:'50%', background: CREW.cream, color: CREW.ink,
-              display:'flex', alignItems:'center', justifyContent:'center', fontSize:9,
-            }}>▶</span>
-            Play
-          </button>
-          <div style={{
-            position:'absolute', top:20, right:20,
-            background:'rgba(10,10,10,0.75)', color: CREW.cream,
-            padding:'4px 10px', borderRadius:999, fontSize:11, fontWeight:600,
-            zIndex: 3,
-          }}>● 2:14</div>
+          <iframe
+            src="https://www.youtube.com/embed/KOFpufzBWyE?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
+            title="Why we started the Crew"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              position:'absolute', top:0, left:0,
+              width:'100%', height:'100%',
+              border:'none', borderRadius: 22,
+            }}
+          />
         </div>
       </div>
     </section>
@@ -767,15 +652,16 @@ function CobFeed() {
                 Apply, get reviewed, post what you shipped this week.
               </p>
             </div>
-            <button style={{
+            <a href="https://app.crewofbuilders.com/login" style={{
               alignSelf:'flex-start',
               background: CREW.ink, color: CREW.cream,
               border:'none', padding:'12px 16px', borderRadius:8,
               fontSize:13, fontWeight:600, cursor:'pointer',
               display:'inline-flex', alignItems:'center', gap:8, marginTop: 16,
+              textDecoration:'none',
             }}>
               Join the Crew <CrewIcon.Arrow s={12}/>
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -1067,14 +953,15 @@ function CobApply() {
 Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
         </p>
         <div style={{display:'flex', gap:14, alignItems:'center', flexWrap:'wrap'}}>
-          <button style={{
+          <a href="https://app.crewofbuilders.com/login" style={{
             background: CREW.ink, color: CREW.cream,
             border:'none', padding:'20px 30px', borderRadius:12,
             fontSize:16, fontWeight:700, cursor:'pointer',
             display:'inline-flex', alignItems:'center', gap:10,
+            textDecoration:'none',
           }}>
             Join the Crew <CrewIcon.Arrow s={16}/>
-          </button>
+          </a>
           <span style={{fontSize:13, color:'rgba(10,10,10,0.5)'}}>~4 minutes · Free · Batch 01 spots are limited.</span>
         </div>
       </div>
@@ -1102,8 +989,8 @@ function CobFooter() {
           <div>
             <div style={{...cobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom: 14}}>Join</div>
             <div style={{display:'flex', flexDirection:'column', gap:10, fontSize:14}}>
-              <span>Join the Crew</span>
-              <span>Join the Crew</span>
+              <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
+              <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
             </div>
           </div>
           <div>
@@ -1127,116 +1014,14 @@ function CobFooter() {
 // COMPOSE
 // ─────────────────────────────────────────────
 // ─────────────────────────────────────────────
-// WHAT IS THE CREW — Dani video block, cream/orange brand.
-// Sits right after the hero. Mirrors Circle's "What is Circle?" pattern.
-// ─────────────────────────────────────────────
-function CobWhatIs() {
-  return (
-    <section style={{padding:'88px 32px 56px'}}>
-      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1.05fr 1fr", gap: 64, alignItems:'center'}}>
-        {/* Video card — orange block with portrait slot, type, play button */}
-        <div style={{
-          position:'relative',
-          background: CREW.orange,
-          borderRadius: 22, padding: 36, aspectRatio:'4 / 3',
-          overflow:'hidden', cursor:'pointer',
-          boxShadow:'0 30px 70px rgba(255,90,31,0.25)',
-          display:'grid', gridTemplateColumns:'1.15fr 0.85fr', gap: 28,
-        }}>
-          {/* Left: kicker + title + name */}
-          <div style={{position:'relative', display:'flex', flexDirection:'column', justifyContent:'space-between', zIndex:2}}>
-            <div>
-              <div style={{...cobStyles.kicker, color: CREW.ink, marginBottom:14}}>WATCH · 2:14</div>
-              <h3 style={{
-                fontSize:'clamp(34px, 3vw, 44px)', lineHeight:0.92, fontWeight:700, letterSpacing:'-0.025em',
-                margin:0, color: CREW.ink,
-              }}>
-                Why we<br/>started the<br/>Crew.
-              </h3>
-            </div>
-            <div style={{fontSize:14, color:'rgba(10,10,10,0.85)', fontWeight:500, lineHeight:1.4}}>
-              <strong style={{fontSize:15}}>Daniel Muniz</strong><br/>
-              <span style={{color:'rgba(10,10,10,0.65)'}}>Founder, WE Heart</span>
-            </div>
-          </div>
-
-          {/* Right: portrait slot — placeholder block w/ initials, swap with real photo */}
-          <div style={{
-            position:'relative', borderRadius: 14, overflow:'hidden',
-            background:'linear-gradient(155deg, #FF7A45 0%, #E54810 100%)',
-            border:'1px solid rgba(10,10,10,0.12)',
-            display:'flex', alignItems:'flex-end', justifyContent:'center',
-            padding: 18,
-          }}>
-            {/* monogram glyph */}
-            <div style={{
-              position:'absolute', inset:0,
-              display:'flex', alignItems:'center', justifyContent:'center',
-              fontSize:'clamp(80px, 9vw, 130px)', fontWeight:700, letterSpacing:'-0.04em',
-              color:'rgba(10,10,10,0.18)', lineHeight:1,
-            }}>DM</div>
-            {/* hint label */}
-            <div style={{
-              position:'relative',
-              fontSize:10, fontWeight:600, letterSpacing:'0.12em', textTransform:'uppercase',
-              color:'rgba(10,10,10,0.55)',
-            }}>Daniel Muniz</div>
-          </div>
-
-          {/* play button — overlays bottom-left */}
-          <button style={{
-            position:'absolute', bottom:24, left:'50%', transform:'translateX(-50%)',
-            display:'inline-flex', alignItems:'center', gap:10,
-            background: CREW.ink, color: CREW.cream, border:'none',
-            padding:'12px 22px 12px 14px', borderRadius:999,
-            fontSize:14, fontWeight:700, cursor:'pointer', fontFamily:'inherit',
-            zIndex: 3, boxShadow:'0 10px 24px rgba(10,10,10,0.25)',
-          }}>
-            <span style={{
-              width:22, height:22, borderRadius:'50%', background: CREW.cream, color: CREW.ink,
-              display:'flex', alignItems:'center', justifyContent:'center', fontSize:9,
-            }}>▶</span>
-            Play
-          </button>
-
-          {/* duration chip */}
-          <div style={{
-            position:'absolute', top:20, right:20,
-            background:'rgba(10,10,10,0.75)', color: CREW.cream,
-            padding:'4px 10px', borderRadius:999, fontSize:11, fontWeight:600,
-            zIndex: 3,
-          }}>● 2:14</div>
-        </div>
-
-        {/* Right copy */}
-        <div>
-          <div style={{...cobStyles.kicker, color: CREW.orange, marginBottom: 14}}>FROM THE CREW</div>
-          <h2 style={{...cobStyles.h2, fontSize:'clamp(40px, 4.6vw, 68px)'}}>
-            Helping builders build, from idea to <span style={{color: CREW.orange}}>first check.</span>
-          </h2>
-          <p style={{fontSize:18, lineHeight:1.55, color:'rgba(10,10,10,0.78)', margin:'24px 0 32px', maxWidth: 540}}>
-            The people solving what you're solving, the playbooks from operators who've done it, and a direct line to capital when you're ready.
-          </p>
-          <a href="https://discovery.weheartimpact.com/" style={{...cobStyles.applyBtn, padding:'16px 24px', fontSize:14, borderRadius:12, textDecoration:"none"}}>
-            Join the Crew <CrewIcon.Arrow s={14}/>
-          </a>
-          <div style={{marginTop: 16, fontSize: 11, fontFamily: 'var(--font-mono, monospace)', letterSpacing: '0.1em', opacity: 0.5}}>FREE · INSTANT ACCESS AFTER ONBOARDING</div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function CobPage() {
   const mobile = useIsMobile();
 
   return (
     <>
-      <style>{`
-        @media (max-width: 768px) { .cob-desktop { display: none !important; } }
-        @media (min-width: 769px) { .cob-mobile { display: none !important; } }
-      `}</style>
-      <div className="cob-mobile" style={mobStyles.page}>
+      {mobile ? (
+      <div style={mobStyles.page}>
         <CobMobTopBar/>
         <CobMobHero/>
         <CobChatSection mobile/>
@@ -1246,7 +1031,8 @@ function CobPage() {
         <CobMobApply/>
         <CobMobFooter/>
       </div>
-      <div className="cob-desktop" style={cobStyles.page}>
+      ) : (
+      <div style={cobStyles.page}>
         <CobTopBar/>
         <CobHero/>
         <CobChatSection/>
@@ -1256,6 +1042,7 @@ function CobPage() {
         <CobApply/>
         <CobFooter/>
       </div>
+      )}
     </>
   );
 }
