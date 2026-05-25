@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Wordmark, MonoAccent, Divider, Reveal, CrewIcon, CREW_TOKENS, CREW_MEMBERS } from "@/components/ui/crew-shared";
+import { Wordmark, MonoAccent, Divider, Reveal, CrewIcon, CREW_TOKENS, CREW_MEMBERS, useTypewriter } from "@/components/ui/crew-shared";
 import CobChatSection from "@/components/ui/cob-chat";
 import CobNextAct from "@/components/ui/cob-next-act";
 // Crew of Builders — single homepage, repositioned.
@@ -110,6 +110,7 @@ function CobMobTopBar() {
 }
 
 function CobMobHero() {
+  const word = useTypewriter();
   return (
     <section style={{padding:'40px 20px 48px'}}>
       <div style={{
@@ -134,10 +135,11 @@ function CobMobHero() {
       </div>
 
       <h1 style={{
-        fontSize: 48, lineHeight: 0.92, fontWeight:700, letterSpacing:'-0.035em',
+        fontSize: 53, lineHeight: 0.92, fontWeight:700, letterSpacing:'-0.035em',
         margin:'0 0 16px',
       }}>
-        Builders build <span style={{color:CREW.orange}}>with builders.</span>
+        Builders build<br/>
+        <span style={{color:CREW.orange, position:'relative', display:'inline-block', whiteSpace:'nowrap'}}><span style={{visibility:'hidden'}}>with investors.</span><span style={{position:'absolute', left:0, top:0, whiteSpace:'nowrap'}}>with {word}<span style={{animation:'pulse 1s infinite'}}>|</span></span></span>
       </h1>
       <p style={{fontSize:15, lineHeight:1.5, color:'rgba(10,10,10,0.72)', margin:'0 0 24px'}}>
         Founders building the next thing. Together.
@@ -318,13 +320,12 @@ function CobMobFooter() {
           <div style={{...mobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom:10}}>Join</div>
           <div style={{display:'flex', flexDirection:'column', gap:8, fontSize:13}}>
             <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
-            <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
           </div>
         </div>
         <div>
           <div style={{...mobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom:10}}>Run by</div>
           <div style={{display:'flex', flexDirection:'column', gap:8, fontSize:13}}>
-            <span>WE Heart ↗</span>
+            <a href="https://www.weheartimpact.com/" target="_blank" rel="noopener noreferrer" style={{color:'inherit', textDecoration:'none'}}>WE Heart ↗</a>
             <span>Contact</span>
           </div>
         </div>
@@ -377,12 +378,15 @@ function CobTopBar() {
 // No secondary CTA per user feedback.
 // ─────────────────────────────────────────────
 function CobHero() {
+  const word = useTypewriter();
   return (
     <section style={{padding: "88px 32px 72px", position:'relative'}}>
-      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1fr 1.3fr", gap:64, alignItems:'center'}}>
+      <div style={{maxWidth: 1280, margin:'0 auto', display:'grid', gridTemplateColumns: "1fr 1.3fr", gap:64, alignItems:'flex-start'}}>
         <div>
-          <h1 style={{...cobStyles.h1, fontSize:'clamp(56px, 7vw, 108px)'}}>
-            Builders build <span style={{color:CREW.orange}}>with builders.</span>
+          <h1 style={{...cobStyles.h1, fontSize:'clamp(62px, 7.7vw, 119px)'}}>
+            Builders<br/>
+            build with<br/>
+            <span style={{color:CREW.orange, position:'relative', display:'inline-block', whiteSpace:'nowrap'}}><span style={{visibility:'hidden'}}>investors.</span><span style={{position:'absolute', left:0, top:0, whiteSpace:'nowrap'}}>{word}<span style={{animation:'pulse 1s infinite'}}>|</span></span></span>
           </h1>
           <p style={{fontSize:20, lineHeight:1.45, maxWidth: 540, color:'rgba(10,10,10,0.72)', margin:'32px 0 40px'}}>
             Founders building the next thing. Together.
@@ -990,13 +994,12 @@ function CobFooter() {
             <div style={{...cobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom: 14}}>Join</div>
             <div style={{display:'flex', flexDirection:'column', gap:10, fontSize:14}}>
               <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
-              <a href="https://app.crewofbuilders.com/login" style={{color:'inherit', textDecoration:'none'}}>Join the Crew</a>
             </div>
           </div>
           <div>
             <div style={{...cobStyles.kicker, color:'rgba(245,239,230,0.4)', marginBottom: 14}}>Run by</div>
             <div style={{display:'flex', flexDirection:'column', gap:10, fontSize:14}}>
-              <span>WE Heart ↗</span>
+              <a href="https://www.weheartimpact.com/" target="_blank" rel="noopener noreferrer" style={{color:'inherit', textDecoration:'none'}}>WE Heart ↗</a>
               <span>Contact</span>
             </div>
           </div>
@@ -1020,6 +1023,9 @@ function CobPage() {
 
   return (
     <>
+      <style>{`
+        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+      `}</style>
       {mobile ? (
       <div style={mobStyles.page}>
         <CobMobTopBar/>

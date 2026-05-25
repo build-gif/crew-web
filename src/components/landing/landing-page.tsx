@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CrewIcon, CREW_MEMBERS } from "@/components/ui/crew-shared";
+import { CrewIcon, CREW_MEMBERS, useTypewriter } from "@/components/ui/crew-shared";
 
 const APPLY_HREF = "https://app.crewofbuilders.com/login";
 
@@ -36,14 +36,14 @@ function TopBar() {
 }
 
 function Hero() {
+  const word = useTypewriter();
   return (
     <section className="relative px-8 pb-[72px] pt-[88px]">
       <div className="mx-auto grid max-w-[1280px] items-center gap-16 md:grid-cols-[1.15fr_1fr]">
         <div>
-          <h1 className="m-0 text-[clamp(56px,7vw,108px)] font-bold leading-[0.88] tracking-[-0.04em] text-[#0A0A0A]">
-            Builders build{" "}
-            <br className="md:hidden" />
-            <span className="text-[#FF5A1F]">with builders.</span>
+          <h1 className="m-0 text-[clamp(62px,7.7vw,119px)] font-bold leading-[0.88] tracking-[-0.04em] text-[#0A0A0A]">
+            Builders{" "}<br className="hidden md:inline"/>build<br className="md:hidden"/>{" "}with<br className="hidden md:inline"/>
+            {" "}<span className="text-[#FF5A1F] whitespace-nowrap" style={{position:'relative', display:'inline-block'}}><span style={{visibility:'hidden'}}>investors.</span><span className="whitespace-nowrap" style={{position:'absolute', left:0, top:0}}>{word}<span className="animate-pulse">|</span></span></span>
           </h1>
           <p className="mb-10 mt-8 max-w-[540px] text-xl leading-[1.45] text-[#0A0A0A]/72">
             A community of founders showing what they&apos;re building and

@@ -5,6 +5,10 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 export const metadata: Metadata = {
   title: "Crew of Builders",
   description: "A curated community for builders and experts.",
+  icons: {
+    icon: "/assets/crew-logo-black.png",
+    apple: "/assets/crew-logo-black.png",
+  },
 };
 
 export default function RootLayout({

@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 // Shared data + tokens for the Crew of Builders page.
 // Each member has: what they shipped lately + what they're learning out loud.
 // That's the protagonist content — not the avatar, not the title.
@@ -109,6 +111,51 @@ export const CREW_TOKENS = {
   cream: '#F5EFE6', bone: '#EFE9DE',
   line: 'rgba(10,10,10,0.12)',
 };
+
+const TYPEWRITER_WORDS = ["builders", "founders", "investors"];
+
+export function useTypewriter(words = TYPEWRITER_WORDS, typingSpeed = 150, deletingSpeed = 100, pauseTime = 3000) {
+  const [text, setText] = useState("");
+  const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
+
+  useEffect(() => {
+    const currentWord = words[wordIndex];
+
+    if (phase === "typing") {
+      if (charIndex < currentWord.length) {
+        const timer = setTimeout(() => {
+          setText(currentWord.slice(0, charIndex + 1));
+          setCharIndex(charIndex + 1);
+        }, typingSpeed);
+        return () => clearTimeout(timer);
+      } else {
+        setPhase("pausing");
+      }
+    }
+
+    if (phase === "pausing") {
+      const timer = setTimeout(() => setPhase("deleting"), pauseTime);
+      return () => clearTimeout(timer);
+    }
+
+    if (phase === "deleting") {
+      if (charIndex > 0) {
+        const timer = setTimeout(() => {
+          setCharIndex(charIndex - 1);
+          setText(currentWord.slice(0, charIndex - 1));
+        }, deletingSpeed);
+        return () => clearTimeout(timer);
+      } else {
+        setWordIndex((prev) => (prev + 1) % words.length);
+        setPhase("typing");
+      }
+    }
+  }, [phase, charIndex, wordIndex, words, typingSpeed, deletingSpeed, pauseTime]);
+
+  return text;
+}
 
 export const CrewIcon = {
   Arrow: ({ s = 14, c = 'currentColor' }) => (
