@@ -102,7 +102,9 @@ function TypingIndicator({ user, mobile }) {
   );
 }
 
-function MarqueeCard({ msg, bg, bordered }) {
+function MarqueeCard({ msg, bg, bordered, light }) {
+  const textColor = light ? '#FFFFFF' : CREW.ink;
+  const subColor = light ? 'rgba(255,255,255,0.7)' : 'rgba(10,10,10,0.5)';
   return (
     <div className="cob-marquee-card" style={{
       background: bg || '#FFF',
@@ -114,15 +116,15 @@ function MarqueeCard({ msg, bg, bordered }) {
       transition: 'transform 0.3s ease, box-shadow 0.3s ease',
       cursor: 'default',
     }}>
-      <p style={{ margin: '0 0 12px', fontSize: 13, lineHeight: 1.55, color: CREW.ink }}>{msg.text}</p>
+      <p style={{ margin: '0 0 12px', fontSize: 13, lineHeight: 1.55, color: textColor }}>{msg.text}</p>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <img src={msg.avatar} alt={msg.name} style={{
           width: 26, height: 26, borderRadius: '50%',
-          border: '1px solid rgba(10,10,10,0.08)', background: '#F0EDE6',
+          border: light ? '1px solid rgba(255,255,255,0.3)' : '1px solid rgba(10,10,10,0.08)', background: '#F0EDE6',
         }}/>
         <div>
-          <div style={{ fontSize: 12, fontWeight: 600, color: CREW.ink, lineHeight: 1.2 }}>{msg.name}</div>
-          <div style={{ fontSize: 11, color: 'rgba(10,10,10,0.5)' }}>{msg.role}</div>
+          <div style={{ fontSize: 12, fontWeight: 600, color: textColor, lineHeight: 1.2 }}>{msg.name}</div>
+          <div style={{ fontSize: 11, color: subColor }}>{msg.role}</div>
         </div>
       </div>
     </div>
@@ -130,7 +132,7 @@ function MarqueeCard({ msg, bg, bordered }) {
 }
 
 function MarqueeSection({ mobile }) {
-  const peach = '#FDEEE6';
+  const peach = '#F8C9A8';
   const row1 = [...chatTestimonials, ...chatTestimonials];
   const row2 = [...[...chatTestimonials].reverse(), ...[...chatTestimonials].reverse()];
   const kicker = mobile ? kickerMobile : kickerDesktop;
