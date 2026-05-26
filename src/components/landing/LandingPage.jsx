@@ -1,7 +1,7 @@
 "use client";
 import useIsMobile from "@/lib/hooks/useIsMobile";
 import CobChatSection from "@/components/ui/cob-chat";
-import CobNextAct from "@/components/ui/cob-next-act";
+// import CobNextAct from "@/components/ui/cob-next-act";
 import { CobTopBar, CobMobTopBar } from "./TopBar";
 import { CobHero, CobMobHero } from "./Hero";
 import { CobBatch, CobMobPillars } from "./Pillars";
@@ -25,7 +25,7 @@ export default function LandingPage() {
           <CobChatSection mobile />
           <CobMobPillars />
           <CobMobMembers />
-          <CobNextAct mobile />
+          {/* <CobNextAct mobile /> */}
           <CobMobApply />
           <CobMobFooter />
         </div>
@@ -36,7 +36,7 @@ export default function LandingPage() {
           <CobChatSection />
           <CobBatch />
           <CobMembers />
-          <CobNextAct />
+          {/* <CobNextAct /> */}
           <CobApply />
           <CobFooter />
         </div>
