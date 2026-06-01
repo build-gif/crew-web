@@ -134,7 +134,7 @@ export function CobFeed() {
             </div>
             <a href="https://app.crewofbuilders.com/login" style={{
               alignSelf: 'flex-start',
-              background: CREW.ink, color: CREW.cream,
+              background: CREW.ink, color: CREW.orange,
               border: 'none', padding: '12px 16px', borderRadius: 8,
               fontSize: 13, fontWeight: 600, cursor: 'pointer',
               display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 16,

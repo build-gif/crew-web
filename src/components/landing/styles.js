@@ -26,7 +26,7 @@ export const cobStyles = {
   },
   applyBtn: {
     display: 'inline-flex', alignItems: 'center', gap: 10,
-    background: CREW.ink, color: CREW.cream,
+    background: CREW.ink, color: CREW.orange,
     padding: '14px 22px', border: 'none', borderRadius: 10,
     fontSize: 14, fontWeight: 600, cursor: 'pointer',
   },

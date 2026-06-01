@@ -37,7 +37,7 @@ export function CobHero() {
           boxShadow: '0 30px 70px rgba(255,90,31,0.25)',
         }}>
           <iframe
-            src="https://www.youtube.com/embed/KOFpufzBWyE?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
+            src="https://www.youtube.com/embed/ZdJgMSNp24U?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
             title="Why we started the Crew"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -66,7 +66,7 @@ export function CobMobHero() {
         marginBottom: 32,
       }}>
         <iframe
-          src="https://www.youtube.com/embed/KOFpufzBWyE?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
+          src="https://www.youtube.com/embed/ZdJgMSNp24U?autoplay=1&showinfo=0&rel=0&modestbranding=1&controls=1"
           title="Why we started the Crew"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -94,7 +94,7 @@ export function CobMobHero() {
         Founders building the next thing. Together.
       </p>
       <a href="https://app.crewofbuilders.com/login" style={{
-        background: CREW.ink, color: CREW.cream, border: 'none',
+        background: CREW.ink, color: CREW.orange, border: 'none',
         padding: '16px 22px', borderRadius: 12, fontSize: 15, fontWeight: 600,
         cursor: 'pointer', fontFamily: 'inherit', width: '100%',
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,

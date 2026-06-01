@@ -12,13 +12,12 @@ export function CobTopBar() {
       backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
       borderBottom: '1px solid rgba(10,10,10,0.08)',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-        <img src="assets/crew-logo-black.svg" style={{ height: 28, width: 'auto', display: 'block' }} />
-        <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.02em', textTransform: 'uppercase' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2 }}>
+        <span style={{ fontSize: 21, fontWeight: 700, letterSpacing: '0.02em', textTransform: 'uppercase', lineHeight: 1 }}>
           Crew of Builders
         </span>
-        <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: 10, opacity: 0.4, letterSpacing: '0.1em', marginLeft: 8 }}>
-          Powered by WE
+        <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: 10, opacity: 0.4, letterSpacing: '0.1em' }}>
+          Powered by WE Heart Impact
         </span>
       </div>
       <a href="https://app.crewofbuilders.com/login" style={{ ...cobStyles.applyBtn, textDecoration: "none" }}>
@@ -38,14 +37,16 @@ export function CobMobTopBar() {
       backdropFilter: 'blur(14px)', WebkitBackdropFilter: 'blur(14px)',
       borderBottom: '1px solid rgba(10,10,10,0.08)',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, minWidth: 0 }}>
-        <img src="assets/crew-logo-black.png" style={{ height: 22, width: 'auto', display: 'block', flexShrink: 0 }} />
-        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 2, minWidth: 0 }}>
+        <span style={{ fontSize: 17, fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap', lineHeight: 1 }}>
           Crew of Builders
+        </span>
+        <span style={{ fontFamily: 'var(--font-mono, monospace)', fontSize: 9, opacity: 0.4, letterSpacing: '0.1em', whiteSpace: 'nowrap' }}>
+          Powered by WE Heart Impact
         </span>
       </div>
       <a href="https://app.crewofbuilders.com/login" style={{
-        background: CREW.ink, color: CREW.cream, border: 'none',
+        background: CREW.ink, color: CREW.orange, border: 'none',
         padding: '9px 16px', borderRadius: 8, fontSize: 12, fontWeight: 600,
         cursor: 'pointer', fontFamily: 'inherit',
         display: 'inline-flex', alignItems: 'center', gap: 6,

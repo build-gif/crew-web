@@ -28,6 +28,7 @@ export function CobFooter() {
             <div style={{ ...cobStyles.kicker, color: 'rgba(245,239,230,0.4)', marginBottom: 14 }}>Run by</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14 }}>
               <a href="https://www.weheartimpact.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>WE Heart ↗</a>
+              <a href="https://www.linkedin.com/company/crew-of-builders/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn ↗</a>
               <span>Contact</span>
             </div>
           </div>
@@ -60,6 +61,7 @@ export function CobMobFooter() {
           <div style={{ ...mobStyles.kicker, color: 'rgba(245,239,230,0.4)', marginBottom: 10 }}>Run by</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 13 }}>
             <a href="https://www.weheartimpact.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>WE Heart ↗</a>
+            <a href="https://www.linkedin.com/company/crew-of-builders/posts/?feedView=all" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LinkedIn ↗</a>
             <span>Contact</span>
           </div>
         </div>
