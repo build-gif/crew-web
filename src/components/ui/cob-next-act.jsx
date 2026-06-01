@@ -31,8 +31,8 @@ export default function CobNextAct({ mobile }) {
             Next Act
           </div>
           <h2 style={{
-            fontSize: mobile ? 36 : 'clamp(40px, 5vw, 76px)',
-            lineHeight: mobile ? 0.96 : 0.92,
+            fontSize: 'clamp(40px, 5vw, 76px)',
+            lineHeight: 0.92,
             fontWeight: 700,
             letterSpacing: mobile ? '-0.03em' : '-0.035em',
             margin: mobile ? '0 0 24px' : 0,
@@ -55,21 +55,12 @@ export default function CobNextAct({ mobile }) {
         </div>
 
         {/* Right / Bottom */}
-        <div style={{ fontSize: mobile ? 15 : 19, lineHeight: 1.55, color: 'rgba(245,239,230,0.88)' }}>
+        <div style={{ fontSize: 19, lineHeight: 1.55, color: 'rgba(245,239,230,0.88)' }}>
           <p style={{ margin: '0 0 22px' }}>
-            <strong style={{ color: CREW.cream }}>Next Act</strong> is WE Heart's Open Talent platform — a closed collective of senior talent and elite operators ready to embed in high-impact projects and spin-offs.
+            <strong style={{ color: CREW.cream }}>Born in the Crew.</strong>
           </p>
-          <p style={{ margin: '0 0 22px' }}>
-            No traditional consulting. No layers of overhead. Just <strong style={{ color: CREW.orange }}>agile squads and lethal execution</strong> — plugged directly into the companies that need them most.
-          </p>
-          <p style={{
-            margin: 0,
-            color: 'rgba(245,239,230,0.6)',
-            fontSize: mobile ? 13 : 15,
-            paddingTop: mobile ? 20 : 24,
-            borderTop: '1px solid rgba(245,239,230,0.14)',
-          }}>
-            If you're a senior operator looking for what's next — or a company that needs one — this is where it starts.
+          <p style={{ margin: 0 }}>
+            Founded by Marco Puerari and Gabriel Ribeiro, Next Act was built, launched, and scaled entirely inside the Crew of Builders. A proven market success and the ultimate proof of our execution ecosystem.
           </p>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap', marginTop: 28 }}>
@@ -78,7 +69,7 @@ export default function CobNextAct({ mobile }) {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: CREW.orange, color: CREW.ink, border: 'none',
+                background: CREW.orange, color: '#fff', border: 'none',
                 padding: '15px 22px', borderRadius: 10, fontSize: 14, fontWeight: 700,
                 cursor: 'pointer', fontFamily: 'inherit', textDecoration: 'none',
                 display: 'inline-flex', alignItems: 'center', gap: 10,

@@ -94,7 +94,7 @@ export function CobMobHero() {
         Founders building the next thing. Together.
       </p>
       <a href="https://app.crewofbuilders.com/login" style={{
-        background: CREW.ink, color: CREW.orange, border: 'none',
+        background: CREW.orange, color: '#fff', border: 'none',
         padding: '16px 22px', borderRadius: 12, fontSize: 15, fontWeight: 600,
         cursor: 'pointer', fontFamily: 'inherit', width: '100%',
         display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
