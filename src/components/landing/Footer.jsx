@@ -35,7 +35,11 @@ export function CobFooter() {
         </div>
         <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: 24, fontSize: 12, color: 'rgba(245,239,230,0.45)', flexWrap: 'wrap', gap: 10 }}>
           <span>© 2026 Crew of Builders</span>
-          <span>Made in São Paulo</span>
+          <div style={{ display: 'flex', gap: 20 }}>
+            <a href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a>
+            <a href="/terms" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a>
+            <span>Made in São Paulo</span>
+          </div>
         </div>
       </div>
     </footer>
@@ -66,9 +70,15 @@ export function CobMobFooter() {
           </div>
         </div>
       </div>
-      <div style={{ paddingTop: 16, borderTop: '1px solid rgba(245,239,230,0.14)', display: 'flex', justifyContent: 'space-between', fontSize: 11, color: 'rgba(245,239,230,0.45)' }}>
-        <span>© 2026 Crew of Builders</span>
-        <span>Made in São Paulo</span>
+      <div style={{ paddingTop: 16, borderTop: '1px solid rgba(245,239,230,0.14)', fontSize: 11, color: 'rgba(245,239,230,0.45)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+          <span>© 2026 Crew of Builders</span>
+          <span>Made in São Paulo</span>
+        </div>
+        <div style={{ display: 'flex', gap: 16 }}>
+          <a href="/privacy" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a>
+          <a href="/terms" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a>
+        </div>
       </div>
     </footer>
   );
