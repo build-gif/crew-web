@@ -132,7 +132,7 @@ export function CobFeed() {
                 Apply, get reviewed, post what you shipped this week.
               </p>
             </div>
-            <a href="https://app.crewofbuilders.com/login" style={{
+            <a href="https://app.crewofbuilders.com/signup" style={{
               alignSelf: 'flex-start',
               background: CREW.ink, color: CREW.orange,
               border: 'none', padding: '12px 16px', borderRadius: 8,

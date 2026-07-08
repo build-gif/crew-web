@@ -16,7 +16,7 @@ export function CobApply() {
           Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
         </p>
         <div style={{ display: 'flex', gap: 14, alignItems: 'center', flexWrap: 'wrap' }}>
-          <a href="https://app.crewofbuilders.com/login" style={{
+          <a href="https://app.crewofbuilders.com/signup" style={{
             background: CREW.orange, color: '#fff',
             border: 'none', padding: '20px 30px', borderRadius: 12,
             fontSize: 16, fontWeight: 700, cursor: 'pointer',
@@ -42,7 +42,7 @@ export function CobMobApply() {
       <p style={{ fontSize: 15, lineHeight: 1.55, margin: '0 0 28px', color: 'rgba(10,10,10,0.7)' }}>
         Tell us what you're building, what you shipped last week, and what's blocking you right now. That's all we need. Instantly unlock the room, access the directory, and connect with other builders. We keep the bar high by reviewing profiles continuously.
       </p>
-      <a href="https://app.crewofbuilders.com/login" style={{
+      <a href="https://app.crewofbuilders.com/signup" style={{
         background: CREW.orange, color: '#fff', border: 'none',
         padding: '17px 22px', borderRadius: 12, fontSize: 15, fontWeight: 700,
         cursor: 'pointer', fontFamily: 'inherit', width: '100%',

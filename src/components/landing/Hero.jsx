@@ -22,7 +22,7 @@ export function CobHero() {
             Founders building the next thing. Together.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
-            <a href="https://app.crewofbuilders.com/login" style={{ ...cobStyles.applyBtn, padding: '18px 26px', fontSize: 15, borderRadius: 12, textDecoration: "none" }}>
+            <a href="https://app.crewofbuilders.com/signup" style={{ ...cobStyles.applyBtn, padding: '18px 26px', fontSize: 15, borderRadius: 12, textDecoration: "none" }}>
               Join the Crew <CrewIcon.Arrow s={15} />
             </a>
             <span style={{ fontSize: 13, color: 'rgba(10,10,10,0.55)' }}>Instant access after onboarding.</span>
@@ -93,7 +93,7 @@ export function CobMobHero() {
       <p style={{ fontSize: 15, lineHeight: 1.5, color: 'rgba(10,10,10,0.72)', margin: '0 0 24px' }}>
         Founders building the next thing. Together.
       </p>
-      <a href="https://app.crewofbuilders.com/login" style={{
+      <a href="https://app.crewofbuilders.com/signup" style={{
         background: CREW.orange, color: '#fff', border: 'none',
         padding: '16px 22px', borderRadius: 12, fontSize: 15, fontWeight: 600,
         cursor: 'pointer', fontFamily: 'inherit', width: '100%',

@@ -20,7 +20,7 @@ export function CobTopBar() {
           Powered by WE Heart Impact
         </span>
       </div>
-      <a href="https://app.crewofbuilders.com/login" style={{ ...cobStyles.applyBtn, textDecoration: "none" }}>
+      <a href="https://app.crewofbuilders.com/signup" style={{ ...cobStyles.applyBtn, textDecoration: "none" }}>
         Join the Crew <CrewIcon.Arrow s={14} />
       </a>
     </div>
@@ -45,7 +45,7 @@ export function CobMobTopBar() {
           Powered by WE Heart Impact
         </span>
       </div>
-      <a href="https://app.crewofbuilders.com/login" style={{
+      <a href="https://app.crewofbuilders.com/signup" style={{
         background: CREW.ink, color: CREW.orange, border: 'none',
         padding: '9px 16px', borderRadius: 8, fontSize: 12, fontWeight: 600,
         cursor: 'pointer', fontFamily: 'inherit',

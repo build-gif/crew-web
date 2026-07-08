@@ -21,7 +21,7 @@ export function CobFooter() {
           <div>
             <div style={{ ...cobStyles.kicker, color: 'rgba(245,239,230,0.4)', marginBottom: 14 }}>Join</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: 14 }}>
-              <a href="https://app.crewofbuilders.com/login" style={{ color: 'inherit', textDecoration: 'none' }}>Join the Crew</a>
+              <a href="https://app.crewofbuilders.com/signup" style={{ color: 'inherit', textDecoration: 'none' }}>Join the Crew</a>
             </div>
           </div>
           <div>
@@ -58,7 +58,7 @@ export function CobMobFooter() {
         <div>
           <div style={{ ...mobStyles.kicker, color: 'rgba(245,239,230,0.4)', marginBottom: 10 }}>Join</div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 13 }}>
-            <a href="https://app.crewofbuilders.com/login" style={{ color: 'inherit', textDecoration: 'none' }}>Join the Crew</a>
+            <a href="https://app.crewofbuilders.com/signup" style={{ color: 'inherit', textDecoration: 'none' }}>Join the Crew</a>
           </div>
         </div>
         <div>
