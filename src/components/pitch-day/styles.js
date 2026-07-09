@@ -20,7 +20,7 @@ export const PITCH_DAY_STYLES = `
   .pitch-day a { color: inherit; text-decoration: none; }
   .pitch-day h1, .pitch-day h2, .pitch-day h3 { font-family: var(--font-sans); font-weight: 700; margin: 0; }
 
-  .pd-wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .pd-wrap { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
   .pd-kicker {
     font-family: var(--font-mono); font-size: 11px; font-weight: 600;
     letter-spacing: 0.18em; text-transform: uppercase; color: ${CREW.orange};
@@ -34,7 +34,7 @@ export const PITCH_DAY_STYLES = `
   }
   .pd-btn:hover { background: ${CREW.orangeDark}; }
   .pd-btn svg { display: block; }
-  .pd-btn-ghost { background: transparent; color: ${CREW.ink}; border: 1.5px solid ${CREW.ink}; }
+  .pd-btn-ghost { background: transparent; color: ${CREW.ink}; border: 2px solid ${CREW.ink}; }
   .pd-btn-ghost:hover { background: ${CREW.ink}; color: ${CREW.cream}; }
 
   /* Top bar */
@@ -52,8 +52,8 @@ export const PITCH_DAY_STYLES = `
   .pd-btn-sm { padding: 11px 18px; font-size: 13px; }
 
   /* Hero */
-  .pd-hero { padding: 120px 0 132px; }
-  .pd-hero .pd-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .pd-hero { padding: 56px 0 48px; }
+  .pd-hero .pd-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 38px; align-items: center; }
   .pd-hero .pd-eyebrow { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
   .pd-hero .pd-eyebrow .pd-ff {
     font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em;
@@ -72,15 +72,15 @@ export const PITCH_DAY_STYLES = `
     transform: rotate(-5deg); transform-origin: center; border-radius: 3px;
   }
   .pd-hero .pd-eyebrow .pd-dd .pd-new { color: ${CREW.orange}; }
-  .pd-hero h1 { font-size: clamp(40px, 4.4vw, 68px); line-height: 0.98; letter-spacing: -0.035em; }
+  .pd-hero h1 { font-size: clamp(52px, 6vw, 96px); line-height: 0.98; letter-spacing: -0.035em; }
   .pd-hero h1 .pd-o { color: ${CREW.orange}; display: block; }
   .pd-hero h1 .pd-l1 { display: block; }
-  .pd-hero .pd-cta-row { display: flex; align-items: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+  .pd-hero .pd-cta-row { display: flex; align-items: center; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
 
   /* Save-the-date card */
   .pd-save-card {
     background: ${CREW.ink}; color: ${CREW.cream};
-    border-radius: 22px; padding: 30px 32px 28px; position: relative; overflow: hidden;
+    border-radius: 22px; padding: 34px 36px 32px; position: relative; overflow: hidden;
   }
   .pd-save-card::after {
     content: ""; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px;
@@ -96,10 +96,10 @@ export const PITCH_DAY_STYLES = `
   @keyframes pd-scpulse { 0% { box-shadow: 0 0 0 0 rgba(255,90,31,0.55); } 70% { box-shadow: 0 0 0 9px rgba(255,90,31,0); } 100% { box-shadow: 0 0 0 0 rgba(255,90,31,0); } }
   .pd-save-card .pd-sc-day { position: relative; z-index: 2; display: flex; align-items: baseline; gap: 14px; margin: 22px 0 26px; }
   .pd-save-card .pd-sc-day .pd-d { font-family: var(--font-sans); font-weight: 700; font-size: clamp(96px, 11vw, 148px); line-height: 0.82; letter-spacing: -0.05em; color: ${CREW.orange}; }
-  .pd-save-card .pd-sc-day .pd-mo { font-family: var(--font-sans); font-weight: 700; font-size: 24px; letter-spacing: -0.02em; }
+  .pd-save-card .pd-sc-day .pd-mo { font-family: var(--font-sans); font-weight: 700; font-size: 26px; letter-spacing: -0.02em; }
   .pd-save-card .pd-sc-meta { position: relative; z-index: 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 22px; border-top: 1px solid ${cream(0.14)}; }
   .pd-save-card .pd-sc-meta .pd-l { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: ${cream(0.65)}; margin-bottom: 7px; }
-  .pd-save-card .pd-sc-meta .pd-v { font-family: var(--font-sans); font-weight: 700; font-size: 17px; letter-spacing: -0.02em; }
+  .pd-save-card .pd-sc-meta .pd-v { font-family: var(--font-sans); font-weight: 700; font-size: 19px; letter-spacing: -0.02em; }
   .pd-save-card .pd-sc-meta .pd-v .pd-tz { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: ${cream(0.65)}; letter-spacing: 0.06em; margin-left: 2px; }
   .pd-save-card .pd-sc-host { position: relative; z-index: 2; display: flex; align-items: center; gap: 12px; margin-top: 24px; padding-top: 22px; border-top: 1px solid ${cream(0.14)}; }
   .pd-save-card .pd-sc-host img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; }
@@ -107,16 +107,16 @@ export const PITCH_DAY_STYLES = `
   .pd-save-card .pd-sc-host .pd-n { font-family: var(--font-sans); font-weight: 700; font-size: 16px; letter-spacing: -0.02em; color: ${CREW.cream}; }
 
   /* Section scaffold */
-  .pd-section { padding: 104px 0; }
-  .pd-section .pd-head { max-width: 780px; margin-bottom: 52px; }
-  .pd-section h2 { font-size: clamp(30px, 3.6vw, 52px); line-height: 0.98; letter-spacing: -0.03em; margin: 16px 0 0; }
+  .pd-section { padding: 80px 0; }
+  .pd-section .pd-head { max-width: 780px; margin-bottom: 40px; }
+  .pd-section h2 { font-size: clamp(32px, 4vw, 56px); line-height: 0.98; letter-spacing: -0.03em; margin: 16px 0 0; }
   .pd-section .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${ink(0.72)}; margin: 18px 0 0; max-width: 720px; }
 
   /* VC logos */
   .pd-logo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
   .pd-logo-cell {
     position: relative; aspect-ratio: 3 / 2;
-    background: ${surface}; border: 1px solid ${CREW.line};
+    background: #FFFFFF; border: 1px solid ${CREW.line};
     border-radius: 14px; overflow: hidden;
     transition: border-color 140ms ease, transform 140ms ease;
   }
@@ -154,9 +154,9 @@ export const PITCH_DAY_STYLES = `
   .pd-stakes::before { content: ""; position: absolute; right: -150px; top: -90px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(255,90,31,0.28) 0%, rgba(255,90,31,0) 64%); pointer-events: none; }
   .pd-stakes::after { content: ""; position: absolute; right: 160px; bottom: -180px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,90,31,0.12) 0%, rgba(255,90,31,0) 68%); pointer-events: none; }
   .pd-stakes .pd-wrap { position: relative; z-index: 1; }
-  .pd-stakes .pd-inner { padding: 96px 0; }
+  .pd-stakes .pd-inner { padding: 72px 0; }
   .pd-stakes .pd-kicker { color: ${CREW.orange}; }
-  .pd-stakes h2 { font-size: clamp(32px, 3.6vw, 54px); line-height: 0.98; letter-spacing: -0.035em; margin: 16px 0 0; }
+  .pd-stakes h2 { font-size: clamp(34px, 4vw, 58px); line-height: 0.98; letter-spacing: -0.035em; margin: 16px 0 0; }
   .pd-stakes .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${cream(0.65)}; margin: 20px 0 0; max-width: 760px; }
   .pd-stakes .pd-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
   .pd-stakes .pd-col { border: 1px solid ${cream(0.14)}; border-radius: 16px; padding: 32px 28px; }
@@ -170,7 +170,7 @@ export const PITCH_DAY_STYLES = `
   .pd-stakes .pd-stakes-cta b { color: ${CREW.cream}; font-weight: 600; }
 
   /* Final CTA */
-  .pd-final { background: ${CREW.ink}; color: ${CREW.cream}; padding: 120px 0 128px; }
+  .pd-final { background: ${CREW.ink}; color: ${CREW.cream}; padding: 96px 0 104px; }
   .pd-final .pd-commit { max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
   .pd-final .pd-commit-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: ${CREW.orange}; }
   .pd-final h2 { font-size: clamp(52px, 8vw, 116px); line-height: 0.88; letter-spacing: -0.04em; margin-top: 22px; }
@@ -200,8 +200,8 @@ export const PITCH_DAY_STYLES = `
   .pd-footer .pd-base { display: flex; justify-content: space-between; padding-top: 22px; font-family: var(--font-mono); font-size: 11.5px; color: ${cream(0.65)}; flex-wrap: wrap; gap: 8px; letter-spacing: 0.04em; }
 
   @media (max-width: 900px) {
-    .pd-hero .pd-grid { grid-template-columns: 1fr; gap: 40px; }
-    .pd-hero h1 { font-size: clamp(48px, 12vw, 76px); }
+    .pd-hero .pd-grid { grid-template-columns: 1fr; gap: 32px; }
+    .pd-hero h1 { font-size: clamp(48px, 11vw, 80px); }
     .pd-stakes .pd-cols { grid-template-columns: 1fr; }
     .pd-logo-grid { grid-template-columns: repeat(3, 1fr); }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -212,7 +212,7 @@ export const PITCH_DAY_STYLES = `
     .pd-topbar { padding: 12px 20px; }
     .pd-topbar .pd-brand .pd-name { font-size: 17px; }
     .pd-btn-sm { padding: 10px 15px; font-size: 12px; }
-    .pd-hero { padding: 54px 0 64px; }
+    .pd-hero { padding: 40px 0 36px; }
     .pd-hero .pd-grid { gap: 32px; }
     .pd-hero h1 { font-size: clamp(38px, 10vw, 58px); }
     .pd-hero .pd-cta-row { gap: 10px; }
@@ -224,7 +224,7 @@ export const PITCH_DAY_STYLES = `
     .pd-stakes h2, .pd-section h2 { font-size: clamp(28px, 8vw, 42px); }
     .pd-stakes .pd-stakes-cta { flex-direction: column; align-items: stretch; gap: 16px; }
     .pd-stakes .pd-stakes-cta .pd-btn { width: 100%; justify-content: center; }
-    .pd-section { padding: 64px 0; }
+    .pd-section { padding: 56px 0; }
     .pd-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); }
     .pd-final { padding: 76px 0; }

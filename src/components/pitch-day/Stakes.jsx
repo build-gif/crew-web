@@ -17,11 +17,11 @@ export function PitchDayStakes() {
               <div className="pd-d"><b>Startups pitch live.</b> Handpicked from across the Crew.</div>
             </div>
             <div className="pd-col">
-              <div className="pd-num">10<span className="pd-u">min</span></div>
+              <div className="pd-num"><span className="pd-o">10</span><span className="pd-u">min</span></div>
               <div className="pd-d"><b>Each.</b> Ten focused minutes to pitch, live on stage.</div>
             </div>
             <div className="pd-col">
-              <div className="pd-num">1:1</div>
+              <div className="pd-num"><span className="pd-o">1:1</span></div>
               <div className="pd-d"><b>Warm intros.</b> Every investor in the room, one intro away.</div>
             </div>
           </div>
