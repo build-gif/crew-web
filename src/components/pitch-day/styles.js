@@ -52,7 +52,7 @@ export const PITCH_DAY_STYLES = `
   .pd-btn-sm { padding: 11px 18px; font-size: 13px; }
 
   /* Hero */
-  .pd-hero { padding: 56px 0 48px; }
+  .pd-hero { padding: 64px 0 96px; }
   .pd-hero .pd-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 38px; align-items: center; }
   .pd-hero .pd-eyebrow { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
   .pd-hero .pd-eyebrow .pd-ff {
@@ -107,7 +107,7 @@ export const PITCH_DAY_STYLES = `
   .pd-save-card .pd-sc-host .pd-n { font-family: var(--font-sans); font-weight: 700; font-size: 16px; letter-spacing: -0.02em; color: ${CREW.cream}; }
 
   /* Section scaffold */
-  .pd-section { padding: 80px 0; }
+  .pd-section { padding: 92px 0; }
   .pd-section .pd-head { max-width: 780px; margin-bottom: 40px; }
   .pd-section h2 { font-size: clamp(32px, 4vw, 56px); line-height: 0.98; letter-spacing: -0.03em; margin: 16px 0 0; }
   .pd-section .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${ink(0.72)}; margin: 18px 0 0; max-width: 720px; }
@@ -158,7 +158,7 @@ export const PITCH_DAY_STYLES = `
   .pd-stakes::before { content: ""; position: absolute; right: -150px; top: -90px; width: 540px; height: 540px; background: radial-gradient(circle, rgba(255,90,31,0.28) 0%, rgba(255,90,31,0) 64%); pointer-events: none; }
   .pd-stakes::after { content: ""; position: absolute; right: 160px; bottom: -180px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,90,31,0.12) 0%, rgba(255,90,31,0) 68%); pointer-events: none; }
   .pd-stakes .pd-wrap { position: relative; z-index: 1; }
-  .pd-stakes .pd-inner { padding: 72px 0; }
+  .pd-stakes .pd-inner { padding: 80px 0; }
   .pd-stakes .pd-kicker { color: ${CREW.orange}; }
   .pd-stakes h2 { font-size: clamp(34px, 4vw, 58px); line-height: 0.98; letter-spacing: -0.035em; margin: 16px 0 0; }
   .pd-stakes .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${cream(0.65)}; margin: 20px 0 0; max-width: 760px; }
@@ -174,7 +174,7 @@ export const PITCH_DAY_STYLES = `
   .pd-stakes .pd-stakes-cta b { color: ${CREW.cream}; font-weight: 600; }
 
   /* Final CTA */
-  .pd-final { background: ${CREW.ink}; color: ${CREW.cream}; padding: 96px 0 104px; }
+  .pd-final { background: ${CREW.ink}; color: ${CREW.cream}; padding: 104px 0 112px; }
   .pd-final .pd-commit { max-width: 720px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
   .pd-final .pd-commit-eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: ${CREW.orange}; }
   .pd-final h2 { font-size: clamp(52px, 8vw, 116px); line-height: 0.88; letter-spacing: -0.04em; margin-top: 22px; }
@@ -216,7 +216,7 @@ export const PITCH_DAY_STYLES = `
     .pd-topbar { padding: 12px 20px; }
     .pd-topbar .pd-brand .pd-name { font-size: 17px; }
     .pd-btn-sm { padding: 10px 15px; font-size: 12px; }
-    .pd-hero { padding: 40px 0 36px; }
+    .pd-hero { padding: 44px 0 64px; }
     .pd-hero .pd-grid { gap: 32px; }
     .pd-hero h1 { font-size: clamp(38px, 10vw, 58px); }
     .pd-hero .pd-cta-row { gap: 10px; }
@@ -224,11 +224,11 @@ export const PITCH_DAY_STYLES = `
     .pd-save-card { padding: 26px 24px 24px; }
     .pd-save-card .pd-sc-day { margin: 18px 0 22px; }
     .pd-save-card .pd-sc-day .pd-d { font-size: 84px; }
-    .pd-stakes .pd-inner { padding: 64px 0; }
+    .pd-stakes .pd-inner { padding: 72px 0; }
     .pd-stakes h2, .pd-section h2 { font-size: clamp(28px, 8vw, 42px); }
     .pd-stakes .pd-stakes-cta { flex-direction: column; align-items: stretch; gap: 16px; }
     .pd-stakes .pd-stakes-cta .pd-btn { width: 100%; justify-content: center; }
-    .pd-section { padding: 56px 0; }
+    .pd-section { padding: 64px 0; }
     .pd-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); }
     .pd-final { padding: 76px 0; }
