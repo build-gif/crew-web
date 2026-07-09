@@ -2,7 +2,7 @@
 
 const VC_LOGOS = [
   { name: "Valutia", file: "vc-valutia.png" },
-  { name: "Verve Capital", file: "vc-verve.png" },
+  { name: "Verve Capital", file: "vc-verve.png", dark: true },
   { name: "Norte", file: "vc-norte.png" },
   { name: "Kfund", file: "vc-kfund.png" },
   { name: "Strive", file: "vc-strive.png" },
@@ -19,7 +19,7 @@ export function PitchDayInvestors() {
         </div>
         <div className="pd-logo-grid">
           {VC_LOGOS.map((vc) => (
-            <div className="pd-logo-cell" key={vc.file}>
+            <div className={`pd-logo-cell${vc.dark ? " pd-logo-cell-dark" : ""}`} key={vc.file}>
               <img src={`/assets/${vc.file}`} alt={vc.name} />
             </div>
           ))}

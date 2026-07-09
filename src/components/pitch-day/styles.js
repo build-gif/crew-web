@@ -121,7 +121,10 @@ export const PITCH_DAY_STYLES = `
     transition: border-color 140ms ease, transform 140ms ease;
   }
   .pd-logo-cell:hover { border-color: ${CREW.ink}; transform: translateY(-2px); }
+  .pd-logo-cell-dark { background: ${CREW.ink}; border-color: ${CREW.ink}; }
+  .pd-logo-cell-dark:hover { border-color: ${CREW.orange}; }
   .pd-logo-cell img { width: 100%; height: 100%; object-fit: contain; padding: 26px; }
+  .pd-logo-cell-dark img { padding: 22px 28px; }
 
   /* Line-up (mystery cards) */
   .pd-lineup { background: ${surface}; border-top: 1px solid ${CREW.line}; border-bottom: 1px solid ${CREW.line}; }

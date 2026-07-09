@@ -14,7 +14,7 @@ export function PitchDayFinalCTA() {
       <div className="pd-wrap">
         <div className="pd-commit">
           <div className="pd-commit-eyebrow">Pitch Day · 29 July 2026</div>
-          <h2>Grab a seat<br />in the <span className="pd-o">room.</span></h2>
+          <h2>Be in the room.<br />There's <span className="pd-o">no replay.</span></h2>
           <div className="pd-commit-facts">
             <span><b>29 Jul</b> Wed</span>
             <span className="pd-dot">·</span>
