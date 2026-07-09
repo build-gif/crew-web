@@ -125,6 +125,7 @@ export const PITCH_DAY_STYLES = `
   .pd-logo-cell-dark:hover { border-color: ${CREW.orange}; }
   .pd-logo-cell img { width: 100%; height: 100%; object-fit: contain; padding: 26px; }
   .pd-logo-cell-dark img { padding: 22px 28px; }
+  .pd-logo-cell-icon img { padding: 34px; object-fit: contain; }
 
   /* Line-up (mystery cards) */
   .pd-lineup { background: ${surface}; border-top: 1px solid ${CREW.line}; border-bottom: 1px solid ${CREW.line}; }
