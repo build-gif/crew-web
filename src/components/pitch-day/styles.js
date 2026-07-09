@@ -130,6 +130,7 @@ export const PITCH_DAY_STYLES = `
 
   /* Line-up (mystery cards) */
   .pd-lineup { background: ${surface}; border-top: 1px solid ${CREW.line}; border-bottom: 1px solid ${CREW.line}; }
+  .pd-lineup h2 { white-space: nowrap; }
   .pd-lineup .pd-head .pd-reveal-tag {
     display: inline-flex; align-items: center; gap: 9px; margin-top: 22px;
     font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em;
@@ -240,6 +241,7 @@ export const PITCH_DAY_STYLES = `
     .pd-save-card .pd-sc-host { margin-top: 18px; padding-top: 18px; }
     .pd-stakes .pd-inner { padding: 64px 0; }
     .pd-stakes h2, .pd-section h2 { font-size: clamp(28px, 8vw, 40px); }
+    .pd-lineup h2 { white-space: normal; }
     .pd-stakes .pd-col { padding: 24px 20px; }
     .pd-stakes .pd-stakes-cta { flex-direction: column; align-items: stretch; gap: 16px; }
     .pd-stakes .pd-stakes-cta .pd-btn { width: 100%; justify-content: center; }
