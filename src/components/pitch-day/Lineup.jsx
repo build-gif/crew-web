@@ -8,7 +8,7 @@ export function PitchDayLineup() {
       <div className="pd-wrap">
         <div className="pd-head">
           <div className="pd-kicker">The line-up</div>
-          <h2>You&apos;ll want to <span className="pd-o">meet these five.</span></h2>
+          <h2>Top Entrepreneurs <span className="pd-o">from the Crew</span></h2>
           <p className="pd-h-sub">Still being handpicked by WE Heart, one by one. We announce all five on 22 July.</p>
           <div className="pd-reveal-tag">
             <span className="pd-badge">Live</span> Selection in progress
