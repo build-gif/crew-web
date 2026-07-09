@@ -1,5 +1,7 @@
 "use client";
 
+import { PITCH_DAY_APPLY_URL, PITCH_DAY_EVENT_URL } from "@/components/pitch-day/links";
+
 const PROOF_PHOTOS = [
   "/assets/daniel-silva.png",
   "/assets/builders/gabriel-ribeiro.png",
@@ -23,8 +25,8 @@ export function PitchDayFinalCTA() {
             <span><b>Live</b> online</span>
           </div>
           <div className="pd-cta-row">
-            <a className="pd-btn pd-btn-lg" href="/">Save your spot →</a>
-            <a className="pd-btn pd-btn-ghost pd-btn-lg" href="/apply">Apply to pitch</a>
+            <a className="pd-btn pd-btn-lg" href={PITCH_DAY_EVENT_URL}>Save your spot →</a>
+            <a className="pd-btn pd-btn-ghost pd-btn-lg" href={PITCH_DAY_APPLY_URL}>Apply to pitch</a>
           </div>
           <div className="pd-commit-note">Free · Online · No recording</div>
           <div className="pd-commit-proof">

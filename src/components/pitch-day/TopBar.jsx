@@ -1,5 +1,6 @@
 "use client";
 import { CrewIcon } from "@/components/ui/crew-shared";
+import { PITCH_DAY_EVENT_URL } from "@/components/pitch-day/links";
 
 export function PitchDayTopBar() {
   return (
@@ -8,7 +9,7 @@ export function PitchDayTopBar() {
         <span className="pd-name">Crew of Builders</span>
         <span className="pd-powered">Powered by WE Heart Impact</span>
       </div>
-      <a className="pd-btn pd-btn-sm" href="/">
+      <a className="pd-btn pd-btn-sm" href={PITCH_DAY_EVENT_URL}>
         <span className="pd-btn-label-full">Save your spot</span>
         <span className="pd-btn-label-short">Save spot</span>
         <CrewIcon.Arrow s={13} />

@@ -1,5 +1,6 @@
 "use client";
 import { CrewIcon } from "@/components/ui/crew-shared";
+import { PITCH_DAY_APPLY_URL, PITCH_DAY_EVENT_URL } from "@/components/pitch-day/links";
 
 export function PitchDayHero() {
   return (
@@ -19,11 +20,11 @@ export function PitchDayHero() {
               <span className="pd-o">A room full of investors.</span>
             </h1>
             <div className="pd-cta-row">
-              <a className="pd-btn" href="/">
+              <a className="pd-btn" href={PITCH_DAY_EVENT_URL}>
                 Save your spot
                 <CrewIcon.Arrow s={15} />
               </a>
-              <a className="pd-btn pd-btn-ghost" href="/apply">
+              <a className="pd-btn pd-btn-ghost" href={PITCH_DAY_APPLY_URL}>
                 Apply to pitch
               </a>
             </div>

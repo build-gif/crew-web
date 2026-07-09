@@ -1,5 +1,6 @@
 "use client";
 import { CrewIcon } from "@/components/ui/crew-shared";
+import { PITCH_DAY_APPLY_URL } from "@/components/pitch-day/links";
 
 export function PitchDayStakes() {
   return (
@@ -27,7 +28,7 @@ export function PitchDayStakes() {
           </div>
           <div className="pd-stakes-cta">
             <span>Building something? <b>Applications are open until 20 July.</b></span>
-            <a className="pd-btn" href="/apply">
+            <a className="pd-btn" href={PITCH_DAY_APPLY_URL}>
               Apply to pitch
               <CrewIcon.Arrow s={15} />
             </a>
