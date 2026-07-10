@@ -23,6 +23,12 @@ export function PitchDayInvestors() {
               <img src={`/assets/${vc.file}`} alt={vc.name} />
             </div>
           ))}
+          <div className="pd-logo-cell pd-logo-cell-text" key="angels">
+            <span className="pd-logo-text">
+              <strong>20+</strong>
+              angels
+            </span>
+          </div>
         </div>
       </div>
     </section>

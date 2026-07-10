@@ -114,7 +114,7 @@ export const PITCH_DAY_STYLES = `
   .pd-section .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${ink(0.72)}; margin: 18px 0 0; max-width: 720px; }
 
   /* VC logos */
-  .pd-logo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .pd-logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
   .pd-logo-cell {
     position: relative; aspect-ratio: 3 / 2;
     background: #FFFFFF; border: 1px solid ${CREW.line};
@@ -127,6 +127,20 @@ export const PITCH_DAY_STYLES = `
   .pd-logo-cell img { width: 100%; height: 100%; object-fit: contain; padding: 26px; }
   .pd-logo-cell-dark img { padding: 22px 28px; }
   .pd-logo-cell-icon img { padding: 34px; object-fit: contain; }
+  .pd-logo-cell-text {
+    display: flex; align-items: center; justify-content: center;
+    padding: 16px;
+  }
+  .pd-logo-cell-text .pd-logo-text {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; line-height: 1.05;
+    font-family: var(--font-sans); font-weight: 500; font-size: clamp(15px, 1.25vw, 18px);
+    letter-spacing: -0.01em; color: ${CREW.ink}; text-transform: lowercase;
+  }
+  .pd-logo-cell-text .pd-logo-text strong {
+    font-weight: 700; font-size: clamp(26px, 2.3vw, 34px); letter-spacing: -0.03em;
+    color: ${CREW.orange}; line-height: 1;
+  }
 
   /* Line-up (mystery cards) */
   .pd-lineup { background: ${surface}; border-top: 1px solid ${CREW.line}; border-bottom: 1px solid ${CREW.line}; }
@@ -152,7 +166,12 @@ export const PITCH_DAY_STYLES = `
     pointer-events: none;
   }
   .pd-mystery .pd-num { position: relative; z-index: 2; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: ${cream(0.65)}; }
-  .pd-mystery .pd-q { position: relative; z-index: 2; font-family: var(--font-sans); font-weight: 700; font-size: clamp(46px, 4vw, 68px); line-height: 1; color: ${CREW.orange}; }
+  .pd-mystery .pd-q {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-sans); font-weight: 700;
+    font-size: clamp(75px, 7vw, 113px); line-height: 1; color: ${CREW.orange};
+  }
   .pd-mystery .pd-status { position: relative; z-index: 2; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: ${cream(0.65)}; }
 
   /* Stakes (format band) */
@@ -255,7 +274,7 @@ export const PITCH_DAY_STYLES = `
     .pd-lineup .pd-head .pd-reveal-tag { font-size: 11px; padding: 7px 12px 7px 9px; }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .pd-mystery { padding: 16px; border-radius: 14px; }
-    .pd-mystery .pd-q { font-size: clamp(40px, 12vw, 56px); }
+    .pd-mystery .pd-q { font-size: clamp(66px, 18.7vw, 95px); }
     .pd-final { padding: 64px 0 72px; }
     .pd-final h2 { font-size: clamp(34px, 9.5vw, 48px); line-height: 0.95; }
     .pd-final .pd-commit-facts { gap: 8px 12px; font-size: 12px; margin-top: 22px; }
