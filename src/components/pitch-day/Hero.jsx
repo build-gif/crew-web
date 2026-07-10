@@ -21,7 +21,7 @@ export function PitchDayHero() {
             </h1>
             <div className="pd-cta-row">
               <a className="pd-btn" href={PITCH_DAY_EVENT_URL}>
-                Save your spot
+                Join as investor
                 <CrewIcon.Arrow s={15} />
               </a>
               <a className="pd-btn pd-btn-ghost" href={PITCH_DAY_APPLY_URL}>

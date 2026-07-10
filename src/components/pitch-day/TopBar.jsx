@@ -10,8 +10,8 @@ export function PitchDayTopBar() {
         <span className="pd-powered">Powered by WE Heart Impact</span>
       </div>
       <a className="pd-btn pd-btn-sm" href={PITCH_DAY_EVENT_URL}>
-        <span className="pd-btn-label-full">Save your spot</span>
-        <span className="pd-btn-label-short">Save spot</span>
+        <span className="pd-btn-label-full">Join as investor</span>
+        <span className="pd-btn-label-short">Join</span>
         <CrewIcon.Arrow s={13} />
       </a>
     </div>

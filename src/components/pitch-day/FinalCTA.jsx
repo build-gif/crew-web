@@ -25,7 +25,7 @@ export function PitchDayFinalCTA() {
             <span><b>Live</b> online</span>
           </div>
           <div className="pd-cta-row">
-            <a className="pd-btn pd-btn-lg" href={PITCH_DAY_EVENT_URL}>Save your spot →</a>
+            <a className="pd-btn pd-btn-lg" href={PITCH_DAY_EVENT_URL}>Join as investor →</a>
             <a className="pd-btn pd-btn-ghost pd-btn-lg" href={PITCH_DAY_APPLY_URL}>Apply to pitch</a>
           </div>
           <div className="pd-commit-note">Free · Online · No recording</div>
