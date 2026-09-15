@@ -1,6 +1,7 @@
 "use client";
 
 const VC_LOGOS = [
+  { name: "Astella", file: "vc-astella.png", wide: true },
   { name: "Valutia", file: "vc-valutia.png" },
   { name: "Verve Capital", file: "vc-verve.png", icon: true },
   { name: "Norte", file: "vc-norte.png" },
@@ -15,7 +16,6 @@ const CREW_FUNDS = [
   "Alexia Ventures",
   "Alter Global",
   "Angels Way",
-  "Astella",
   "Canary",
   "Canastra Ventures",
   "Caravela Capital",
@@ -40,13 +40,13 @@ export function PitchDayInvestors() {
         </div>
         <div className="pd-logo-grid">
           {VC_LOGOS.map((vc) => (
-            <div className={`pd-logo-cell${vc.icon ? " pd-logo-cell-icon" : ""}${vc.dark ? " pd-logo-cell-dark" : ""}`} key={vc.file}>
+            <div className={`pd-logo-cell${vc.icon ? " pd-logo-cell-icon" : ""}${vc.dark ? " pd-logo-cell-dark" : ""}${vc.wide ? " pd-logo-cell-wide" : ""}`} key={vc.file}>
               <img src={`/assets/${vc.file}`} alt={vc.name} />
             </div>
           ))}
           <div className="pd-logo-cell pd-logo-cell-text" key="angels">
             <span className="pd-logo-text">
-              <strong>25+</strong>
+              <strong>50+</strong>
               angels
             </span>
           </div>

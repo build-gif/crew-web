@@ -114,7 +114,7 @@ export const PITCH_DAY_STYLES = `
   .pd-section .pd-h-sub { font-size: 17px; line-height: 1.55; color: ${ink(0.72)}; margin: 18px 0 0; max-width: 720px; }
 
   /* VC logos */
-  .pd-logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+  .pd-logo-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; }
   .pd-logo-cell {
     position: relative; aspect-ratio: 3 / 2;
     background: #FFFFFF; border: 1px solid ${CREW.line};
@@ -127,6 +127,7 @@ export const PITCH_DAY_STYLES = `
   .pd-logo-cell img { width: 100%; height: 100%; object-fit: contain; padding: 26px; }
   .pd-logo-cell-dark img { padding: 22px 28px; }
   .pd-logo-cell-icon img { padding: 34px; object-fit: contain; }
+  .pd-logo-cell-wide img { padding: 12px 10px; }
   .pd-logo-cell-text {
     display: flex; align-items: center; justify-content: center;
     padding: 16px;
@@ -288,7 +289,7 @@ export const PITCH_DAY_STYLES = `
     .pd-section { padding: 80px 0; }
     .pd-stakes .pd-inner { padding: 76px 0; }
     .pd-stakes .pd-cols { grid-template-columns: 1fr; }
-    .pd-logo-grid { grid-template-columns: repeat(3, 1fr); }
+    .pd-logo-grid { grid-template-columns: repeat(4, 1fr); }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); }
     .pd-slide { grid-template-columns: 1fr; }
     .pd-slide-founder { min-height: 300px; }
@@ -329,6 +330,7 @@ export const PITCH_DAY_STYLES = `
     .pd-logo-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .pd-logo-cell img { padding: 18px; }
     .pd-logo-cell-icon img { padding: 22px; }
+    .pd-logo-cell-wide img { padding: 12px 10px; }
     .pd-logo-cell:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 5px); margin: 0 auto; }
     .pd-lineup .pd-head .pd-reveal-tag { font-size: 11px; padding: 7px 12px 7px 9px; }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
