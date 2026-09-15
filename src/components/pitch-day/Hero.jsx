@@ -11,6 +11,7 @@ export function PitchDayHero() {
             <div className="pd-eyebrow">
               <span className="pd-ff">Online · 29 Oct</span>
               <span className="pd-dd">
+                <s className="pd-old">Demo Day</s>
                 <span className="pd-new">Pitch Day #2</span>
               </span>
             </div>
