@@ -9,8 +9,8 @@ const VC_LOGOS = [
 ];
 
 // Funds with investors in the Crew (profiles.investor_fund, Sep 2026). They are
-// invited as members; none of them confirmed attendance, so the copy says
-// "invited", never "joining".
+// members, not confirmed attendees, so the copy says "part of the Crew", never
+// "joining".
 const CREW_FUNDS = [
   "Alexia Ventures",
   "Alter Global",
@@ -35,8 +35,8 @@ export function PitchDayInvestors() {
       <div className="pd-wrap">
         <div className="pd-head">
           <div className="pd-kicker">In the room</div>
-          <h2>Investors from the Crew, <span className="pd-o">invited to Pitch Day #2.</span></h2>
-          <p className="pd-h-sub">Funds and angels who are part of the Crew, watching the pitches right alongside the builders.</p>
+          <h2>Investors who are part of <span className="pd-o">the Crew.</span></h2>
+          <p className="pd-h-sub">Funds and angels who are members of the Crew, right alongside the builders.</p>
         </div>
         <div className="pd-logo-grid">
           {VC_LOGOS.map((vc) => (
