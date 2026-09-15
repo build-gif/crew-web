@@ -5,6 +5,7 @@ import { PitchDayTopBar } from "@/components/pitch-day/TopBar";
 import { PitchDayHero } from "@/components/pitch-day/Hero";
 import { PitchDayStakes } from "@/components/pitch-day/Stakes";
 import { PitchDayLineup } from "@/components/pitch-day/Lineup";
+import { PitchDayPastLineup } from "@/components/pitch-day/PastLineup";
 import { PitchDayInvestors } from "@/components/pitch-day/Investors";
 import { PitchDayFinalCTA } from "@/components/pitch-day/FinalCTA";
 import { PitchDayFooter } from "@/components/pitch-day/Footer";
@@ -17,6 +18,7 @@ export default function PitchDayPage() {
       <PitchDayHero />
       <PitchDayStakes />
       <PitchDayLineup />
+      <PitchDayPastLineup />
       <PitchDayInvestors />
       <PitchDayFinalCTA />
       <PitchDayFooter />

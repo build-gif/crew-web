@@ -1,5 +1,5 @@
 export const PITCH_DAY_EVENT_URL =
-  "https://app.crewofbuilders.com/events/pitch-day-1-1235";
+  "https://app.crewofbuilders.com/events/pitch-day-2-2910";
 
 export const PITCH_DAY_APPLY_URL =
-  "https://app.crewofbuilders.com/demo-day";
+  "https://app.crewofbuilders.com/pitch-day";

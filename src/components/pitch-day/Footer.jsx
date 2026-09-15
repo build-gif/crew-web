@@ -9,7 +9,7 @@ export function PitchDayFooter() {
             <img src="/assets/crew-wordmark.svg" alt="Crew of Builders" />
             <div className="pd-blurb">
               A crew of founders building in the open — sharing what we know and doing the hard parts together.
-              Pitch Day is our first time doing it live, in front of the people who can help.
+              Pitch Day is where we do it live, in front of the people who can help.
             </div>
           </div>
           <div className="pd-links">

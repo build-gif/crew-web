@@ -15,17 +15,17 @@ export function PitchDayFinalCTA() {
     <section className="pd-final">
       <div className="pd-wrap">
         <div className="pd-commit">
-          <div className="pd-commit-eyebrow">Pitch Day · 29 July 2026</div>
-          <h2>Sign up for <span className="pd-o">Pitch Day.</span></h2>
+          <div className="pd-commit-eyebrow">Pitch Day #2 · 29 October 2026</div>
+          <h2>Sign up for <span className="pd-o">Pitch Day #2.</span></h2>
           <div className="pd-commit-facts">
-            <span><b>29 Jul</b> Wed</span>
+            <span><b>29 Oct</b> Thu</span>
             <span className="pd-dot">·</span>
             <span><b>10:00am</b> BRT</span>
             <span className="pd-dot">·</span>
             <span><b>Live</b> online</span>
           </div>
           <div className="pd-cta-row">
-            <a className="pd-btn pd-btn-lg" href={PITCH_DAY_EVENT_URL}>Join as investor →</a>
+            <a className="pd-btn pd-btn-lg" href={PITCH_DAY_EVENT_URL}>Watch it live →</a>
             <a className="pd-btn pd-btn-ghost pd-btn-lg" href={PITCH_DAY_APPLY_URL}>Apply to pitch</a>
           </div>
           <div className="pd-commit-note">Free · Online · No recording</div>
@@ -35,7 +35,7 @@ export function PitchDayFinalCTA() {
                 <img src={src} alt="" key={src} />
               ))}
             </div>
-            <span><b>200+ Crew members</b> already invited.</span>
+            <span><b>500+ Crew members</b> already invited.</span>
           </div>
         </div>
       </div>

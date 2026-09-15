@@ -9,10 +9,9 @@ export function PitchDayHero() {
         <div className="pd-grid">
           <div>
             <div className="pd-eyebrow">
-              <span className="pd-ff">First ever</span>
+              <span className="pd-ff">Online · 29 Oct</span>
               <span className="pd-dd">
-                <s className="pd-old">Demo Day</s>
-                <span className="pd-new">Pitch Day</span>
+                <span className="pd-new">Pitch Day #2</span>
               </span>
             </div>
             <h1>
@@ -21,7 +20,7 @@ export function PitchDayHero() {
             </h1>
             <div className="pd-cta-row">
               <a className="pd-btn" href={PITCH_DAY_EVENT_URL}>
-                Join as investor
+                Watch it live
                 <CrewIcon.Arrow s={15} />
               </a>
               <a className="pd-btn pd-btn-ghost" href={PITCH_DAY_APPLY_URL}>
@@ -38,7 +37,7 @@ export function PitchDayHero() {
             </div>
             <div className="pd-sc-day">
               <span className="pd-d">29</span>
-              <span className="pd-mo">July 2026</span>
+              <span className="pd-mo">October 2026</span>
             </div>
             <div className="pd-sc-meta">
               <div>

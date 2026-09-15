@@ -224,6 +224,63 @@ export const PITCH_DAY_STYLES = `
   .pd-footer .pd-links a:hover { color: ${CREW.orange}; }
   .pd-footer .pd-base { display: flex; justify-content: space-between; padding-top: 22px; font-family: var(--font-mono); font-size: 11.5px; color: ${cream(0.65)}; flex-wrap: wrap; gap: 8px; letter-spacing: 0.04em; }
 
+  /* Past line-up carousel (Pitch Day #1) */
+  .pd-past-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 40px; }
+  .pd-past .pd-past-top .pd-head { margin-bottom: 0; }
+  .pd-car-ctrls { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+  .pd-car-btn {
+    display: grid; place-items: center; width: 48px; height: 48px; border-radius: 999px;
+    background: transparent; color: ${CREW.ink}; border: 2px solid ${CREW.ink}; cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+  }
+  .pd-car-btn:hover { background: ${CREW.ink}; color: ${CREW.cream}; }
+  .pd-car-prev { display: grid; transform: rotate(180deg); }
+  .pd-car-count { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: ${ink(0.55)}; min-width: 64px; text-align: center; }
+  .pd-carousel { overflow: hidden; border-radius: 22px; touch-action: pan-y; }
+  .pd-track { display: flex; transition: transform 520ms cubic-bezier(0.2, 0.7, 0.2, 1); }
+  @media (prefers-reduced-motion: reduce) { .pd-track { transition: none; } }
+  .pd-slide {
+    flex: 0 0 100%; display: grid; grid-template-columns: 1.4fr 1fr; min-height: 420px;
+    background: ${CREW.ink}; color: ${CREW.cream}; border-radius: 22px; overflow: hidden;
+  }
+  .pd-slide-main { display: flex; flex-direction: column; padding: 44px 48px; }
+  .pd-slide-brand { display: flex; align-items: center; justify-content: space-between; }
+  .pd-slide-logo {
+    display: grid; place-items: center; width: 64px; height: 64px; border-radius: 16px;
+    background: #fff; overflow: hidden;
+  }
+  .pd-slide-logo img { width: 100%; height: 100%; object-fit: contain; }
+  .pd-slide-logo-text { background: ${CREW.orange}; color: #fff; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; }
+  .pd-slide-num { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; color: ${cream(0.55)}; }
+  .pd-slide h3 { font-size: clamp(36px, 3.8vw, 56px); line-height: 1; letter-spacing: -0.035em; margin: auto 0 0; padding-top: 40px; }
+  .pd-slide-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .pd-slide-tags span {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: ${cream(0.75)}; border: 1px solid ${cream(0.22)}; border-radius: 999px; padding: 6px 11px;
+  }
+  .pd-slide-line { font-size: clamp(18px, 1.55vw, 22px); line-height: 1.4; color: ${cream(0.85)}; margin: 22px 0 0; max-width: 580px; }
+  .pd-slide-founder { position: relative; min-height: 320px; background: ${CREW.ink2}; }
+  .pd-slide-founder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .pd-slide-founder::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 45%, rgba(10,10,10,0.88) 100%);
+  }
+  .pd-slide-who { position: absolute; left: 28px; right: 28px; bottom: 24px; z-index: 2; }
+  .pd-slide-fname { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+  .pd-slide-frole { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: ${CREW.orange}; margin-top: 6px; }
+  .pd-dots { display: flex; justify-content: center; gap: 8px; margin-top: 22px; }
+  .pd-dot-btn { width: 28px; height: 4px; border-radius: 999px; border: 0; padding: 0; background: ${ink(0.18)}; cursor: pointer; transition: background 140ms ease, width 140ms ease; }
+  .pd-dot-btn.is-active { width: 44px; background: ${CREW.orange}; }
+
+  /* Funds from the Crew */
+  .pd-fund-wall { margin-top: 14px; padding: 28px; background: #FFFFFF; border: 1px solid ${CREW.line}; border-radius: 14px; }
+  .pd-fund-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: ${ink(0.5)}; margin: 0 0 16px; }
+  .pd-fund-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .pd-fund {
+    font-weight: 700; font-size: clamp(15px, 1.25vw, 18px); letter-spacing: -0.02em; color: ${CREW.ink};
+    padding: 10px 16px; border: 1px solid ${CREW.line}; border-radius: 999px; background: ${CREW.cream};
+  }
+
   @media (max-width: 900px) {
     .pd-hero { padding: 56px 0 80px; }
     .pd-hero .pd-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -233,6 +290,8 @@ export const PITCH_DAY_STYLES = `
     .pd-stakes .pd-cols { grid-template-columns: 1fr; }
     .pd-logo-grid { grid-template-columns: repeat(3, 1fr); }
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); }
+    .pd-slide { grid-template-columns: 1fr; }
+    .pd-slide-founder { min-height: 300px; }
     .pd-final { padding: 88px 0 96px; }
     .pd-final h2 { font-size: clamp(44px, 9vw, 72px); }
   }
@@ -275,6 +334,16 @@ export const PITCH_DAY_STYLES = `
     .pd-mystery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .pd-mystery { padding: 16px; border-radius: 14px; }
     .pd-mystery .pd-q { font-size: clamp(66px, 18.7vw, 95px); }
+    .pd-past-top { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+    .pd-car-btn { width: 44px; height: 44px; }
+    .pd-slide { border-radius: 18px; }
+    .pd-slide-main { padding: 26px 22px 28px; }
+    .pd-slide-logo { width: 52px; height: 52px; border-radius: 13px; }
+    .pd-slide h3 { padding-top: 28px; }
+    .pd-slide-line { font-size: 17px; margin-top: 16px; }
+    .pd-slide-founder { min-height: 260px; }
+    .pd-fund-wall { padding: 20px; }
+    .pd-fund { font-size: 14px; padding: 8px 12px; }
     .pd-final { padding: 64px 0 72px; }
     .pd-final h2 { font-size: clamp(34px, 9.5vw, 48px); line-height: 0.95; }
     .pd-final .pd-commit-facts { gap: 8px 12px; font-size: 12px; margin-top: 22px; }

@@ -27,7 +27,7 @@ export function PitchDayStakes() {
             </div>
           </div>
           <div className="pd-stakes-cta">
-            <span>Building something? <b>Applications are open until 20 July.</b></span>
+            <span>Building something? <b>Applications are open until 22 October.</b></span>
             <a className="pd-btn" href={PITCH_DAY_APPLY_URL}>
               Apply to pitch
               <CrewIcon.Arrow s={15} />
