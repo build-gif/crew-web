@@ -22,7 +22,12 @@ export const HOME_STYLES = `
     --sans: var(--home-sans), 'Inter', ui-sans-serif, system-ui, sans-serif;
     --mono: var(--home-mono), 'JetBrains Mono', ui-monospace, monospace;
     --gutter: clamp(20px, 4vw, 40px);
-    --section: clamp(96px, 11vw, 160px);
+    /* Vertical rhythm, three tiers: between sections > between blocks inside
+       a section > a block's own parts. Numbers sit closer to Welcome because
+       they are its proof, not a new topic. */
+    --section: clamp(72px, 8.4vw, 120px);
+    --block: clamp(56px, 6vw, 88px);
+    --related: clamp(48px, 5vw, 72px);
     --max: 1200px;
 
     background: var(--cream); color: var(--ink);
@@ -156,8 +161,14 @@ export const HOME_STYLES = `
   @keyframes hFloat2 { 0%, 100% { transform: translate(0, 0); } 33% { transform: translate(4px, 6px); } 66% { transform: translate(-4px, -5px); } }
 
   /* Welcome */
-  .h-welcome .h-wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 4.5vw, 64px); align-items: start; }
+  .h-welcome .h-wrap {
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: clamp(32px, 4.5vw, 64px); align-items: center;
+  }
   .h-welcome .h-wrap > * { min-width: 0; }
+  .h-welcome-text { grid-column: 1; grid-row: 1; }
+  .h-welcome-media { grid-column: 2; grid-row: 1; }
+  .h-welcome .h-video-cap { grid-column: 2; grid-row: 2; }
   .h-welcome .h-lead { margin-top: 24px; }
   .h-video { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 22px; overflow: hidden; background: var(--ink); }
   .h-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -177,7 +188,7 @@ export const HOME_STYLES = `
   }
 
   /* Numbers */
-  .h-numbers { padding: clamp(80px, 9vw, 120px) var(--gutter) 0; }
+  .h-numbers { padding: var(--related) var(--gutter) 0; }
   .h-numbers .h-wrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; }
   .h-num { border-top: 1px solid var(--line-16); padding-top: 24px; min-width: 0; }
   .h-num-value { font-family: var(--display); font-weight: 700; font-size: clamp(56px, 6vw, 72px); line-height: 0.9; letter-spacing: -0.04em; }
@@ -198,9 +209,9 @@ export const HOME_STYLES = `
   .h-label-short { display: none; }
 
   /* Inside the Crew */
-  .h-inside > .h-wrap > .h-title { margin-bottom: clamp(48px, 6vw, 80px); }
+  .h-inside > .h-wrap > .h-title { margin-bottom: clamp(40px, 4.5vw, 64px); }
   .h-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 72px; align-items: center; }
-  .h-row + .h-row { margin-top: clamp(80px, 9vw, 128px); }
+  .h-row + .h-row { margin-top: var(--block); }
   .h-row.is-reverse { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
   .h-row.is-reverse .h-row-text { order: 2; }
   .h-row-text { display: flex; flex-direction: column; max-width: 520px; min-width: 0; }
@@ -284,7 +295,9 @@ export const HOME_STYLES = `
   .h-ev-format { color: var(--orange-text); }
   .h-ev-date { color: var(--ink-55); }
   .h-ev-theme { font-family: var(--display); font-weight: 700; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.02; letter-spacing: -0.03em; margin-top: 18px; text-wrap: balance; }
-  .h-dashes { display: grid; gap: 8px; margin-top: 16px; }
+  /* Dashes keep a 10px hit area above and below; the negative margin keeps
+     that invisible padding out of the gap to the next section. */
+  .h-dashes { display: grid; gap: 8px; margin: 6px 0 -10px; }
   .h-dash { all: unset; cursor: pointer; padding: 10px 0; }
   .h-dash span { display: block; height: 3px; border-radius: 2px; background: var(--dash); transition: background 200ms ease; }
   .h-dash.is-on span { background: var(--orange); }
@@ -352,6 +365,8 @@ export const HOME_STYLES = `
   }
   @media (max-width: 899px) {
     .h-welcome .h-wrap { grid-template-columns: minmax(0, 1fr); }
+    .h-welcome-text, .h-welcome-media, .h-welcome .h-video-cap { grid-column: 1; grid-row: auto; }
+    .h-welcome-media { margin-top: clamp(32px, 4.5vw, 64px); }
   }
   @media (max-width: 767px) {
     .h-quote-grid {
