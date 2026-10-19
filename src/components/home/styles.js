@@ -123,9 +123,10 @@ export const HOME_STYLES = `
   }
   .h-rot-word.is-on { opacity: 1; transform: none; }
   .h-rot-word.is-out { opacity: 0; transform: translateY(-0.15em); }
-  .h-rot-word.is-on, .h-rot-word.is-out {
-    transition: opacity 350ms cubic-bezier(.2,.7,.2,1), transform 350ms cubic-bezier(.2,.7,.2,1);
-  }
+  /* The outgoing word clears before the next one lands, so the two never
+     sit on top of each other mid-swap. */
+  .h-rot-word.is-out { transition: opacity 180ms ease-in, transform 180ms ease-in; }
+  .h-rot-word.is-on { transition: opacity 320ms cubic-bezier(.2,.7,.2,1) 140ms, transform 320ms cubic-bezier(.2,.7,.2,1) 140ms; }
 
   .h-const { flex: 1 1 0; min-width: 0; position: relative; width: 100%; aspect-ratio: 1 / 1; max-height: 560px; }
   .h-node { position: absolute; aspect-ratio: 1 / 1; }
