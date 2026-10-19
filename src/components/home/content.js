@@ -31,13 +31,13 @@ export const ROTATING_WORDS = ["builders.", "experts.", "investors."];
 // Hero constellation. Order matters: the first person takes the largest
 // circle and the last one is placed farthest from it.
 export const PEOPLE = [
-  { name: "Mariana Ravedutti", slug: "mariana-ravedutti", kind: "Builder" },
-  { name: "Ivan Freire", slug: "ivan-freire", kind: "Builder" },
-  { name: "Cauê Albuquerque", slug: "caue-albuquerque", kind: "Expert" },
-  { name: "Juliano Dias", slug: "juliano-dias", kind: "Builder" },
-  { name: "Lucas Zanon", slug: "lucas-zanon", kind: "Builder" },
-  { name: "Gabriel Ribeiro", slug: "gabriel-ribeiro", kind: "Builder" },
-  { name: "Letícia Souza", slug: "leticia-souza", kind: "Expert" },
+  { name: "Mariana Ravedutti", slug: "mariana-ravedutti" },
+  { name: "Ivan Freire", slug: "ivan-freire" },
+  { name: "Cauê Albuquerque", slug: "caue-albuquerque" },
+  { name: "Juliano Dias", slug: "juliano-dias" },
+  { name: "Lucas Zanon", slug: "lucas-zanon" },
+  { name: "Gabriel Ribeiro", slug: "gabriel-ribeiro" },
+  { name: "Letícia Souza", slug: "leticia-souza" },
 ];
 
 export const NUMBERS = [

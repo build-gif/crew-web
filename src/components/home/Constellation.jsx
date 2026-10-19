@@ -9,10 +9,10 @@ const ORANGE_DOTS = 6;
 
 // Size comes from CSS (square up to 560px on desktop, a 520:188 strip capped
 // at 150px when the hero stacks), so nothing jumps while this measures itself.
+// The faces are pure image: no hover, no names.
 export function Constellation() {
   const ref = useRef(null);
   const [box, setBox] = useState(null);
-  const [hover, setHover] = useState(-1);
 
   useEffect(() => {
     const el = ref.current;
@@ -47,37 +47,14 @@ export function Constellation() {
             const top = (Math.max(0, Math.min(view.VH - n.d, n.y - n.d / 2)) / view.VH) * 100;
             const width = box.strip ? `${Math.round((n.d * box.h) / view.VH)}px` : `${(n.d / view.VW) * 100}%`;
             const style = { left: `${left}%`, top: `${top}%`, width, animation: `hFloat${n.i % 3} ${14 + (n.i % 5) * 3}s ease-in-out ${-(n.i * 1.7)}s infinite`, zIndex: n.person ? 2 : 1 };
-            if (!n.person) {
-              return (
-                <div key={n.i} className="h-node" style={style} aria-hidden="true">
-                  <div className="h-node-dot" />
-                </div>
-              );
-            }
-            const isHover = hover === n.i;
             return (
-              <div
-                key={n.i}
-                className={`h-node${isHover ? " is-hover" : ""}`}
-                style={style}
-                onMouseEnter={() => setHover(n.i)}
-                onMouseLeave={() => setHover(-1)}
-              >
-                <button
-                  type="button"
-                  className="h-face"
-                  aria-label={`${n.person.name}, ${n.person.kind}`}
-                  onClick={() => setHover((h) => (h === n.i ? -1 : n.i))}
-                  onFocus={() => setHover(n.i)}
-                  onBlur={() => setHover(-1)}
-                >
-                  <Image src={`/assets/v2/faces/${n.person.slug}.webp`} alt="" width={160} height={160} sizes="(max-width: 1099px) 64px, 140px" loading="eager" draggable={false} />
-                </button>
-                {isHover && (
-                  <div className="h-tip" role="tooltip">
-                    <div className="h-tip-name">{n.person.name}</div>
-                    <div className="h-tip-kind">{n.person.kind}</div>
+              <div key={n.i} className="h-node" style={style} aria-hidden={n.person ? undefined : "true"}>
+                {n.person ? (
+                  <div className="h-face">
+                    <Image src={`/assets/v2/faces/${n.person.slug}.webp`} alt={n.person.name} width={160} height={160} sizes="(max-width: 1099px) 64px, 140px" loading="eager" draggable={false} />
                   </div>
+                ) : (
+                  <div className="h-node-dot" />
                 )}
               </div>
             );

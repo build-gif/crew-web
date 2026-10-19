@@ -136,24 +136,8 @@ export const HOME_STYLES = `
   .h-const { flex: 1 1 0; min-width: 0; position: relative; width: 100%; aspect-ratio: 1 / 1; max-height: 560px; }
   .h-node { position: absolute; aspect-ratio: 1 / 1; }
   .h-node-dot { width: 100%; height: 100%; border-radius: 50%; background: var(--orange); }
-  .h-face {
-    all: unset; display: block; width: 100%; height: 100%; border-radius: 50%; overflow: hidden;
-    background: var(--orange); border: 1px solid transparent; cursor: pointer;
-    transition: border-color 120ms ease;
-  }
-  .h-face img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); }
-  .h-node.is-hover { z-index: 10; }
-  .h-node.is-hover .h-face { border-color: var(--ink); }
-  .h-tip {
-    position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-    background: var(--surface); border: 1px solid var(--line-12); border-radius: 8px;
-    padding: 8px 11px; white-space: nowrap; pointer-events: none; text-align: left;
-  }
-  .h-tip-name { font-size: 14px; font-weight: 600; line-height: 1.3; }
-  .h-tip-kind {
-    font-family: var(--mono); font-size: 12px; color: var(--ink-62); letter-spacing: 0.06em;
-    text-transform: uppercase; line-height: 1.4;
-  }
+  .h-face { width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: var(--orange); }
+  .h-face img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); user-select: none; }
   .h-const-in { animation: hFadeIn 450ms ease both; }
   @keyframes hFadeIn { from { opacity: 0; } to { opacity: 1; } }
   @keyframes hFloat0 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(5px, -9px); } }
