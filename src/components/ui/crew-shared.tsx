@@ -105,12 +105,7 @@ export const CREW_MEMBERS = [
   },
 ];
 
-export const CREW_TOKENS = {
-  orange: '#FF5A1F', orangeDark: '#E64A0F',
-  ink: '#0A0A0A', ink2: '#161616',
-  cream: '#F5EFE6', bone: '#EFE9DE',
-  line: 'rgba(10,10,10,0.12)',
-};
+export { CREW_TOKENS } from "./crew-tokens";
 
 const TYPEWRITER_WORDS = ["builders", "founders", "investors"];
 
