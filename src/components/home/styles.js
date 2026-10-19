@@ -264,7 +264,7 @@ export const HOME_STYLES = `
     display: flex; flex-wrap: wrap; align-items: center; gap: 20px 24px; background: var(--surface);
     border: 1px solid var(--line-08); border-radius: 12px; padding: clamp(16px, 2vw, 20px);
   }
-  .h-mission-img { flex: 1 1 180px; min-width: 0; position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; }
+  .h-mission-img { flex: 1 1 180px; min-width: 0; position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--sand); }
   .h-mission-img img { object-fit: cover; }
   .h-mission-body { flex: 2 1 260px; min-width: 0; }
   .h-mission-kicker { color: var(--orange-text); }
