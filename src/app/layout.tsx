@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Crew of Builders",
-  description: "A curated community for builders and experts.",
+  description: "The community that supports the new generation of builders. Free to join.",
   icons: {
     icon: "/assets/crew-logo-black.png",
     apple: "/assets/crew-logo-black.png",
