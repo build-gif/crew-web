@@ -9,7 +9,7 @@ export function PitchDayLineup() {
         <div className="pd-head">
           <div className="pd-kicker">The line-up</div>
           <h2>Top Entrepreneurs <span className="pd-o">from the Crew</span></h2>
-          <p className="pd-h-sub">Handpicked by WE Heart from the applications. We announce all five after applications close on 22 October.</p>
+          <p className="pd-h-sub">Handpicked by WE Heart from the applications. We announce all five after applications close on 12 November.</p>
           <div className="pd-reveal-tag">
             <span className="pd-badge">Open</span> Applications in progress
           </div>

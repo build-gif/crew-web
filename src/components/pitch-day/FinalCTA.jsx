@@ -15,10 +15,10 @@ export function PitchDayFinalCTA() {
     <section className="pd-final">
       <div className="pd-wrap">
         <div className="pd-commit">
-          <div className="pd-commit-eyebrow">Pitch Day #2 · 29 October 2026</div>
+          <div className="pd-commit-eyebrow">Pitch Day #2 · 19 November 2026</div>
           <h2>Sign up for <span className="pd-o">Pitch Day #2.</span></h2>
           <div className="pd-commit-facts">
-            <span><b>29 Oct</b> Thu</span>
+            <span><b>19 Nov</b> Thu</span>
             <span className="pd-dot">·</span>
             <span><b>10:00am</b> BRT</span>
             <span className="pd-dot">·</span>

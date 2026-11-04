@@ -36,8 +36,8 @@ export function PitchDayHero() {
               </span>
             </div>
             <div className="pd-sc-day">
-              <span className="pd-d">29</span>
-              <span className="pd-mo">October 2026</span>
+              <span className="pd-d">19</span>
+              <span className="pd-mo">November 2026</span>
             </div>
             <div className="pd-sc-meta">
               <div>

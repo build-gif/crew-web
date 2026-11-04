@@ -24,7 +24,7 @@ export const LINKS = {
 };
 
 // The Pitch Day bar disappears on its own once the day has passed.
-export const PITCH_DAY = { date: "2026-10-29", label: "Pitch Day #2 · Oct 29" };
+export const PITCH_DAY = { date: "2026-11-19", label: "Pitch Day #2 · Nov 19" };
 
 export const ROTATING_WORDS = ["builders.", "experts.", "investors."];
 
@@ -63,7 +63,7 @@ export const INTRO_STEPS = [
 export const AGENDA_DATED = [
   { date: "2026-10-20", kind: "WE POD", title: "Celso Berri, founder of Syncker", detail: "Live on YouTube" },
   { date: "2026-10-22", kind: "Meet the Crew", title: "Meet the Crew #15", detail: "Kelvin Berlatto pitches" },
-  { date: "2026-10-29", kind: "Pitch Day", title: "Pitch Day #2", detail: "Startups from the Crew pitch to investors · 10am", highlight: true },
+  { date: "2026-11-19", kind: "Pitch Day", title: "Pitch Day #2", detail: "Startups from the Crew pitch to investors · 10am", highlight: true },
 ];
 
 export const AGENDA_WEEKLY = [
