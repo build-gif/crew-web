@@ -18,6 +18,9 @@ export function signupUrl(track, content) {
 export const LINKS = {
   events: `${APP}/events`,
   missions: `${APP}/missions`,
+  // Public catalog of what members are building. Linked from the footer so
+  // Google finds it: nothing else on the site points there.
+  projects: `${APP}/projects`,
   pitchDay: "/pitch-day",
   weHeart: "https://www.weheartimpact.com/",
   video: "https://www.youtube-nocookie.com/embed/ZdJgMSNp24U?autoplay=1&rel=0&modestbranding=1",

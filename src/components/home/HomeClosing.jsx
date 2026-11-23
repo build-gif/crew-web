@@ -48,7 +48,7 @@ export function HomeFooter() {
       <div className="h-wrap">
         <span className="h-footer-brand">Crew of Builders</span>
         <span>
-          Powered by <a href={LINKS.weHeart}>WE Heart Impact</a> · Made in São Paulo
+          <a href={LINKS.projects}>Projects</a> · Powered by <a href={LINKS.weHeart}>WE Heart Impact</a> · Made in São Paulo
         </span>
         <span className="h-footer-year">© 2026</span>
       </div>
